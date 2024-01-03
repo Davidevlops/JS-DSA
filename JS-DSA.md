@@ -5,4 +5,3 @@ Whether you're a seasoned developer seeking to enhance your proficiency or a new
 
 #### Prerequisites
 In solving data structures and algorithms using JavaScript, you must have an understanding of JavaScript.
-
