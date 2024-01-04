@@ -6,9 +6,19 @@ Whether you're a seasoned developer seeking to enhance your proficiency or a new
 #### Prerequisites
 In solving data structures and algorithms using JavaScript, you must have an understanding of JavaScript basic syntaxes, Data types, variables, control flows, functions, and scope.
 
-## Big O notation.
-Big O notation refers to the runtime of an algorithm which grows as the inputs grow. 
-   An algorithm is o(f(n)) if the number of sample operations the computer has to do is eventually less than a constant times f(n) as a increases.
+#### Big O notation
+Big O notation discusses the runtime of an algorithm which grows as the input grows.
+An algorithm is o(f(n)) if the number of simple operations the computer has to do is eventually less than a constant times f(n) as a increases.
+o(1)- This grows as the input  grows it is not reflected.
+o(n)- This shows the number of operations is bounded by a mutilple of n.
+o(n^2) This means a nested loop which means an operation inside an o(n) operation.
 
+Simplifying Big O expressions
+* o(2n) can be simplified to o(n)
+* o(500) can be simplified to o(1)
+* o(13n^2) can be simplified to o(n^2)
+* o(n+10) can be simplified to o(n)
+* o(1000n+50) can be simplified to o(n)
+* o(n^2+5n+8) can be simplified to o(n^2)
 
 
