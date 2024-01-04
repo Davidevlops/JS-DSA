@@ -20,5 +20,3 @@ Simplifying Big O expressions
 * o(n+10) can be simplified to o(n)
 * o(1000n+50) can be simplified to o(n)
 * o(n^2+5n+8) can be simplified to o(n^2)
-
-
