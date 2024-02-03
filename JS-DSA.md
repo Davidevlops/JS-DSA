@@ -1,6 +1,6 @@
 Welcome to the world of Data Structures and Algorithms using JavaScript! This comprehensive guide would equip you with the essential knowledge and skills to navigate the intricate landscape of data manipulation and algorithmic problem-solving using JavaScript.
 
-Whether you're a seasoned developer seeking to enhance your proficiency or a newcomer eager to dive into the realm of data structures and algorithms, this content is tailored to provide clarity and practical insights. Join us on a journey that combines theoretical foundations with hands-on coding examples, empowering you to build robust and efficient solutions in JavaScript.
+Whether you're a seasoned developer seeking to enhance your proficiency or a beginner eager to dive into the realm of data structures and algorithms, this content is tailored to provide clarity and practical insights. Join us on a journey that combines theoretical foundations with hands-on coding examples, empowering you to build robust and efficient solutions in JavaScript.
 
 ##### Prerequisites
 
@@ -8,8 +8,8 @@ In solving data structures and algorithms using JavaScript, you must be knowledg
 
 #### Big O notation
 
-Big O notation discusses the runtime of an algorithm which grows as the input grows.
-An algorithm is o(f(n)) if the number of simple operations the computer has to do is eventually less than a constant times f(n) as a increases.
+Big O notation is used to analyze and describe the efficiency or complexity of an algorithm. Big O notation discusses the runtime of an algorithm which grows as the input grows.
+The notation is typically expressed as O(f(n)), where "f(n)" is a function that represents the growth rate of the algorithm's time or space complexity in relation to the input size "n." The "O" stands for "order of," and it provides an upper bound on the growth rate.
 
 - o(1) This grows as the input grows it is not reflected.
 - o(n) This shows the number of operations is bounded by a mutilple of n.
