@@ -11,9 +11,12 @@ In solving data structures and algorithms using JavaScript, you must be knowledg
 Big O notation is used to analyze and describe the efficiency or complexity of an algorithm. Big O notation discusses the runtime of an algorithm which grows as the input grows.
 The notation is typically expressed as O(f(n)), where "f(n)" is a function that represents the growth rate of the algorithm's time or space complexity in relation to the input size "n." The "O" stands for "order of," and it provides an upper bound on the growth rate.
 
-- o(1) This grows as the input grows it is not reflected.
-- o(n) This shows the number of operations is bounded by a mutilple of n.
-- o(n) This means a nested loop which means an operation inside an o(n) operation.
+###### Common Big O notations include:
+
+- **O(1) Constant time complexity:** The algorithm's execution time or space usage is constant, regardless of the input size.
+- **O(log n) Linear time complexity:** Logarithmic time complexity. Common in algorithms that divide the problem into smaller subproblems, such as binary search.
+- **O(n) Linear time complexity:** The algorithm's performance grows linearly with the input size.
+- **O(n log n) Linearithmic time:** complexity. Often seen in efficient sorting algorithms like merge sort and quicksort.
 
 ###### Simplifying Big O expressions
 
