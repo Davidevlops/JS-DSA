@@ -8,10 +8,57 @@ In solving data structures and algorithms using JavaScript, you must be knowledg
 
 #### Big O notation
 
-Big O notation is used to analyze and describe the efficiency or complexity of an algorithm. Big O notation discusses the runtime of an algorithm which grows as the input grows. The notation is typically expressed as
-**O(f(n))**, where "O" stands for "order of," It indicates the upper bound or the worst-case scenario for the growth rate of an algorithm. The "f" stands for "function" like our normal functions in mathematics and the "n" represents the "size of inputs that the function takes". It could be the number of elements in an array, the length of a string, the number of nodes in a graph, etc. Therefore, "f(n)" is a function that represents the growth rate of the algorithm's time or space complexity in relation to the input size "n".
+Big O notation is used to analyze and describe the efficiency or complexity of an algorithm. Big O notation is typically expressed as **O(f(n))**, where "O" stands for "order of," it indicates the upper bound or the worst-case scenario for the growth rate of an algorithm. The "f" stands for "function" like our normal functions in mathematics and the "n" represents the "size of inputs that the function takes". It could be the number of elements in an array, the length of a string, the number of nodes in a graph, etc. Therefore, "f(n)" is a function that represents the growth rate of the algorithm's time or space complexity in relation to the input size "n".
 
-###### Common Big O notations include:
+In discussing Big O notation, it is essential to understand that an algorithm efficiency is dependent on two main concepts which are the time complexity and the space complexity. In this series, I would be discussing the
+them extensively.
+
+###### Common Big O notation time complexity:
+
+In javascript, you can use the performance.now() method to measure the time of an algorithm. An example of how the performance.now() method is used to measure an algorithm is shown below. In this example, i would be writing two functions that solve the same problem but one is more efficient than the other.
+
+```js
+// 1st approach: which is less efficient
+function findDivisor(number) {
+  const startime = performance.now();
+  const arrayOfDivisor = [];
+  for (let i = 1; i <= number; i++) {
+    if (number % i === 0) {
+      arrayOfDivisor.push(i);
+    }
+  }
+  const endtime = performance.now();
+  const elapsedTime = endtime - startime;
+  console.log("elapsedTime", elapsedTime.toPrecision());
+  return arrayOfDivisor;
+}
+console.log("findDivisor", findDivisor(10000000));
+// result: elapsedTime 56.85770000517368
+```
+
+```js
+// 2nd approach: which is more efficient
+function findDivisor(number) {
+  const startime = performance.now();
+  const arrayOfDivisor = [];
+  for (let i = 1; i <= Math.sqrt(number); i++) {
+    if (number % i === 0) {
+      arrayOfDivisor.push(i);
+      // If the divisor is not equal to the square root, add its pair
+      if (i !== Math.sqrt(number)) {
+        arrayOfDivisor.push(number / i);
+      }
+    }
+  }
+  const sortedArrayOfDivisor = arrayOfDivisor.sort((a, b) => a - b);
+  const endtime = performance.now();
+  const elapsedTime = endtime - startime;
+  console.log("elapsedTime", elapsedTime.toPrecision());
+  return sortedArrayOfDivisor;
+}
+console.log("findDivisor", findDivisor(10000000));
+// result: elapsedTime 0.29659999907016754
+```
 
 - **O(1) Constant time complexity:** Constnat time complexity denoted as **O(1)** is a measure of algorithmic efficiency. An algorithm is said to have constant time complexity if the execution time of the algorithm remains constant, regardless of the size of the input data. In other words, an algorithm's execution time, does not depend on the size of the input. An example of a constant time complexity is acessing an element in an array by it's index as shown below.
 
@@ -165,14 +212,87 @@ function fibonacci(n) {
 console.log(fibonacci(5));
 ```
 
+moving On, I would be discussing the space complexity of an algorithm. Space complexity is a measure of the amount of memory (space) an algorithm uses in relation to the input size. Space complexity is often denoted as **O(g(n))**. This notation describes the growth rate of an algorithm in terms of the space it requires as a function of the input size. Similar to time complexity, space complexity can also be expressed using Big O notation. Big O notation can also be used to express space complexity.
+
+- **O(1) - Constant space complexity:** Constant space complexity, often denoted as O(1), is a measure of an algorithm's memory usage that remains constant regardless of the input size. In other words, the amount of memory required by the algorithm does not depend on the size of the input data. Characteristics of constant space complexity include: Fixed Amount of Memory, No Dynamic Memory Allocation. An example of constant space complexity is shown below.
+
+```js
+// find the sum of elements in an array
+function findSum(arr) {
+  let sum = 0;
+
+  // Iterate through the array and add each element to sum
+  for (let i = 0; i < arr.length; i++) {
+    sum += arr[i];
+  }
+
+  return sum;
+}
+
+// Example usage:
+const numbers = [1, 2, 3, 4, 5];
+console.log(findSum(numbers));
+```
+
+- **O(log n) - Logarithmic space complexity:** Logarithmic space complexity, often denoted as O(log n), is a measure of an algorithm's memory usage relative to the logarithm of the input size. In other words, as the input size increases, the space used by the algorithm grows logarithmically.
+
+```js
+// A binary search function for find the index of a target element in a sorted array.
+function binarySearch(arr, target) {
+  let low = 0;
+  let high = arr.length - 1;
+
+  while (low <= high) {
+    let mid = Math.floor((low + high) / 2);
+
+    if (arr[mid] === target) {
+      return mid;
+    } else if (arr[mid] < target) {
+      low = mid + 1;
+    } else {
+      high = mid - 1;
+    }
+  }
+
+  return -1; // Target not found
+}
+// Example usage:
+const arrayOfNumbers = [1, 2, 3, 4, 5, 6, 7];
+console.log(binarySearch(arr, 5));
+```
+
+- **O(n) - Linear space complexity:** Linear space complexity, often denoted as O(n), is a measure of an algorithm's memory usage that grows linearly with the size of the input data. In other words, as the input size increases, the amount of memory required by the algorithm also increases at a constant rate. An example of linear space complexity is shown below.
+
+```js
+// find the sum of elements in an array
+function squareArrayElements(arr) {
+  // Create a new array to store squared elements
+  const squaredArr = [];
+
+  // Iterate through the original array
+  for (let i = 0; i < arr.length; i++) {
+    // Square each element and push it to the new array
+    squaredArr.push(arr[i] ** 2);
+  }
+
+  return squaredArr;
+}
+
+// Example usage:
+const originalArray = [1, 2, 3, 4, 5];
+console.log(squareArrayElements(originalArray));
+```
+
+The goal of algorithm analysis is to understand the algorithm’s efficiency by calculating f(n). However, it can be challenging to calculate f(n). Big-O notation provides some fundamental ways to simplify any algorithm to help developers compute.
+
 ###### Simplifying Big O expressions
 
-- o(2n) can be simplified to o(n)
-- o(500) can be simplified to o(1)
-- o(13n^2) can be simplified to o(n^2)
-- o(n+10) can be simplified to o(n)
-- o(1000n+50) can be simplified to o(n)
-- o(n^2+5n+8) can be simplified to o(n^2)
+- O(2n) can be simplified to O(n)
+- O(500) can be simplified to O(1)
+- O(13n^2) can be simplified to O(n^2)
+- O(n+10) can be simplified to O(n)
+- O(1000n+50) can be simplified to O(n)
+- O(n^2+5n+8) can be simplified to O(n^2)
 
 In javascript, you can use the performance.now() method to measure the time of an algorithm. Also, the performace.memory api to check the space of an algorithm.
 
