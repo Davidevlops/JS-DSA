@@ -1,3 +1,5 @@
+# Discovering JavaScript's Hidden Secrets: Simplifying Data Structures & Algorithms.
+
 Welcome to the world of Data Structures and Algorithms using JavaScript! This comprehensive guide is designed to equip you with the essential knowledge and skills necessary to navigate the complex landscape of data manipulation and algorithmic problem-solving with JavaScript.
 
 Whether you're a seasoned developer looking to enhance your proficiency or a beginner eager to explore the realms of data structures and algorithms, this content is tailored to provide clarity and practical insights. Join us on a journey that combines theoretical foundations with hands-on coding examples, empowering you to write robust and efficient solutions in JavaScript.
@@ -10,9 +12,9 @@ This lesson will cover data structures and algorithms in series. In this first e
 
 ### Big O notation
 
-Big O notation is a powerful tool for analyzing and articulating the efficiency or complexity of an algorithm. Notably, it provides insights into both time and space complexities. When addressing time complexity, Big O is represented as O(f(n)), where 'O' signifies the 'order of,' denoting the upper bound or worst-case scenario for the algorithm's growth rate. The 'f' corresponds to a function, much like those in mathematics, while 'n' signifies the size of inputs the function processes. This 'n' typically represents the number of elements in data structures like arrays, the length of strings, the number of nodes in a graph, or any other relevant metric related to the input size. Consequently, 'f(n)' becomes a function representing the algorithm's time complexity growth rate in relation to the input size 'n'. Similarly, Big O notation for space complexity adopts the form O(g(n)), where 'g' represents another function, reflecting the upper bound of the algorithm's space usage as it scales with the input size 'n'. Like time complexity, space complexity analysis aims to provide an understanding of how the algorithm's memory consumption grows with increasing input size.
+Big O notation is a powerful tool for analyzing and articulating the efficiency or complexity of an algorithm. Notably, it provides insights into both time and space complexities. When addressing time complexity, Big O is represented as **O(f(n))**, where 'O' signifies the 'order of,' denoting the upper bound or worst-case scenario for the algorithm's growth rate. The 'f' corresponds to a function, much like those in mathematics, while 'n' signifies the size of inputs the function processes. This 'n' typically represents the number of elements in data structures like arrays, the length of strings, the number of nodes in a graph, or any other relevant metric related to the input size. Consequently, 'f(n)' becomes a function representing the algorithm's time complexity growth rate in relation to the input size 'n'. Similarly, Big O notation for space complexity adopts the form **O(g(n))**, where 'g' represents another function, reflecting the upper bound of the algorithm's space usage as it scales with the input size 'n'. Like time complexity, space complexity analysis aims to provide an understanding of how the algorithm's memory consumption grows with increasing input size.
 
-In JavaScript, the execution time of an algorithm can be accurately measured using the performance.now() method. This allows developers to compare the efficiency of different algorithmic solutions or implementations for the same problem. By timing the execution of each function and analyzing the differences in performance, valuable insights can be gained into the efficiency levels of the respective algorithms. In the example below, we'll compare two functions that solve the same problem, showcasing the difference in their efficiency levels.
+In JavaScript, the execution time of an algorithm can be accurately measured using the **performance.now()** method. This allows developers to compare the efficiency of different algorithmic solutions or implementations for the same problem. By timing the execution of each function and analyzing the differences in performance, valuable insights can be gained into the efficiency levels of the respective algorithms. In the example below, we'll compare two functions that solve the same problem, showcasing the difference in their efficiency levels.
 
 ```js
 // 1st approach: which is less efficient
@@ -60,9 +62,9 @@ console.log("findDivisor2", findDivisor2(10000000));
 // result: Elapsed Time for 2nd approach: 0.35019999742507935
 ```
 
-The difference between the efficiency in those examples written above leads us to discuss the analysis of Big O notation for Algorithm complexity.
+The difference between the efficiency in those examples written above leads us to discuss the analysis of Big O notation for algorithm complexity.
 
-### Big O notation for algorithm complexity Analysis:
+### Big O notation for algorithm complexity analysis:
 
 - **O(1) Constant complexity:** Constant complexity, denoted as **O(1)**, signifies an algorithm's efficiency where the execution time and space remain constant regardless of input size. This implies that the algorithm's performance does not depend on the size of the input data. A classic example demonstrating constant complexity is accessing an element in an array by its index as shown below.
 
@@ -164,7 +166,7 @@ console.log(bubbleSort(unsortedArrayOfNumbers));
 // result: [ 11, 12, 22, 25, 64 ]
 ```
 
-- **O(n^3) Cubic complexity:** Cubic complexity, denoted as **O(n^3)**, is a measure of algorithmic efficiency where the execution time and space of an algorithm grows cubically with the size of the input data. In simpler terms, as the input size increases, the time and space required to complete the algorithm increases proportionally to the cube of the input size. An example illustrating cubic time complexity is provided below..
+- **O(n^3) Cubic complexity:** Cubic complexity, denoted as **O(n^3)**, is a measure of algorithmic efficiency where the execution time and space of an algorithm grows cubically with the size of the input data. In simpler terms, as the input size increases, the time and space required to complete the algorithm increases proportionally to the cube of the input size. An example illustrating cubic time complexity is provided below.
 
 ```js
 // Function to calculate the sum of all elements in a 3D matrix
@@ -225,7 +227,7 @@ console.log(fibonacci(7));
 // result: 13
 ```
 
-Algorithm analysis aims to understand the efficiency of algorithms, predicting their performance as input sizes grow. This involves calculating both time (f(n)) and space (g(n)) complexities. However, it can be a little bit challenging to calculate. Big-O notation provides some fundamental ways to simplify any algorithm to help developers compute.
+Algorithm analysis aims to understand the efficiency of algorithms, predicting their performance as input sizes grow. This involves calculating both time (f(n)) and space (g(n)) complexities. However, it can be a little bit challenging to calculate. Big-O notation provides some fundamental ways to simplify any algorithm to help developers calculate.
 
 ### Simplifying Big O expressions
 
