@@ -30,9 +30,23 @@ In the couple of lessons ahead, we would be discussing extensively on linear Dat
 
 - **Arrays:** An array is one of the fundamental data structures in computer science, commonly used for storing collections of elements, such as numbers or strings, that are accessed by indices. It provides a way to store multiple elements of the same data type in a contiguous block of memory, with each element occupying a fixed-size memory space. A picture of Array is shown below.
   ![Array](https://media.geeksforgeeks.org/wp-content/cdn-uploads/20200922124319/Singly-Linked-List1.png "Arrays")
+
+  There are various operations that can be performed on an array, this operations includes: Access, Insertion, Deletion, Traversal, Search.
+  Access: Elements in an array are accessed using their indices. Accessing an element at a specific index typically has a time complexity of O(1), as it involves a simple calculation to determine the memory address of the desired element.
+
+  Insertion/Deletion: Insertion and deletion operations in arrays can be costly, especially if they require shifting elements to accommodate the change. In the worst-case scenario, these operations have a time complexity of O(n), where n is the number of elements in the array.
   The operation that can be performed on an array include: Insertion, deletion, and access. The implementaion is shown below.
 
-       ```js
+  Traversal: Arrays can be traversed sequentially to perform operations on each element. This is commonly done using loops, such as for loops, iterating over each index of the array.
+
+  Search: Searching for an element in an array typically involves iterating through each element sequentially until the desired element is found. In the worst-case scenario, this operation has a time complexity of O(n), where n is the number of elements in the array.
+
+  Types of Arrays:
+  One-dimensional Arrays: These are the simplest form of arrays where elements are arranged in a single row or column.
+
+  Multi-dimensional Arrays: Arrays can have multiple dimensions, forming a matrix-like structure. Common examples include two-dimensional arrays (rows and columns) and three-dimensional arrays (rows, columns, and depth).
+
+  ````js
 
        class Array {
        constructor() {
@@ -86,6 +100,8 @@ In the couple of lessons ahead, we would be discussing extensively on linear Dat
   // Output: Array { length: 2, data: { '0': 1, '1': 2 } }
 
        ```
+
+  ````
 
 - **linked lists:** A linked list is a collection of nodes, where each node contains a data element and a reference (or pointer) to the next node in the sequence. Unlike arrays, linked lists do not require contiguous memory allocation, allowing for dynamic memory allocation and efficient insertion and deletion operations. Linked lists can be singly linked, doubly linked, depending on the number of references each node contains.
 
