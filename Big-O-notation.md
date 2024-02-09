@@ -1,4 +1,4 @@
-# Discovering JavaScript's Hidden Secrets: Simplifying Data Structures & Algorithms.
+# Discovering JavaScript's Hidden Secrets: Understanding Big O Notation in Data Structures & Algorithms.
 
 Welcome to the world of Data Structures and Algorithms using JavaScript! This comprehensive guide is designed to equip you with the essential knowledge and skills necessary to navigate the complex landscape of data manipulation and algorithmic problem-solving with JavaScript.
 
