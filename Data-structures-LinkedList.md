@@ -1,104 +1,104 @@
-Welcome back, in the last episode,we dived into data structures in details we disussed some important concepts in Data structures which include the meaning of data structure, categroies of data structures, and discusssed array as an example of linear data structure.
+Welcome back, in the last episode,we dived into data structures in details. we disussed some important concepts in Data structures which include the meaning of data structure, categroies of data structures, and discusssed array as a type of linear data structure.
 
 In this episode, we would be discussing LinkedList as another type of linear data structure.
 
-- **linked lists:** A linked list is a collection of nodes, where each node contains a data element and a reference (or pointer) to the next node in the sequence. Unlike arrays, linked lists do not require contiguous memory allocation, allowing for dynamic memory allocation and efficient insertion and deletion operations. Linked lists can be categorized into two major types which include: singly linked list and doubly linked list.
+- **linked lists:** A linked list is a collection of nodes, where each node contains a data element and a reference (or pointer) to the next node in the sequence. Unlike arrays, linked lists do not require contiguous memory allocation which allows for dynamic memory allocation and efficient insertion and deletion operations. Linked lists can be categorized into two major types which are: singly linked list and doubly linked list.
 
-  - **singly linked lists:** A singly linked list is a fundamental data structure used in computer science and programming. It is a collection of nodes where each node contains two parts: data and a reference (or pointer) to the next node in the sequence. In a singly linked list, each node points only to the next node in the sequence, and the last node points to null, indicating the end of the list. An example of a linked list is shown below.
+  - **singly linked lists:** A singly linked list is a fundamental data structure used in computer science and programming. It is a collection of nodes where each node contains two parts: a data and a reference (or pointer) to the next node in the sequence. In a singly linked list, each node points only to the next node in the sequence, and the last node points to null, indicating the end of the list. An example of a linked list is illustrated below.
 
-        ```js
-          class Node {
-          constructor(data) {
-              this.data = data;
-              this.next = null;
+    ```js
+    class Node {
+      constructor(data) {
+        this.data = data;
+        this.next = null;
+      }
+    }
+
+    class LinkedList {
+      constructor() {
+        this.head = null;
+      }
+
+      // Insertion at the beginning
+      insertFirst(data) {
+        const newNode = new Node(data);
+        newNode.next = this.head;
+        this.head = newNode;
+      }
+
+      // Insertion at the end
+      insertLast(data) {
+        const newNode = new Node(data);
+        if (!this.head) {
+          this.head = newNode;
+          return;
+        }
+        let current = this.head;
+        while (current.next) {
+          current = current.next;
+        }
+        current.next = newNode;
+      }
+
+      // Deletion by value
+      delete(value) {
+        if (!this.head) return;
+
+        if (this.head.data === value) {
+          this.head = this.head.next;
+          return;
+        }
+
+        let current = this.head;
+        while (current.next) {
+          if (current.next.data === value) {
+            current.next = current.next.next;
+            return;
           }
+          current = current.next;
+        }
+      }
+
+      // Search
+      search(value) {
+        let current = this.head;
+        while (current) {
+          if (current.data === value) {
+            return true;
           }
+          current = current.next;
+        }
+        return false;
+      }
 
-          class LinkedList {
-          constructor() {
-              this.head = null;
-          }
+      // Traversal
+      printList() {
+        let current = this.head;
+        while (current) {
+          console.log(current.data);
+          current = current.next;
+        }
+      }
+    }
 
-          // Insertion at the beginning
-          insertFirst(data) {
-              const newNode = new Node(data);
-              newNode.next = this.head;
-              this.head = newNode;
-          }
+    // Example usage:
+    const linkedList = new LinkedList();
+    linkedList.insertFirst(3);
+    linkedList.insertFirst(2);
+    linkedList.insertFirst(1);
+    linkedList.insertLast(4);
+    linkedList.insertLast(5);
 
-          // Insertion at the end
-          insertLast(data) {
-              const newNode = new Node(data);
-              if (!this.head) {
-              this.head = newNode;
-              return;
-              }
-              let current = this.head;
-              while (current.next) {
-              current = current.next;
-              }
-              current.next = newNode;
-          }
+    console.log("Initial Linked List:");
+    linkedList.printList(); // Output: 1 -> 2 -> 3 -> 4 -> 5
 
-          // Deletion by value
-          delete(value) {
-              if (!this.head) return;
+    linkedList.delete(3);
+    console.log("\nLinked List after deleting 3:");
+    linkedList.printList(); // Output: 1 -> 2 -> 4 -> 5
 
-              if (this.head.data === value) {
-              this.head = this.head.next;
-              return;
-              }
-
-              let current = this.head;
-              while (current.next) {
-              if (current.next.data === value) {
-                  current.next = current.next.next;
-                  return;
-              }
-              current = current.next;
-              }
-          }
-
-          // Search
-          search(value) {
-              let current = this.head;
-              while (current) {
-              if (current.data === value) {
-                  return true;
-              }
-              current = current.next;
-              }
-              return false;
-          }
-
-          // Traversal
-          printList() {
-              let current = this.head;
-              while (current) {
-              console.log(current.data);
-              current = current.next;
-              }
-          }
-          }
-
-          // Example usage:
-          const linkedList = new LinkedList();
-          linkedList.insertFirst(3);
-          linkedList.insertFirst(2);
-          linkedList.insertFirst(1);
-          linkedList.insertLast(4);
-          linkedList.insertLast(5);
-
-          console.log("Initial Linked List:");
-          linkedList.printList(); // Output: 1 -> 2 -> 3 -> 4 -> 5
-
-          linkedList.delete(3);
-          console.log("\nLinked List after deleting 3:");
-          linkedList.printList(); // Output: 1 -> 2 -> 4 -> 5
-
-          console.log("\nIs 4 present in the list?", linkedList.search(4)); // Output: true
-          console.log("Is 6 present in the list?", linkedList.search(6)); // Output: false
-        ```
+    console.log("\nIs 4 present in the list?", linkedList.search(4)); // Output: true
+    console.log("Is 6 present in the list?", linkedList.search(6)); // Output: false
+    ```
 
     - **doubly linked lists:** A doubly linked list is a data structure similar to a singly linked list, with the addition of each node containing a reference to both the next node and the previous node in the sequence. In a doubly linked list, each node has three fields: data, a pointer to the next node (often called next), and a pointer to the previous node (often called prev). This bidirectional linkage allows traversal in both forward and backward directions. An example of a doubly list is shown below.
 
