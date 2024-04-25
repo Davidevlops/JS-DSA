@@ -103,9 +103,7 @@ In this episode, we'll be discussing Linked List as another type of linear data 
   console.log("Is 6 present in the list?", singlyLinkedList.search(6)); // Output: false
   ```
 
-  - **Doubly linked lists:** A doubly linked list is a data structure similar to a singly linked list, but with the addition of each node containing references to both the next node and the previous node in the sequence. In a doubly linked list, each node has three fields: data, a pointer to the next node (often called 'next'), and a pointer to the previous node (often called 'prev'). This bidirectional linkage allows traversal in both forward and backward directions. Various operations can be performed on a doubly linked list, similar to those on an array. These operations include access, insertion/deletion, traversal, and search.
-
-  A picture of a doubly linked list is shown below.
+  - **Doubly linked lists:** A doubly linked list is a data structure similar to a singly linked list, but with the addition of each node containing references to both the next node and the previous node in the sequence. In a doubly linked list, each node has three fields: data, a pointer to the next node (often called 'next'), and a pointer to the previous node (often called 'prev'). This bidirectional linkage allows traversal in both forward and backward directions. Various operations can be performed on a doubly linked list, similar to those on an array. These operations include access, insertion/deletion, traversal, and search.A picture of a doubly linked list is shown below.
 
   ![doubly linked list](https://dev-to-uploads.s3.amazonaws.com/uploads/articles/6bn1f08wb786i7410n3k.png)
 
