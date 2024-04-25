@@ -1,90 +1,59 @@
-class Node {
-    constructor(data) {
-      this.data = data;
-      this.next = null;
-    }
-  }
-
-  class SinglyLinkedList {
+class Stack {
     constructor() {
-      this.head = null;
+      this.items = [];
     }
-
-    // Insertion at the beginning
-    insertFirst(data) {
-      const newNode = new Node(data);
-      newNode.next = this.head;
-      this.head = newNode;
+  
+    push(element) {
+      this.items.push(element);
     }
-
-    // Insertion at the end
-    insertLast(data) {
-      const newNode = new Node(data);
-      if (!this.head) {
-        this.head = newNode;
-        return;
+  
+    pop() {
+      if (this.isEmpty()) {
+        return "Underflow";
       }
-      let current = this.head;
-      while (current.next) {
-        current = current.next;
-      }
-      current.next = newNode;
+      return this.items.pop();
     }
-
-    // Deletion by value
-    delete(value) {
-      if (!this.head) return;
-
-      if (this.head.data === value) {
-        this.head = this.head.next;
-        return;
+  
+    peek() {
+      if (this.isEmpty()) {
+        return "Stack is empty";
       }
-
-      let current = this.head;
-      while (current.next) {
-        if (current.next.data === value) {
-          current.next = current.next.next;
-          return;
-        }
-        current = current.next;
-      }
+      return this.items[this.items.length - 1];
     }
-
-    // Search
-    search(value) {
-      let current = this.head;
-      while (current) {
-        if (current.data === value) {
-          return true;
-        }
-        current = current.next;
-      }
-      return false;
+  
+    isEmpty() {
+      return this.items.length === 0;
     }
-
-    // Traversal
-    printList() {
-      let current = this.head;
-      while (current) {
-        console.log(current.data);
-        current = current.next;
-      }
+  
+    size() {
+      return this.items.length;
+    }
+  
+    clear() {
+      this.items = [];
+    }
+  
+    printStack() {
+      console.log(this.items.toString());
     }
   }
-
+  
   // Example usage:
-  const singlyLinkedList = new SinglyLinkedList();
-  singlyLinkedList.insertFirst(3);
-  singlyLinkedList.insertFirst(2);
-  singlyLinkedList.insertFirst(1);
-  singlyLinkedList.insertLast(4);
-  singlyLinkedList.insertLast(5);
-
-  singlyLinkedList.printList(); // Output: 1 -> 2 -> 3 -> 4 -> 5
-
-  singlyLinkedList.delete(3);
-  console.log("\nLinked List after deleting 3:");
-  singlyLinkedList.printList(); // Output: 1 -> 2 -> 4 -> 5
-
-  console.log("\nIs 4 present in the list?", singlyLinkedList.search(4)); // Output: true
-  console.log("Is 6 present in the list?", singlyLinkedList.search(6)); // Output: false
+  const stack = new Stack();
+  
+  console.log("Is stack empty?", stack.isEmpty()); // Output: true
+  
+  stack.push(10);
+  stack.push(20);
+  stack.push(30);
+  
+  console.log("Stack after pushing 10, 20, and 30:");
+  stack.printStack(); // Output: [10, 20, 30]
+  
+  console.log("Peek:", stack.peek()); // Output: 30
+  console.log("Stack size:", stack.size()); // Output: 3
+  
+  console.log("popped element:", stack.pop()); // Output: 30
+  
+  console.log("Stack after popping:");
+  stack.printStack(); // Output: [10, 20]
