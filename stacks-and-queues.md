@@ -1,10 +1,10 @@
-# Discovering JavaScript's Hidden Secrets: Understanding Stacks and Queues as types of linear Data Structure.
-
 Welcome to the final episode of our series on linear data structures. In the previous episode, we explored linked lists as a type of data structure and discussed the two main types: singly linked lists and doubly linked lists. Additionally, we implemented typical operations for both types of linked lists.
 
 In this episode, we'll be exploring stacks and queues, which are fundamental linear data structures used in computer science. Let's dive in.
 
 - **stacks:** A stack is a fundamental data structure in computer science that follows the Last In, First Out (LIFO) principle. Think of a stack as a collection of items stacked on top of each other, similar to a stack of plates in a cafeteria. The last plate placed on the stack is the first one to be removed. A picture of a stack is shown below.
+
+![Stack Data structure](https://dev-to-uploads.s3.amazonaws.com/uploads/articles/57oafjpiiomhev8j6cjt.png)
 
 An implementation of a stack data structure with its various operations is illustrated below.
 
@@ -71,6 +71,8 @@ stack.printStack(); // Output: [10, 20]
 ```
 
 - **Queues:** Queues are another fundamental data structure that follows the First In, First Out (FIFO) principle. Unlike stacks, where the last element added is the first to be removed, queues operate on the principle that the first element added is the first to be removed, similar to a line or queue of people waiting for service. A picture of a queue is shown below.
+
+![Queue's Data structure ](https://dev-to-uploads.s3.amazonaws.com/uploads/articles/ygfbohtj4u31m1yfi5xn.png)
 
 An implementation of a queue data structure with its various operations is illustrated below.
 
