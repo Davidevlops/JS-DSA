@@ -6,7 +6,7 @@ In this episode, we'll be exploring stacks and queues, which are fundamental lin
 
 - **stacks:** A stack is a fundamental data structure in computer science that follows the Last In, First Out (LIFO) principle. Think of a stack as a collection of items stacked on top of each other, similar to a stack of plates in a cafeteria. The last plate placed on the stack is the first one to be removed. A picture of a stack is shown below.
 
-In implementation of a stack data structure with its various operations is illustrated below.
+An implementation of a stack data structure with its various operations is illustrated below.
 
 ```js
 class Stack {
@@ -72,7 +72,7 @@ stack.printStack(); // Output: [10, 20]
 
 - **Queues:** Queues are another fundamental data structure that follows the First In, First Out (FIFO) principle. Unlike stacks, where the last element added is the first to be removed, queues operate on the principle that the first element added is the first to be removed, similar to a line or queue of people waiting for service. A picture of a queue is shown below.
 
-An implementation of a stack data structure with it's various operations is illustrated below.
+An implementation of a queue data structure with its various operations is illustrated below.
 
 ```js
 class Queue {
@@ -143,11 +143,11 @@ console.log("Queue after dequeuing:");
 queue.printQueue(); // Output: [20, 30]
 ```
 
-This concludes our discussion on stacks and queues and also ends our discussion on linear data structure as a whole In the next episode, we will be exploring graph as a non-linear data structure.
+This concludes our discussion on stacks and queues, as well as our exploration of linear data structures as a whole. In the next episode, we will delve into graphs as a non-linear data structure
 
 ### Conclusion
 
-In this episode, we have comprehensively discussed stacks and queues as a type of linear data structure in JavaScript. We implemented a detailed example demonstrating how to create and manipulate them, covering various operations. In the next episode, we'll explore graphs as a type of non-linear datastructure.
+In this episode, we have comprehensively discussed stacks and queues as a type of linear data structure in JavaScript. We implemented a detailed example demonstrating how to create and manipulate them, covering various operations. In the next episode, we'll explore graphs as a type of non-linear data structure.
 
 ### Resources and References
 
