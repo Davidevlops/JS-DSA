@@ -2,7 +2,7 @@ Welcome to the final episode of our series on linear data structures. In the pre
 
 In this episode, we'll be exploring stacks and queues, which are fundamental linear data structures used in computer science. Let's dive in.
 
-- **stacks:** A stack is a fundamental data structure in computer science that follows the Last In, First Out (LIFO) principle. Think of a stack as a collection of items stacked on top of each other, similar to a stack of plates in a cafeteria. The last plate placed on the stack is the first one to be removed. A picture of a stack is shown below.
+- **Stacks:** A stack is a fundamental data structure in computer science that follows the Last In, First Out (LIFO) principle. Think of a stack as a collection of items stacked on top of each other, similar to a stack of plates in a cafeteria. The last plate placed on the stack is the first one to be removed. A picture of a stack is shown below.
 
 ![Stack Data structure](https://dev-to-uploads.s3.amazonaws.com/uploads/articles/57oafjpiiomhev8j6cjt.png)
 
@@ -82,20 +82,17 @@ class Queue {
     this.items = [];
   }
 
-  // Enqueue operation: Adds an element to the back (end) of the queue
   enqueue(element) {
     this.items.push(element);
   }
 
-  // Dequeue operation: Removes and returns the front (first) element from the queue
   dequeue() {
     if (this.isEmpty()) {
-      return "Underflow"; // Queue is empty
+      return "Underflow";
     }
     return this.items.shift();
   }
 
-  // Peek operation: Returns the front element from the queue without removing it
   peek() {
     if (this.isEmpty()) {
       return "Queue is empty";
@@ -103,22 +100,18 @@ class Queue {
     return this.items[0];
   }
 
-  // isEmpty operation: Checks if the queue is empty
   isEmpty() {
     return this.items.length === 0;
   }
 
-  // Size operation: Returns the number of elements in the queue
   size() {
     return this.items.length;
   }
 
-  // Clear operation: Removes all elements from the queue
   clear() {
     this.items = [];
   }
 
-  // Print operation: Prints the elements of the queue
   printQueue() {
     console.log(this.items.toString());
   }
@@ -145,7 +138,7 @@ console.log("Queue after dequeuing:");
 queue.printQueue(); // Output: [20, 30]
 ```
 
-This concludes our discussion on stacks and queues, as well as our exploration of linear data structures as a whole. In the next episode, we will delve into graphs as a non-linear data structure
+This concludes our discussion on stacks and queues, as well as our exploration of linear data structures as a whole. In the next episode, we will explore graphs as a non-linear data structure.
 
 ### Conclusion
 
@@ -153,7 +146,9 @@ In this episode, we have comprehensively discussed stacks and queues as a type o
 
 ### Resources and References
 
-You can check out some of the resources listed below to learn more about linked list as a linear data structure:
+You can check out some of the resources listed below to learn more about stacks and queues as linear data structures:
 
 - [GeeksforGeeks - Linked List](https://www.geeksforgeeks.org/difference-between-stack-and-queue-data-structures/)
 - [JavaScript Algorithms and Data Structures Masterclass by Colt Steele](https://www.udemy.com/course/js-algorithms-and-data-structures-masterclass/)
+- [Implementing Stacks and Queues in Javascript](https://medium.com/@drewisatlas/implementing-stacks-and-queues-in-javascript-b3714dee112f)
+- [Exploring Stacks and Queues via JavaScript](https://www.digitalocean.com/community/tutorials/js-stacks-queues)
