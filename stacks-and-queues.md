@@ -88,7 +88,7 @@ class Queue {
 
   dequeue() {
     if (this.isEmpty()) {
-      return "Underflow";
+      return "Underflow"; 
     }
     return this.items.shift();
   }
@@ -148,7 +148,7 @@ In this episode, we have comprehensively discussed stacks and queues as a type o
 
 You can check out some of the resources listed below to learn more about stacks and queues as linear data structures:
 
-- [GeeksforGeeks - Linked List](https://www.geeksforgeeks.org/difference-between-stack-and-queue-data-structures/)
+- [GeeksforGeeks -difference between stack and queue data structures](https://www.geeksforgeeks.org/difference-between-stack-and-queue-data-structures/)
 - [JavaScript Algorithms and Data Structures Masterclass by Colt Steele](https://www.udemy.com/course/js-algorithms-and-data-structures-masterclass/)
 - [Implementing Stacks and Queues in Javascript](https://medium.com/@drewisatlas/implementing-stacks-and-queues-in-javascript-b3714dee112f)
 - [Exploring Stacks and Queues via JavaScript](https://www.digitalocean.com/community/tutorials/js-stacks-queues)
