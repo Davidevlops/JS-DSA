@@ -2,11 +2,11 @@
 
 Welcome to the final episode of our series on linear data structures. In the previous episode, we explored linked lists as a type of data structure and discussed the two main types: singly linked lists and doubly linked lists. Additionally, we implemented typical operations for both types of linked lists.
 
-In this episode, we'll be discussing stacks and queues as types of linear data structures. Let's dive in.
+In this episode, we'll be exploring stacks and queues, which are fundamental linear data structures used in computer science. Let's dive in.
 
 - **stacks:** A stack is a fundamental data structure in computer science that follows the Last In, First Out (LIFO) principle. Think of a stack as a collection of items stacked on top of each other, similar to a stack of plates in a cafeteria. The last plate placed on the stack is the first one to be removed. A picture of a stack is shown below.
 
-An implementation of a stack data structure with it's various operations is illustrated below.
+In implementation of a stack data structure with its various operations is illustrated below.
 
 ```js
 class Stack {
