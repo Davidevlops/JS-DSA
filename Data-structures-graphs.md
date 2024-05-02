@@ -1,6 +1,6 @@
-Welcome to another entire section under datas structures which is non-linear data. In the previous episode, we explored stacks and queues as a type of linear data structure. Additionally, we implemented typical operations for both data structure and that brought to end of linear data structure.
+Welcome to another section on data structures, this time, we would be focusing on non-linear data structures. In the previous section, we delved into stacks and queues, which are examples of linear data structures. Now, we'll explore non-linear structures, which exhibit more complex relationships between their elements. Let's begin by understanding the fundamental concepts and operations associated with non-linear data structures
 
-In this episode, we'll be exploring grpahs, which is a fundamental non-linear data structures used in computer science. Let's dive in.
+In this section, we'll delve into graphs, a fundamental non-linear data structure widely used in computer science. Graphs offer a versatile way to represent relationships between objects or entities. Let's dive in and explore the concepts, properties, and operations associated with graphs.
 
 - **Graphs:** A graph as a type of non-linear data structure is a collection of nodes also referred to as vertices and edges that connect pairs of nodes. Graphs are fundamental concept in computer science and is used to represent relationships between objects. In discussing graphs, it's important we understand we understand some important concepts which include: Nodes and Edges
 
@@ -12,7 +12,8 @@ In this episode, we'll be exploring grpahs, which is a fundamental non-linear da
 
 - **Undirected Edge:** An edge where the relationship between nodes is bidirectional, meaning it doesn't have a specific direction. For example, in a social network graph, a friendship between two users would be represented by an undirected edge.
 
-  In discussing 
+  In discussing graphs, it's important to note that there are different types of graphs which include:Directed Graph, Undirected Graph, Weighted Graph, Unweighted Graph, Cyclic Graph and Acyclic Graph
+
 ### Conclusion
 
 In this episode, we have comprehensively discussed stacks and queues as a type of linear data structure in JavaScript. We implemented a detailed example demonstrating how to create and manipulate them, covering various operations. In the next episode, we'll explore graphs as a type of non-linear data structure.
