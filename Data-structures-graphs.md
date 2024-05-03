@@ -23,7 +23,9 @@ In discussing graphs, it's important to note that there are different types of g
 
 - **Weighted Graph:** A weighted graph is a type of graph in which each edge has an associated numerical value called a weight or a cost. These weights represent quantitative measures of the relationships between pairs of nodes in the graph. Unlike unweighted graphs, where edges have no associated numerical values, weighted graphs provide additional information about the strength, distance, or any other relevant metric of the connections between nodes.
 
-- **Unweighted Graph:**
+- **Unweighted Graph:** An unweighted graph is a type of graph in which edges do not have any associated numerical value or weight. Unlike weighted graphs, where edges have numerical values representing costs, distances, or other quantitative measures, unweighted graphs simply indicate the presence or absence of connections between pairs of nodes without considering any specific weight or cost associated with those connections.
+
+- **Cyclic Graph:** A cyclic graph is a type of graph that contains at least one cycle, which is a closed path in the graph where the starting node and ending node are the same. In other words, a cyclic graph is a graph that has a sequence of edges that forms a loop, allowing traversal from a node back to itself by following the edges of the cycle.
 
 ### Conclusion
 
@@ -33,7 +35,8 @@ In this episode, we have comprehensively discussed stacks and queues as a type o
 
 You can check out some of the resources listed below to learn more about stacks and queues as linear data structures:
 
-- [GeeksforGeeks -difference between stack and queue data structures](https://www.geeksforgeeks.org/difference-between-stack-and-queue-data-structures/)
-- [JavaScript Algorithms and Data Structures Masterclass by Colt Steele](https://www.udemy.com/course/js-algorithms-and-data-structures-masterclass/)
+- [GeeksforGeeks -Graph Data Structure And Algorithms](https://www.geeksforgeeks.org/graph-data-structure-and-algorithms/)
 - [Implementing Stacks and Queues in Javascript](https://medium.com/@drewisatlas/implementing-stacks-and-queues-in-javascript-b3714dee112f)
 - [Exploring Stacks and Queues via JavaScript](https://www.digitalocean.com/community/tutorials/js-stacks-queues)
+
+
