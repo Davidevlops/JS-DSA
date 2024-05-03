@@ -118,12 +118,12 @@ graph.printGraph();
 
 ### Conclusion
 
-In this episode, we have comprehensively discussed stacks and queues as a type of linear data structure in JavaScript. We implemented a detailed example demonstrating how to create and manipulate them, covering various operations. In the next episode, we'll explore graphs as a type of non-linear data structure.
+In this episode, we have comprehensively discussed graphs as a type of non linear data structure in JavaScript. We implemented a detailed example demonstrating how to create and manipulate graphs, covering various operations. In the next episode, we'll explore tress as a type of non-linear data structure.
 
 ### Resources and References
 
 You can check out some of the resources listed below to learn more about stacks and queues as linear data structures:
 
 - [GeeksforGeeks -Graph Data Structure And Algorithms](https://www.geeksforgeeks.org/graph-data-structure-and-algorithms/)
-- [Implementing Stacks and Queues in Javascript](https://medium.com/@drewisatlas/implementing-stacks-and-queues-in-javascript-b3714dee112f)
-- [Exploring Stacks and Queues via JavaScript](https://www.digitalocean.com/community/tutorials/js-stacks-queues)
+- [Graph Data Stucture](https://www.programiz.com/dsa/graph)
+- [Graph Data Structure](https://www.tutorialspoint.com/data_structures_algorithms/graph_data_structure.htm)
