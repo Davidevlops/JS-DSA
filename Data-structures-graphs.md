@@ -1,3 +1,4 @@
+# Discovering JavaScript's Hidden Secrets: Understanding Graphs as a Non Linear Data Structure.
 Welcome to another section on data structures, this time, we would be focusing on non-linear data structures. In the previous section, we delved into stacks and queues, which are examples of linear data structures. Now, we'll explore non-linear structures, which exhibit more complex relationships between their elements. Let's begin by understanding the fundamental concepts and operations associated with non-linear data structures
 
 In this episode, we'll delve into graphs, a fundamental non-linear data structure widely used in computer science. Graphs offer a versatile way to represent relationships between objects or entities. Let's dive in and explore the concepts, properties, and operations associated with graphs.
@@ -8,7 +9,10 @@ In this episode, we'll delve into graphs, a fundamental non-linear data structur
 
       - **Edges:** Edges, also known as links, are fundamental components of a graph data structure. They represent the relationships or connections between pairs of nodes. In essence, an edge defines how nodes are related to each other within the graph.
 
-A picture of a grpah is shown below:
+A picture of a graph is shown below
+
+![Graph](https://dev-to-uploads.s3.amazonaws.com/uploads/articles/us3hs9ej4d2i4t33ulbo.jpg)
+
 
 In discussing graphs, it's important to note that there are different types of graphs which include:
 
