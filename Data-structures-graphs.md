@@ -2,15 +2,11 @@ Welcome to another section on data structures, this time, we would be focusing o
 
 In this section, we'll delve into graphs, a fundamental non-linear data structure widely used in computer science. Graphs offer a versatile way to represent relationships between objects or entities. Let's dive in and explore the concepts, properties, and operations associated with graphs.
 
-- **Graphs:** A graph as a type of non-linear data structure is a collection of nodes also referred to as vertices and edges that connect pairs of nodes. Graphs are fundamental concept in computer science and is used to represent relationships between objects. In discussing graphs, it's important we understand we understand some important concepts which include: Nodes and Edges
+- **Graphs:** A graph, as a type of non-linear data structure, consists of a collection of nodes, also known as vertices, and edges that connect pairs of nodes. Graphs are a fundamental concept in computer science and are utilized to represent various relationships between objects. As we delve into the topic of graphs, it's essential to grasp some key concepts, namely: Nodes and Edges.
 
 - **Nodes:** Nodes are also referred to as vertices. Nodes are entities in a graph which could represent any discrete object, such as cities in a map, users in a social network, or web pages in a hyperlink network.
 
 - **Edges:** Edges are connections between pairs of nodes. They represent relationships or interactions between the nodes they connect. Edges can be directed or undirected
-
-- **Directed Edge:** An edge where the relationship between nodes has a specific direction. For example, in a network of web pages, a hyperlink from one page to another would be represented by a directed edge, indicating the direction of the link.
-
-- **Undirected Edge:** An edge where the relationship between nodes is bidirectional, meaning it doesn't have a specific direction. For example, in a social network graph, a friendship between two users would be represented by an undirected edge.
 
   In discussing graphs, it's important to note that there are different types of graphs which include:Directed Graph, Undirected Graph, Weighted Graph, Unweighted Graph, Cyclic Graph and Acyclic Graph
 
