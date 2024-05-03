@@ -21,6 +21,8 @@ In discussing graphs, it's important to note that there are different types of g
 
 - **Undirected Graph:** An undirected graph is a type of graph in which edges do not have a direction associated with them. Undirected graphs depict symmetric relationships by indicating that the relationship between two nodes is bidirectional.
 
+- **Weighted Graph:** A weighted graph is a type of graph in which each edge has an associated numerical value called a weight or a cost.
+
 ### Conclusion
 
 In this episode, we have comprehensively discussed stacks and queues as a type of linear data structure in JavaScript. We implemented a detailed example demonstrating how to create and manipulate them, covering various operations. In the next episode, we'll explore graphs as a type of non-linear data structure.
