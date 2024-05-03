@@ -27,6 +27,8 @@ In discussing graphs, it's important to note that there are different types of g
 
 - **Cyclic Graph:** A cyclic graph is a type of graph that contains at least one cycle, which is a closed path in the graph where the starting node and ending node are the same. In other words, a cyclic graph is a graph that has a sequence of edges that forms a loop, allowing traversal from a node back to itself by following the edges of the cycle.
 
+- **Acyclic Graph:** An acyclic graph, also known as a DAG (Directed Acyclic Graph), is a type of graph that does not contain any cycles. In other words, it is a directed graph in which it is impossible to traverse through the graph and return to the starting node by following the direction of the edges.
+
 ### Conclusion
 
 In this episode, we have comprehensively discussed stacks and queues as a type of linear data structure in JavaScript. We implemented a detailed example demonstrating how to create and manipulate them, covering various operations. In the next episode, we'll explore graphs as a type of non-linear data structure.
@@ -38,5 +40,3 @@ You can check out some of the resources listed below to learn more about stacks 
 - [GeeksforGeeks -Graph Data Structure And Algorithms](https://www.geeksforgeeks.org/graph-data-structure-and-algorithms/)
 - [Implementing Stacks and Queues in Javascript](https://medium.com/@drewisatlas/implementing-stacks-and-queues-in-javascript-b3714dee112f)
 - [Exploring Stacks and Queues via JavaScript](https://www.digitalocean.com/community/tutorials/js-stacks-queues)
-
-
