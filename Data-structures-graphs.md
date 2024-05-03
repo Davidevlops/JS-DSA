@@ -2,9 +2,9 @@ Welcome to another section on data structures, this time, we would be focusing o
 
 In this section, we'll delve into graphs, a fundamental non-linear data structure widely used in computer science. Graphs offer a versatile way to represent relationships between objects or entities. Let's dive in and explore the concepts, properties, and operations associated with graphs.
 
-- **Graphs:** A graph, as a type of non-linear data structure, consists of a collection of nodes, also known as vertices, and edges that connect pairs of nodes. Graphs are a fundamental concept in computer science and are utilized to represent various relationships between objects. As we delve into the topic of graphs, it's essential to grasp some key concepts, namely: Nodes and Edges.
+- **Graphs:** A graph, as a type of non-linear data structure, consists of a collection of nodes and edges that connect pairs of nodes. Graphs are a fundamental concept in computer science and are utilized to represent various relationships between objects. As we delve into the topic of graphs, it's essential to grasp some key concepts, namely: Nodes and Edges.
 
-- **Nodes:** Nodes are also referred to as vertices. Nodes are entities in a graph which could represent any discrete object, such as cities in a map, users in a social network, or web pages in a hyperlink network.
+- **Nodes:** Nodes, also known as vertices, are fundamental building blocks of a graph. Each node represents an entity or an object in the graph. For example, in a social network graph, nodes could represent individuals, while in a transportation network, nodes could represent cities or junctions
 
 - **Edges:** Edges are connections between pairs of nodes. They represent relationships or interactions between the nodes they connect. Edges can be directed or undirected
 
