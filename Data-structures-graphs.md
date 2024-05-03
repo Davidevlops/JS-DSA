@@ -8,11 +8,11 @@ We'll embark on an exploration of graphs, a cornerstone non-linear data structur
 
       - **Edges:** Edges, also known as links, are fundamental components of a graph data structure. They represent the relationships or connections between pairs of nodes. In essence, an edge defines how nodes are related to each other within the graph.
 
-      A picture of a graph is shown below
+        A picture of a graph is shown below
 
       ![Graph](https://dev-to-uploads.s3.amazonaws.com/uploads/articles/us3hs9ej4d2i4t33ulbo.jpg)
 
-In discussing graphs, it's important to note that there are different types of graphs:
+In discussing graphs, it's important to note that there are different types of graphs which include: directed graphs, undirected graphs, weighted graphs, unweighted graphs, cyclic graphs, acyclic graphs.
 
 - **Directed Graph:** A directed graph, also known as a digraph, is a type of graph where edges have a direction associated with them, indicating a specific direction of connection between nodes. Directed graphs depict asymmetric relationships by indicating a specific direction of connection between nodes.
 
@@ -26,7 +26,7 @@ In discussing graphs, it's important to note that there are different types of g
 
 - **Acyclic Graph:** An acyclic graph, also known as a DAG (Directed Acyclic Graph), is a type of graph that does not contain any cycles. In other words, it is a directed graph in which it is impossible to traverse through the graph and return to the starting node by following the direction of the edges.
 
-An implementation of a graph with it operations is illustrated below.
+An implementation of a graph with various operations is illustrated below.
 
 ```js
 class Graph {
@@ -109,7 +109,7 @@ graph.printGraph();
 
 ### Conclusion
 
-In this episode, we have comprehensively discussed graphs as a type of non linear data structure in JavaScript. We implemented a detailed example demonstrating how to create and manipulate graphs, covering various operations. In the next episode, we'll explore tress as a type of non-linear data structure.
+In this segment, we have comprehensively discussed graphs as a type of non-linear data structure in JavaScript. We implemented a detailed example demonstrating how to create and manipulate graphs, covering various operations. In the next episode, we'll explore trees as a type of non-linear data structure.
 
 ### Resources and References
 
