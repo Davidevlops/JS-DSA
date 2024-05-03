@@ -8,7 +8,16 @@ In this section, we'll delve into graphs, a fundamental non-linear data structur
 
 - **Edges:** Edges, also known as links, are fundamental components of a graph data structure. They represent the relationships or connections between pairs of nodes. In essence, an edge defines how nodes are related to each other within the graph.
 
-In discussing graphs, it's important to note that there are different types of graphs which include:Directed Graph, Undirected Graph, Weighted Graph, Unweighted Graph, Cyclic Graph and Acyclic Graph
+In discussing graphs, it's important to note that there are different types of graphs which include:
+
+- Directed Graph
+- Undirected Graph
+- Weighted Graph
+- Unweighted Graph
+- Cyclic Graph
+- Acyclic Graph
+
+- **Directed Graph:** 
 
 ### Conclusion
 
