@@ -1,10 +1,8 @@
-# Discovering JavaScript's Hidden Secrets: Understanding Graphs as a Non Linear Data Structure.
-
 Welcome to another section on data structures. In this segment, we'll explore non-linear data structures, which present more intricate relationships between their elements compared to linear structures like stacks and queues, discussed in the previous section. Our focus will be on understanding the fundamental concepts and operations associated with these non-linear structures.
 
 We'll embark on an exploration of graphs, a cornerstone non-linear data structure extensively employed in computer science. Graphs offer a versatile means to represent relationships between objects or entities. Join us as we unravel the concepts, properties, and operations integral to graph
 
-- **Graphs:** A graph, as a type of non-linear data structure, consists of a collection of nodes and edges that connect pairs of nodes. Graphs are a fundamental concept in computer science and are utilized to represent various relationships between objects. As we delve into the topic of graphs, it's essential to grasp some key concepts, namely: Nodes and Edges.
+- **Graphs:** A graph, as a type of non-linear data structure, consists of a collection of nodes and edges that connect pairs of nodes. Graphs are a fundamental concept in computer science and are utilized to represent various relationships between objects. As we explore graphs as a topic, it's essential to grasp some key concepts, namely: Nodes and Edges.
 
       - **Nodes:** Nodes, also known as vertices, are fundamental building blocks of a graph. Each node represents an entity or an object in the graph. For example, in a social network graph, nodes could represent individuals, while in a transportation network, nodes could represent cities or junctions
 
@@ -16,13 +14,13 @@ We'll embark on an exploration of graphs, a cornerstone non-linear data structur
 
 In discussing graphs, it's important to note that there are different types of graphs:
 
-- **Directed Graph:** A directed graph, also known as a digraph, is a type of graph in which edges have a direction associated with them. Unlike undirected graphs, where edges represent symmetric relationships between nodes, directed graphs depict asymmetric relationships by indicating a specific direction of connection between nodes.
+- **Directed Graph:** A directed graph, also known as a digraph, is a type of graph where edges have a direction associated with them, indicating a specific direction of connection between nodes. Directed graphs depict asymmetric relationships by indicating a specific direction of connection between nodes.
 
 - **Undirected Graph:** An undirected graph is a type of graph in which edges do not have a direction associated with them. Undirected graphs depict symmetric relationships by indicating that the relationship between two nodes is bidirectional.
 
-- **Weighted Graph:** A weighted graph is a type of graph in which each edge has an associated numerical value called a weight or a cost. These weights represent quantitative measures of the relationships between pairs of nodes in the graph. Unlike unweighted graphs, where edges have no associated numerical values, weighted graphs provide additional information about the strength, distance, or any other relevant metric of the connections between nodes.
+- **Weighted Graph:** A weighted graph is a type of graph in which each edge has an associated numerical value called a weight or a cost. These weights represent quantitative measures of the relationships between pairs of nodes in the graph. Weighted graphs provide additional information about the strength, distance, or any other relevant metric of the connections between nodes.
 
-- **Unweighted Graph:** An unweighted graph is a type of graph in which edges do not have any associated numerical value or weight. Unlike weighted graphs, where edges have numerical values representing costs, distances, or other quantitative measures, unweighted graphs simply indicate the presence or absence of connections between pairs of nodes without considering any specific weight or cost associated with those connections.
+- **Unweighted Graph:** An unweighted graph is a type of graph in which edges do not have any associated numerical value or weight. Unweighted graphs simply indicate the presence or absence of connections between pairs of nodes without considering any specific weight or cost associated with those connections.
 
 - **Cyclic Graph:** A cyclic graph is a type of graph that contains at least one cycle, which is a closed path in the graph where the starting node and ending node are the same. In other words, a cyclic graph is a graph that has a sequence of edges that forms a loop, allowing traversal from a node back to itself by following the edges of the cycle.
 
