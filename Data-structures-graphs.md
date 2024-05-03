@@ -17,7 +17,9 @@ In discussing graphs, it's important to note that there are different types of g
 - Cyclic Graph
 - Acyclic Graph
 
-- **Directed Graph:** 
+- **Directed Graph:** A directed graph, also known as a digraph, is a type of graph in which edges have a direction associated with them. Unlike undirected graphs, where edges represent symmetric relationships between nodes, directed graphs depict asymmetric relationships by indicating a specific direction of connection between nodes.
+
+- **Undirected Graph:** An undirected graph is a type of graph in which edges do not have a direction associated with them. Undirected graphs depict symmetric relationships by indicating that the relationship between two nodes is bidirectional.
 
 ### Conclusion
 
