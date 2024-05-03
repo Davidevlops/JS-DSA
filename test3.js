@@ -83,7 +83,15 @@ graph.addEdge("A", "B");
 graph.addEdge("B", "C");
 graph.addEdge("A", "C");
 graph.printGraph();
+// output
+// A -> B, C
+// B -> A, C
+// C -> B, A
 console.log("Has edge between A and B:", graph.hasEdge("A", "B"));
 console.log("Has edge between A and C:", graph.hasEdge("A", "C"));
 graph.removeVertex("B");
+console.log("Heyy");
 graph.printGraph();
+// output
+// A -> C
+// C -> A

@@ -8,11 +8,11 @@ We'll embark on an exploration of graphs, a cornerstone non-linear data structur
 
       - **Edges:** Edges, also known as links, are fundamental components of a graph data structure. They represent the relationships or connections between pairs of nodes. In essence, an edge defines how nodes are related to each other within the graph.
 
-        A picture of a graph is shown below
+A picture of a graph is shown below
 
-      ![Graph](https://dev-to-uploads.s3.amazonaws.com/uploads/articles/us3hs9ej4d2i4t33ulbo.jpg)
+![Graph](https://dev-to-uploads.s3.amazonaws.com/uploads/articles/us3hs9ej4d2i4t33ulbo.jpg)
 
-In discussing graphs, it's important to note that there are different types of graphs which include: directed graphs, undirected graphs, weighted graphs, unweighted graphs, cyclic graphs, acyclic graphs.
+In discussing graphs, it's important to note that there are different types of graphs, which include: directed graphs, undirected graphs, weighted graphs, unweighted graphs, cyclic graphs, and acyclic graphs. Let's discuss them in detail
 
 - **Directed Graph:** A directed graph, also known as a digraph, is a type of graph where edges have a direction associated with them, indicating a specific direction of connection between nodes. Directed graphs depict asymmetric relationships by indicating a specific direction of connection between nodes.
 
@@ -101,10 +101,17 @@ graph.addEdge("A", "B");
 graph.addEdge("B", "C");
 graph.addEdge("A", "C");
 graph.printGraph();
-console.log("Has edge between A and B:", graph.hasEdge("A", "B"));
-console.log("Has edge between A and C:", graph.hasEdge("A", "C"));
+// output
+// A -> B, C
+// B -> A, C
+// C -> B, A
+console.log("Has edge between A and B:", graph.hasEdge("A", "B")); // true ;
+console.log("Has edge between A and C:", graph.hasEdge("A", "C")); // true;
 graph.removeVertex("B");
 graph.printGraph();
+// output
+// A -> C
+// C -> A
 ```
 
 ### Conclusion
@@ -113,7 +120,7 @@ In this segment, we have comprehensively discussed graphs as a type of non-linea
 
 ### Resources and References
 
-You can check out some of the resources listed below to learn more about stacks and queues as linear data structures:
+You can check out some of the resources listed below to learn more about graphs as a non-linear data structure:
 
 - [GeeksforGeeks -Graph Data Structure And Algorithms](https://www.geeksforgeeks.org/graph-data-structure-and-algorithms/)
 - [Graph Data Stucture](https://www.programiz.com/dsa/graph)
