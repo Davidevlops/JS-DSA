@@ -1,4 +1,5 @@
 # Discovering JavaScript's Hidden Secrets: Understanding Graphs as a Non Linear Data Structure.
+
 Welcome to another section on data structures, this time, we would be focusing on non-linear data structures. In the previous section, we delved into stacks and queues, which are examples of linear data structures. Now, we'll explore non-linear structures, which exhibit more complex relationships between their elements. Let's begin by understanding the fundamental concepts and operations associated with non-linear data structures
 
 In this episode, we'll delve into graphs, a fundamental non-linear data structure widely used in computer science. Graphs offer a versatile way to represent relationships between objects or entities. Let's dive in and explore the concepts, properties, and operations associated with graphs.
@@ -12,7 +13,6 @@ In this episode, we'll delve into graphs, a fundamental non-linear data structur
 A picture of a graph is shown below
 
 ![Graph](https://dev-to-uploads.s3.amazonaws.com/uploads/articles/us3hs9ej4d2i4t33ulbo.jpg)
-
 
 In discussing graphs, it's important to note that there are different types of graphs which include:
 
@@ -34,6 +34,8 @@ In discussing graphs, it's important to note that there are different types of g
 - **Cyclic Graph:** A cyclic graph is a type of graph that contains at least one cycle, which is a closed path in the graph where the starting node and ending node are the same. In other words, a cyclic graph is a graph that has a sequence of edges that forms a loop, allowing traversal from a node back to itself by following the edges of the cycle.
 
 - **Acyclic Graph:** An acyclic graph, also known as a DAG (Directed Acyclic Graph), is a type of graph that does not contain any cycles. In other words, it is a directed graph in which it is impossible to traverse through the graph and return to the starting node by following the direction of the edges.
+
+An implementation of a graph with it operations is illustrated below.
 
 ```js
 class Graph {
