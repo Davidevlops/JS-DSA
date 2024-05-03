@@ -1,6 +1,6 @@
 # Discovering JavaScript's Hidden Secrets: Understanding Graphs as a Non Linear Data Structure.
 
-Welcome to another section on data structures. In this segment, we'll delve into non-linear data structures, which present more intricate relationships between their elements compared to linear structures like stacks and queues, discussed in the previous section. Our focus will be on understanding the fundamental concepts and operations associated with these non-linear structures.
+Welcome to another section on data structures. In this segment, we'll explore non-linear data structures, which present more intricate relationships between their elements compared to linear structures like stacks and queues, discussed in the previous section. Our focus will be on understanding the fundamental concepts and operations associated with these non-linear structures.
 
 We'll embark on an exploration of graphs, a cornerstone non-linear data structure extensively employed in computer science. Graphs offer a versatile means to represent relationships between objects or entities. Join us as we unravel the concepts, properties, and operations integral to graph
 
