@@ -6,7 +6,7 @@ In this section, we'll delve into graphs, a fundamental non-linear data structur
 
 - **Nodes:** Nodes, also known as vertices, are fundamental building blocks of a graph. Each node represents an entity or an object in the graph. For example, in a social network graph, nodes could represent individuals, while in a transportation network, nodes could represent cities or junctions
 
-- **Edges:** Edges are connections between pairs of nodes. They represent relationships or interactions between the nodes they connect. Edges can be directed or undirected
+- **Edges:** Edges, also known as links, are fundamental components of a graph data structure. They represent the relationships or connections between pairs of nodes. In essence, an edge defines how nodes are related to each other within the graph.
 
   In discussing graphs, it's important to note that there are different types of graphs which include:Directed Graph, Undirected Graph, Weighted Graph, Unweighted Graph, Cyclic Graph and Acyclic Graph
 
