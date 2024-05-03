@@ -1,12 +1,14 @@
 Welcome to another section on data structures, this time, we would be focusing on non-linear data structures. In the previous section, we delved into stacks and queues, which are examples of linear data structures. Now, we'll explore non-linear structures, which exhibit more complex relationships between their elements. Let's begin by understanding the fundamental concepts and operations associated with non-linear data structures
 
-In this section, we'll delve into graphs, a fundamental non-linear data structure widely used in computer science. Graphs offer a versatile way to represent relationships between objects or entities. Let's dive in and explore the concepts, properties, and operations associated with graphs.
+In this episode, we'll delve into graphs, a fundamental non-linear data structure widely used in computer science. Graphs offer a versatile way to represent relationships between objects or entities. Let's dive in and explore the concepts, properties, and operations associated with graphs.
 
 - **Graphs:** A graph, as a type of non-linear data structure, consists of a collection of nodes and edges that connect pairs of nodes. Graphs are a fundamental concept in computer science and are utilized to represent various relationships between objects. As we delve into the topic of graphs, it's essential to grasp some key concepts, namely: Nodes and Edges.
 
-- **Nodes:** Nodes, also known as vertices, are fundamental building blocks of a graph. Each node represents an entity or an object in the graph. For example, in a social network graph, nodes could represent individuals, while in a transportation network, nodes could represent cities or junctions
+      - **Nodes:** Nodes, also known as vertices, are fundamental building blocks of a graph. Each node represents an entity or an object in the graph. For example, in a social network graph, nodes could represent individuals, while in a transportation network, nodes could represent cities or junctions
 
-- **Edges:** Edges, also known as links, are fundamental components of a graph data structure. They represent the relationships or connections between pairs of nodes. In essence, an edge defines how nodes are related to each other within the graph.
+      - **Edges:** Edges, also known as links, are fundamental components of a graph data structure. They represent the relationships or connections between pairs of nodes. In essence, an edge defines how nodes are related to each other within the graph.
+
+A picture of a grpah is shown below:
 
 In discussing graphs, it's important to note that there are different types of graphs which include:
 
@@ -28,6 +30,85 @@ In discussing graphs, it's important to note that there are different types of g
 - **Cyclic Graph:** A cyclic graph is a type of graph that contains at least one cycle, which is a closed path in the graph where the starting node and ending node are the same. In other words, a cyclic graph is a graph that has a sequence of edges that forms a loop, allowing traversal from a node back to itself by following the edges of the cycle.
 
 - **Acyclic Graph:** An acyclic graph, also known as a DAG (Directed Acyclic Graph), is a type of graph that does not contain any cycles. In other words, it is a directed graph in which it is impossible to traverse through the graph and return to the starting node by following the direction of the edges.
+
+```js
+class Graph {
+  constructor() {
+    this.vertices = {};
+  }
+  addVertex(vertex) {
+    if (!this.vertices[vertex]) {
+      this.vertices[vertex] = [];
+    }
+  }
+  addEdge(vertex1, vertex2) {
+    if (!this.vertices[vertex1] || !this.vertices[vertex2]) {
+      console.log("Vertex not found");
+      return;
+    }
+    if (!this.vertices[vertex1].includes(vertex2)) {
+      this.vertices[vertex1].push(vertex2);
+    }
+    if (!this.vertices[vertex2].includes(vertex1)) {
+      this.vertices[vertex2].push(vertex1);
+    }
+  }
+
+  removeVertex(vertex) {
+    if (!this.vertices[vertex]) {
+      console.log("Vertex not found");
+      return;
+    }
+    for (let adjacentVertex of this.vertices[vertex]) {
+      this.vertices[adjacentVertex] = this.vertices[adjacentVertex].filter(
+        (v) => v !== vertex
+      );
+    }
+    delete this.vertices[vertex];
+  }
+
+  removeEdge(vertex1, vertex2) {
+    if (!this.vertices[vertex1] || !this.vertices[vertex2]) {
+      console.log("Vertex not found");
+      return;
+    }
+    this.vertices[vertex1] = this.vertices[vertex1].filter(
+      (v) => v !== vertex2
+    );
+    this.vertices[vertex2] = this.vertices[vertex2].filter(
+      (v) => v !== vertex1
+    );
+  }
+
+  hasEdge(vertex1, vertex2) {
+    if (!this.vertices[vertex1] || !this.vertices[vertex2]) {
+      console.log("Vertex not found");
+      return false;
+    }
+    return this.vertices[vertex1].includes(vertex2);
+  }
+
+  printGraph() {
+    for (let vertex in this.vertices) {
+      console.log(vertex + " -> " + this.vertices[vertex].join(", "));
+    }
+  }
+}
+
+// Example usage:
+const graph = new Graph();
+graph.addVertex("A");
+graph.addVertex("B");
+graph.addVertex("C");
+graph.addEdge("A", "B");
+graph.addEdge("B", "C");
+graph.addEdge("A", "C");
+graph.printGraph();
+console.log("Has edge between A and B:", graph.hasEdge("A", "B"));
+console.log("Has edge between A and C:", graph.hasEdge("A", "C"));
+graph.removeVertex("B");
+graph.printGraph();
+```
 
 ### Conclusion
 
