@@ -1,4 +1,4 @@
-Welcome back to another section on non-linear data structures. In this serie, we'll explore trees as another type of non-linear data structures. Our focus will be on understanding the fundamental concepts and operations associated with trees.
+Welcome back to another section on non-linear data structures. In this series, we'll explore trees as a type of non-linear data structure. Our focus will be on understanding the fundamental concepts and operations associated with trees.
 
 - **Trees:** A tree which as the name suggests is a top-down structure which consists ofnodes connected by edges. Trees are hierarchical structures that represents a collection of elements, where each element is connected to one or more elements in a parent-child relationship. Trees are used to model various kinds of data, including file systems, databases, and organizational structures. In understanding trees as a data structure, there are some basic terminologies you need to understand and we would be taking a look at them.
 
@@ -11,9 +11,9 @@ Welcome back to another section on non-linear data structures. In this serie, we
       - **Internal Node:** An internal node is a node that has at least one child.
       - **Subtree:** A subtree is a portion of a tree that includes a node and all its descendants.
 
-A picture of a graph is shown below
+A picture of a tree is shown below
 
-![Graph](https://dev-to-uploads.s3.amazonaws.com/uploads/articles/us3hs9ej4d2i4t33ulbo.jpg)
+![Tree ](https://dev-to-uploads.s3.amazonaws.com/uploads/articles/us3hs9ej4d2i4t33ulbo.jpg)
 
 In discussing trees, it's important to note that there are different types of trees, which include: Binary Tree, Binary Search Tree (BST), Heaps, B-trees, and Tries. Let's discuss them in detail
 
@@ -29,10 +29,139 @@ In discussing trees, it's important to note that there are different types of tr
 
 - **Tries:**Trees used to store dynamic sets of strings, useful for tasks like autocomplete and spell checking.
 
-An implementation of a graph with various operations is illustrated below.
+An implementation of a tree structure with various operations is illustrated below.
 
 ```js
+class Node {
+  constructor(value) {
+    this.value = value;
+    this.left = null;
+    this.right = null;
+  }
+}
 
+class BinaryTree {
+  constructor() {
+    this.root = null;
+  }
+
+  // Insertion in a Binary Search Tree (BST)
+  insert(value) {
+    const newNode = new Node(value);
+    if (this.root === null) {
+      this.root = newNode;
+    } else {
+      this.insertNode(this.root, newNode);
+    }
+  }
+
+  insertNode(node, newNode) {
+    if (newNode.value < node.value) {
+      if (node.left === null) {
+        node.left = newNode;
+      } else {
+        this.insertNode(node.left, newNode);
+      }
+    } else {
+      if (node.right === null) {
+        node.right = newNode;
+      } else {
+        this.insertNode(node.right, newNode);
+      }
+    }
+  }
+
+  // In-order Traversal
+  inOrderTraversal(node = this.root) {
+    if (node !== null) {
+      this.inOrderTraversal(node.left);
+      console.log(node.value);
+      this.inOrderTraversal(node.right);
+    }
+  }
+
+  // Pre-order Traversal
+  preOrderTraversal(node = this.root) {
+    if (node !== null) {
+      console.log(node.value);
+      this.preOrderTraversal(node.left);
+      this.preOrderTraversal(node.right);
+    }
+  }
+
+  // Post-order Traversal
+  postOrderTraversal(node = this.root) {
+    if (node !== null) {
+      this.postOrderTraversal(node.left);
+      this.postOrderTraversal(node.right);
+      console.log(node.value);
+    }
+  }
+
+  // Level-order Traversal
+  levelOrderTraversal() {
+    const queue = [];
+    if (this.root !== null) {
+      queue.push(this.root);
+    }
+    while (queue.length > 0) {
+      let node = queue.shift();
+      console.log(node.value);
+      if (node.left !== null) {
+        queue.push(node.left);
+      }
+      if (node.right !== null) {
+        queue.push(node.right);
+      }
+    }
+  }
+
+  // Search in a Binary Search Tree (BST)
+  search(value) {
+    return this.searchNode(this.root, value);
+  }
+
+  searchNode(node, value) {
+    if (node === null) {
+      return false;
+    }
+    if (value < node.value) {
+      return this.searchNode(node.left, value);
+    } else if (value > node.value) {
+      return this.searchNode(node.right, value);
+    } else {
+      return true;
+    }
+  }
+}
+
+// Example Usage
+const tree = new BinaryTree();
+tree.insert(10);
+tree.insert(5);
+tree.insert(15);
+tree.insert(3);
+tree.insert(7);
+tree.insert(13);
+tree.insert(17);
+
+console.log("In-order Traversal:");
+tree.inOrderTraversal(); // 3, 5, 7, 10, 13, 15, 17
+
+console.log("Pre-order Traversal:");
+tree.preOrderTraversal(); // 10, 5, 3, 7, 15, 13, 17
+
+console.log("Post-order Traversal:");
+tree.postOrderTraversal(); // 3, 7, 5, 13, 17, 15, 10
+
+console.log("Level-order Traversal:");
+tree.levelOrderTraversal(); // 10, 5, 15, 3, 7, 13, 17
+
+console.log("Search for 7:");
+console.log(tree.search(7)); // true
+
+console.log("Search for 8:");
+console.log(tree.search(8)); // false
 ```
 
 ### Conclusion
@@ -44,5 +173,6 @@ In this serie, we have extensively discussed trees as a type of non-linear data 
 You can check out some of the resources listed below to learn more about graphs as a non-linear data structure:
 
 - [Introduction to Tree Data Structure](https://www.geeksforgeeks.org/introduction-to-tree-data-structure/)
-- [Graph Data Stucture](https://www.programiz.com/dsa/graph)
-- [Graph Data Structure](https://www.tutorialspoint.com/data_structures_algorithms/graph_data_structure.htm)
+- [Tree Data Structure](https://www.tutorialspoint.com/data_structures_algorithms/tree_data_structure.htm)
+- [Tree Data Structure](https://www.programiz.com/dsa/trees)
+- [Tree (data structure)](<https://en.wikipedia.org/wiki/Tree_(data_structure)>)
