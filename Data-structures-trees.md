@@ -2,22 +2,20 @@ Welcome back to another section on non-linear data structures. In this serie, we
 
 - **Trees:** A tree which as the name suggests is a top-down structure which consists ofnodes connected by edges. Trees are hierarchical structures that represents a collection of elements, where each element is connected to one or more elements in a parent-child relationship. Trees are used to model various kinds of data, including file systems, databases, and organizational structures. In understanding trees as a data structure, there are some basic terminologies you need to understand and we would be taking a look at them.
 
-        - **Node:** Node is the basic unit of a tree, which contains data. Each node can have zero or more child nodes.
-
-        - **Edge:** An Edge is a connection between two nodes, representing the parent-child relationship.
-        - **Root:** A root refers to the topmost node of a tree, from which all nodes descend. There is only one root in a tree.
-        - **Parent:** Parent refers to a node that has one or more child nodes.
-        - **Child:** A node that descends from another node (its parent).
-
-        - **Leaf (or External Node):** A node that does not have any children. It is the end of a path in the tree.
-        - **Internal Node:** A node that has at least one child.
-        - **Subtree:** A portion of a tree that includes a node and all its descendants.
+      - **Node:** Node is the basic unit of a tree, which contains data. Each node can have zero or more        child      nodes.
+      - **Edge:** An Edge is a connection between two nodes, representing the parent-child relationship.
+      - **Root:** A root refers to the topmost node of a tree, from which all nodes descend. There is only one    root in a tree.
+      - **Parent:** Parent refers to a node that has one or more child nodes.
+      - **Child:** A node that descends from another node (its parent).
+      - **Leaf (or External Node):** A leaf refers to a node that does not have any children. It is the end of  a path in the tree.
+      - **Internal Node:** An internal node is a node that has at least one child.
+      - **Subtree:** A subtree is a portion of a tree that includes a node and all its descendants.
 
 A picture of a graph is shown below
 
 ![Graph](https://dev-to-uploads.s3.amazonaws.com/uploads/articles/us3hs9ej4d2i4t33ulbo.jpg)
 
-In discussing graphs, it's important to note that there are different types of graphs, which include: directed graphs, undirected graphs, weighted graphs, unweighted graphs, cyclic graphs, and acyclic graphs. Let's discuss them in detail
+In discussing trees, it's important to note that there are different types of trees, which include: Binary Tree, Binary Search Tree (BST), Heaps, B-trees, and Tries. Let's discuss them in detail
 
 - **Directed Graph:** A directed graph, also known as a digraph, is a type of graph where edges have a direction associated with them, indicating a specific direction of connection between nodes. Directed graphs depict asymmetric relationships by indicating a specific direction of connection between nodes.
 
