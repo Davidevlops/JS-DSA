@@ -17,9 +17,9 @@ A picture of a graph is shown below
 
 In discussing trees, it's important to note that there are different types of trees, which include: Binary Tree, Binary Search Tree (BST), Heaps, B-trees, and Tries. Let's discuss them in detail
 
-- **Binary Tree:** A binary Tree
+- **Binary Tree:** A binary node has at most two children (left and right).
 
-- **Binary Search Tree (BST):** An undirected graph is a type of graph in which edges do not have a direction associated with them. Undirected graphs depict symmetric relationships by indicating that the relationship between two nodes is bidirectional.
+- **Binary Search Tree (BST):** A binary tree with the additional property that the left child is less than the parent node and the right child is greater.
 
 - **Heaps:** A weighted graph is a type of graph in which each edge has an associated numerical value called a weight or a cost. These weights represent quantitative measures of the relationships between pairs of nodes in the graph. Weighted graphs provide additional information about the strength, distance, or any other relevant metric of the connections between nodes.
 
