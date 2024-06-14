@@ -167,11 +167,11 @@ console.log(tree.search(8)); // false
 
 ### Conclusion
 
-In this serie, we have extensively discussed trees as a type of non-linear data structure in JavaScript. We implemented a detailed example demonstrating how to create and manipulate trees, covering various operations. This brings us to the end of our discussion on data Structure. In the next episode, we'll discussing some common algorithms.
+In this series, we have extensively discussed trees as a type of non-linear data structure in JavaScript. We implemented a detailed example demonstrating how to create and manipulate trees, covering various operations. This brings us to the end of our discussion on data structures. In the next episode, we'll discuss some common algorithms.
 
 ### Resources and References
 
-You can check out some of the resources listed below to learn more about graphs as a non-linear data structure:
+You can check out some of the resources listed below to learn more about trees as a non-linear data structure:
 
 - [Introduction to Tree Data Structure](https://www.geeksforgeeks.org/introduction-to-tree-data-structure/)
 - [Tree Data Structure](https://www.tutorialspoint.com/data_structures_algorithms/tree_data_structure.htm)
