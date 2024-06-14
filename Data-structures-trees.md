@@ -19,11 +19,13 @@ In discussing trees, it's important to note that there are different types of tr
 
 - **Binary Tree:** A binary node has at most two children (left and right).
 
-- **Binary Search Tree (BST):** A binary tree with the additional property that the left child is less than the parent node and the right child is greater.
+- **Binary Search Tree (BST):** A binary Search Tree is a binary tree with the additional property that the left child is less than the parent node and the right child is greater.
 
-- **Heaps:** A weighted graph is a type of graph in which each edge has an associated numerical value called a weight or a cost. These weights represent quantitative measures of the relationships between pairs of nodes in the graph. Weighted graphs provide additional information about the strength, distance, or any other relevant metric of the connections between nodes.
+- **Balanced Trees:** A balanced Trees is a tree that maintain a balanced structure to ensure efficient operations, like AVL trees and Red-Black trees.
 
-- **B-trees:** An unweighted graph is a type of graph in which edges do not have any associated numerical value or weight. Unweighted graphs simply indicate the presence or absence of connections between pairs of nodes without considering any specific weight or cost associated with those connections.
+- **Heaps:** Complete binary trees used to implement priority queues, with properties like the min-heap or max-heap.
+
+- **B-trees:** Trees used to store dynamic sets of strings, useful for tasks like autocomplete and spell checking.
 
 - **Tries:** A cyclic graph is a type of graph that contains at least one cycle, which is a closed path in the graph where the starting node and ending node are the same. In other words, a cyclic graph is a graph that has a sequence of edges that forms a loop, allowing traversal from a node back to itself by following the edges of the cycle.
 
