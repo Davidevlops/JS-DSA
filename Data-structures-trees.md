@@ -1,6 +1,7 @@
 Welcome back to another section on non-linear data structures. In this serie, we'll explore trees as another type of non-linear data structures. Our focus will be on understanding the fundamental concepts and operations associated with trees.
 
-- **Trees:** A tree, just like a graph is a type of non-linear data structure, which as the name suggests consists of a parent(root) and the nodes(branches). Trees are a fundamental concept in computer science composed of nodes connected by edges. It is a hierarchical structure that represents a collection of elements, where each element is connected to one or more elements in a parent-child relationship. Trees are used to model various kinds of data, including file systems, databases, and organizational structures.
+- **Trees:** A tree, just like a graph is a type of non-linear data structure, which as the name suggests consists of a parent(root) and the nodes(branches). Trees are a fundamental concept in computer science composed of nodes connected by edges. It is a hierarchical structure that represents a collection of elements, where each element is connected to one or more elements in a parent-child relationship. Trees are used to model various kinds of data, including file systems, databases, and organizational structures. In understanding trees as a data structure, there are some basic terminologies you need to understand and we would be taking a look at them.
+
 
       - **Nodes:** Nodes, also known as vertices, are fundamental building blocks of a graph. Each node represents an entity or an object in the graph. For example, in a social network graph, nodes could represent individuals, while in a transportation network, nodes could represent cities or junctions
 
@@ -114,7 +115,7 @@ graph.printGraph();
 
 ### Conclusion
 
-In this segment, we have comprehensively discussed graphs as a type of non-linear data structure in JavaScript. We implemented a detailed example demonstrating how to create and manipulate graphs, covering various operations. In the next episode, we'll explore trees as a type of non-linear data structure.
+In this serie, we have extensively discussed trees as a type of non-linear data structure in JavaScript. We implemented a detailed example demonstrating how to create and manipulate trees, covering various operations. This brings us to the end of our discussion on data Structure. In the next episode, we'll discussing some common algorithms.
 
 ### Resources and References
 
