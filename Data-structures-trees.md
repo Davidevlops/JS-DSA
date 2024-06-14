@@ -17,11 +17,11 @@ A picture of a graph is shown below
 
 In discussing trees, it's important to note that there are different types of trees, which include: Binary Tree, Binary Search Tree (BST), Heaps, B-trees, and Tries. Let's discuss them in detail
 
-- **Directed Graph:** A directed graph, also known as a digraph, is a type of graph where edges have a direction associated with them, indicating a specific direction of connection between nodes. Directed graphs depict asymmetric relationships by indicating a specific direction of connection between nodes.
+- **Binary Tree:** A binary Tree
 
-- **Undirected Graph:** An undirected graph is a type of graph in which edges do not have a direction associated with them. Undirected graphs depict symmetric relationships by indicating that the relationship between two nodes is bidirectional.
+- **Binary Search Tree (BST):** An undirected graph is a type of graph in which edges do not have a direction associated with them. Undirected graphs depict symmetric relationships by indicating that the relationship between two nodes is bidirectional.
 
-- **Weighted Graph:** A weighted graph is a type of graph in which each edge has an associated numerical value called a weight or a cost. These weights represent quantitative measures of the relationships between pairs of nodes in the graph. Weighted graphs provide additional information about the strength, distance, or any other relevant metric of the connections between nodes.
+- **Heaps:** A weighted graph is a type of graph in which each edge has an associated numerical value called a weight or a cost. These weights represent quantitative measures of the relationships between pairs of nodes in the graph. Weighted graphs provide additional information about the strength, distance, or any other relevant metric of the connections between nodes.
 
 - **Unweighted Graph:** An unweighted graph is a type of graph in which edges do not have any associated numerical value or weight. Unweighted graphs simply indicate the presence or absence of connections between pairs of nodes without considering any specific weight or cost associated with those connections.
 
