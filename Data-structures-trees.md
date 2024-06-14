@@ -1,11 +1,17 @@
 Welcome back to another section on non-linear data structures. In this serie, we'll explore trees as another type of non-linear data structures. Our focus will be on understanding the fundamental concepts and operations associated with trees.
 
-- **Trees:** A tree, just like a graph is a type of non-linear data structure, which as the name suggests consists of a parent(root) and the nodes(branches). Trees are a fundamental concept in computer science composed of nodes connected by edges. It is a hierarchical structure that represents a collection of elements, where each element is connected to one or more elements in a parent-child relationship. Trees are used to model various kinds of data, including file systems, databases, and organizational structures. In understanding trees as a data structure, there are some basic terminologies you need to understand and we would be taking a look at them.
+- **Trees:** A tree which as the name suggests is a top-down structure which consists ofnodes connected by edges. Trees are hierarchical structures that represents a collection of elements, where each element is connected to one or more elements in a parent-child relationship. Trees are used to model various kinds of data, including file systems, databases, and organizational structures. In understanding trees as a data structure, there are some basic terminologies you need to understand and we would be taking a look at them.
 
+        - **Node:** Node is the basic unit of a tree, which contains data. Each node can have zero or more child nodes.
 
-      - **Nodes:** Nodes, also known as vertices, are fundamental building blocks of a graph. Each node represents an entity or an object in the graph. For example, in a social network graph, nodes could represent individuals, while in a transportation network, nodes could represent cities or junctions
+        - **Edge:** An Edge is a connection between two nodes, representing the parent-child relationship.
+        - **Root:** A root refers to the topmost node of a tree, from which all nodes descend. There is only one root in a tree.
+        - **Parent:** Parent refers to a node that has one or more child nodes.
+        - **Child:** A node that descends from another node (its parent).
 
-      - **Edges:** Edges, also known as links, are fundamental components of a graph data structure. They represent the relationships or connections between pairs of nodes. In essence, an edge defines how nodes are related to each other within the graph.
+        - **Leaf (or External Node):** A node that does not have any children. It is the end of a path in the tree.
+        - **Internal Node:** A node that has at least one child.
+        - **Subtree:** A portion of a tree that includes a node and all its descendants.
 
 A picture of a graph is shown below
 
