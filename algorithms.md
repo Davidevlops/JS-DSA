@@ -10,4 +10,9 @@ Algorithm referred to step-by-step procedures for arithmetic calculationsa. In t
 2. Scalability: Good algorithms ensure systems can grow, making them essential for handling big data and real-world applications.
 3. Automation: Algorithms enable machines to perform tasks without human intervention.
 4. Foundation of Software: Every program, from simple calculators to complex AI systems, relies on algorithms for its logic and flow.
-5. Economic and Societal Impact:
+5. Economic and Societal Impact: Algorithms drive various industries and shape daily life.
+
+examples of Real-world applications of algorithms include search engines, navigation, AI, cryptography e.t.c
+
+
+There are some common algorithm design techniques in computing or they are better reffered to as problem solving patterns
