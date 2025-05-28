@@ -6,4 +6,4 @@ We'll emabk on what algorithms are really are.
 Algorithm referred to step-by-step procedures for arithmetic calculationsa. In the 20th century, it expanded to mean any systematic computational procedure, especially in computer science. Algorithms are written for specific purposes. We would explore the common algorithms available.
 
 #### Why are algorithms crucial in computing?
-there are 4 main reasons why algorithms crucial in computing. They are:
+1. Efficiency:  Algorithms helps us to do more with less. it determiness how quickly and effectively a problem can be solved. A well-designed algorithm can drastically reduce the time and resources required.
