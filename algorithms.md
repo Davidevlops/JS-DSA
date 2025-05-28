@@ -37,5 +37,7 @@ Greedy algorithms work well when a problem has the greedy-choice property and op
 
 Examples include:Dijkstra’s, Huffman Coding
 
-- Backtracking (N-Queens, Sudoku solver)
+- Backtracking is a problem-solving technique used in computer science where you build a solution step-by-step and abandon (or “backtrack”) as soon as you realize the current path won't lead to a valid or optimal solution.
+It’s often used for problems that involve combinations, permutations, or constraints, such as: Solving a maze, N-Queens problem, Sudoku solver.
+The key idea is to explore all possible options, but to prune paths early if they violate problem constraints.
 - Randomized Algorithms (QuickSort with random pivot)
