@@ -40,4 +40,12 @@ Examples include:Dijkstra’s, Huffman Coding
 - Backtracking is a problem-solving technique used in computer science where you build a solution step-by-step and abandon (or “backtrack”) as soon as you realize the current path won't lead to a valid or optimal solution.
 It’s often used for problems that involve combinations, permutations, or constraints, such as: Solving a maze, N-Queens problem, Sudoku solver.
 The key idea is to explore all possible options, but to prune paths early if they violate problem constraints.
-- Randomized Algorithms (QuickSort with random pivot)
+- Randomized Algorithms: Randomized Algorithms are algorithms that make random choices during their execution to improve performance or simplicity. They can produce different outcomes even on the same input, depending on the random choices made.
+
+There are two main types:
+
+Las Vegas algorithms – always give the correct result, but their runtime varies.
+
+Monte Carlo algorithms – have a chance of producing an incorrect result, but run faster.
+
+Examples include: Randomized QuickSort, Hashing techniques in data structures
