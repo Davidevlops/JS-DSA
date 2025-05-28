@@ -35,7 +35,7 @@ Instead of solving the same problem multiple times (as in brute force), DP saves
 
 Greedy algorithms work well when a problem has the greedy-choice property and optimal substructure, meaning local best choices lead to the global best solution.
 
-Examples include:Dijkstra’s, Huffman Coding
+Examples include: Dijkstra’s, Huffman Coding
 
 - Backtracking is a problem-solving technique used in computer science where you build a solution step-by-step and abandon (or “backtrack”) as soon as you realize the current path won't lead to a valid or optimal solution.
 It’s often used for problems that involve combinations, permutations, or constraints, such as: Solving a maze, N-Queens problem, Sudoku solver.
@@ -49,3 +49,5 @@ Las Vegas algorithms – always give the correct result, but their runtime varie
 Monte Carlo algorithms – have a chance of producing an incorrect result, but run faster.
 
 Examples include: Randomized QuickSort, Hashing techniques in data structures
+
+There are Fundamental Algorithms 
