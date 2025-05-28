@@ -7,3 +7,4 @@ Algorithm referred to step-by-step procedures for arithmetic calculationsa. In t
 
 #### Why are algorithms crucial in computing?
 1. Efficiency:  Algorithms helps us to do more with less. it determiness how quickly and effectively a problem can be solved. A well-designed algorithm can drastically reduce the time and resources required.
+2. Scalability: Good algorithms ensure systems can grow, making them essential for handling big data and real-world applications.
