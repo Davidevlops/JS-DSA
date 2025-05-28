@@ -17,7 +17,13 @@ examples of Real-world applications of algorithms include search engines, naviga
 
 There are some common algorithm design techniques in computing or they are better reffered to as problem solving patterns they are:
 - Brute Force: Brute Force in computer science refers to an approach to solving problems by trying all possible solutions until the correct one is found. It doesn't use any shortcuts or optimization; instead, it relies on sheer computing power and time.
-- Divide and Conquer (Merge Sort, QuickSort)
+- Divide and Conquer: Divide and Conquer is a computer science strategy for solving complex problems by breaking them down into smaller, more manageable subproblems. Each subproblem is solved independently, and then the solutions are combined to solve the original problem.
+
+This method typically follows three steps:
+Divide the problem into smaller parts.
+Conquer each part by solving it recursively.
+Combine the results to form the final solution.
+examples of algorithms that utilizes Divide and Conquer problem solving pattern is Merge Sort and Quick Sort. 
 - Dynamic Programming (Fibonacci, Knapsack problem)
 - Greedy Algorithms (Dijkstra’s, Huffman Coding)
 - Backtracking (N-Queens, Sudoku solver)
