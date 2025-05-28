@@ -15,4 +15,10 @@ Algorithm referred to step-by-step procedures for arithmetic calculationsa. In t
 examples of Real-world applications of algorithms include search engines, navigation, AI, cryptography e.t.c
 
 
-There are some common algorithm design techniques in computing or they are better reffered to as problem solving patterns
+There are some common algorithm design techniques in computing or they are better reffered to as problem solving patterns they are:
+- Brute Force: Brute Force in computer science refers to an approach to solving problems by trying all possible solutions until the correct one is found. It doesn't use any shortcuts or optimization; instead, it relies on sheer computing power and time.
+- Divide and Conquer (Merge Sort, QuickSort)
+- Dynamic Programming (Fibonacci, Knapsack problem)
+- Greedy Algorithms (Dijkstra’s, Huffman Coding)
+- Backtracking (N-Queens, Sudoku solver)
+- Randomized Algorithms (QuickSort with random pivot)
