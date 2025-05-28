@@ -50,4 +50,4 @@ Monte Carlo algorithms – have a chance of producing an incorrect result, but r
 
 Examples include: Randomized QuickSort, Hashing techniques in data structures
 
-There are some common fundamental Algorithms  in computer science of which we would be discussing i
+There are some common fundamental Algorithms in computer science of which we would be discussing in the next episode.
