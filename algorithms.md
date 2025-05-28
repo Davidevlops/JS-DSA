@@ -1,4 +1,4 @@
-# Welcome to the Algorithm Series
+### Welcome to the Algorithm Series
 
 Welcome back to another section of *Discovering JavaScript's Hidden Secrets*. Having explored the basic data structures, we now shift our focus to algorithms, discussing what they are, why they matter, how they differ from problem-solving patterns, and how they shape the software systems we build.
 
@@ -6,7 +6,7 @@ This part of the series will dive into the essence of algorithms, their historic
 
 ---
 
-## What Is an Algorithm?
+### What Is an Algorithm?
 
 An **algorithm** is a step-by-step procedure for solving a problem or performing a task. The word “algorithm” comes from the name of the 9th-century Persian mathematician **Muḥammad ibn Mūsā al-Khwārizmī**, who wrote a book in Arabic titled *Kitāb al-ḥisāb al-hindī* (*The Book of Calculation with Hindu Numerals*). His methods for arithmetic and algebra were so influential that his name was Latinized as “Algoritmi” in European texts. Over time, the term came to represent any well-defined procedure for solving computational problems.
 
@@ -14,7 +14,7 @@ In computer science, algorithms are used to perform operations like searching, s
 
 ---
 
-## Why Are Algorithms Important in Computing?
+### Why Are Algorithms Important in Computing?
 
 1. **Efficiency**: A well-designed algorithm significantly reduces the time and resources required to solve a problem. Efficient algorithms make programs faster and more responsive.
 
@@ -28,13 +28,13 @@ In computer science, algorithms are used to perform operations like searching, s
 
 ---
 
-## Algorithm Design Techniques (a.k.a. Problem-Solving Patterns)
+### Algorithm Design Techniques (a.k.a. Problem-Solving Patterns)
 
 These are abstract strategies used to craft algorithms that are efficient, reusable, and adaptable to various problem domains.
 
 ---
 
-### 1. **Brute Force**
+#### 1. **Brute Force**
 
 Brute Force is the most straightforward approach to problem-solving. It involves trying every possible option until the correct one is found.
 
@@ -44,7 +44,7 @@ Brute Force is the most straightforward approach to problem-solving. It involves
 
 ---
 
-### 2. **Divide and Conquer**
+#### 2. **Divide and Conquer**
 
 This technique involves breaking a problem into smaller subproblems, solving each independently, and then combining their results.
 
@@ -57,7 +57,7 @@ This technique involves breaking a problem into smaller subproblems, solving eac
 
 ---
 
-### 3. **Dynamic Programming (DP)**
+#### 3. **Dynamic Programming (DP)**
 
 Dynamic Programming solves problems by breaking them down into overlapping subproblems. It stores solutions to subproblems to avoid redundant work.
 
@@ -67,7 +67,7 @@ Dynamic Programming solves problems by breaking them down into overlapping subpr
 
 ---
 
-### 4. **Greedy Algorithms**
+#### 4. **Greedy Algorithms**
 
 Greedy algorithms make the best choice at each step, hoping that these local optima will lead to a global optimum.
 
@@ -76,7 +76,7 @@ Greedy algorithms make the best choice at each step, hoping that these local opt
 
 ---
 
-### 5. **Backtracking**
+#### 5. **Backtracking**
 
 Backtracking builds candidates for the solution incrementally and abandons a candidate (“backtracks”) as soon as it determines it cannot lead to a valid solution.
 
@@ -85,7 +85,7 @@ Backtracking builds candidates for the solution incrementally and abandons a can
 
 ---
 
-### 6. **Randomized Algorithms**
+#### 6. **Randomized Algorithms**
 
 These algorithms use random inputs or decisions to improve performance or simplify logic. They can have varying outputs even on the same input.
 
@@ -98,7 +98,7 @@ These algorithms use random inputs or decisions to improve performance or simpli
 
 ---
 
-## Difference Between Algorithms and Design Techniques
+### Difference Between Algorithms and Design Techniques
 
 Understanding the distinction between **algorithms** and **problem-solving patterns** (or design techniques) is essential:
 
@@ -110,7 +110,7 @@ You can think of problem-solving patterns as blueprints and algorithms as the ac
 
 ---
 
-## Real-World Applications of Algorithms
+### Real-World Applications of Algorithms
 
 Algorithms are behind many of the technologies we use every day:
 
@@ -124,7 +124,7 @@ Algorithms are behind many of the technologies we use every day:
 
 
 
-## Conclusion 
+### Conclusion 
 
 Algorithms are not just lines of code—they are logical, structured problem-solving tools that power the digital world. Whether you're sorting a list, finding the shortest path, or training a neural network, algorithms form the bedrock of how solutions are built in computing.
 
