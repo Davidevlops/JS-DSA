@@ -15,11 +15,9 @@ A searching algorithm is a step-by-step procedure used to locate a specific elem
 
 2. **AI & Machine Learning**: Retrieving relevant data from large datasets.
 
-3. **Automation**: Algorithms enable systems to operate without constant human intervention, allowing automation in areas like data analysis, robotics, and artificial intelligence.
-
-4. **Networking**: Routing tables, IP lookups.
-
-5. **Economic and Societal Impact**: Algorithms power everything from search engines and recommendation systems to financial models and health diagnostics, shaping the way we live and interact with technology.
+3. **Networking**: Routing tables, IP lookups.
+Everyday Computing → File search (Ctrl+F), autocomplete suggestions.
+5. **Everyday Computing**: Algorithms power everything from search engines and recommendation systems to financial models and health diagnostics, shaping the way we live and interact with technology.
 
 ---
 
