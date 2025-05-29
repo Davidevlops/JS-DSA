@@ -8,7 +8,7 @@ This part of the series will dive into searching algorithms
 
 ### What Is a searching Algorithm?
 
-An **algorithm** is a step-by-step procedure for solving a problem or performing a task. The word “algorithm” comes from the name of the 9th-century Persian mathematician **Muḥammad ibn Mūsā al-Khwārizmī**, who wrote a book in Arabic titled *Kitāb al-ḥisāb al-hindī* (*The Book of Calculation with Hindu Numerals*). His methods for arithmetic and algebra were so influential that his name was Latinized as “Algoritmi” in European texts. Over time, the term came to represent any well-defined procedure for solving computational problems.
+A searching algorithm is a step-by-step procedure used to locate a specific element (or multiple elements) within a collection of data, such as an array, list, tree, graph, or database. The goal is to determine whether the element exists in the dataset and, if so, retrieve its position or related information.
 
 In computer science, algorithms are used to perform operations like searching, sorting, pathfinding, optimization, and more. These procedures are the backbone of every piece of software, from simple scripts to large-scale applications.
 
