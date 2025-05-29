@@ -10,7 +10,7 @@ This part of the series will dive into searching algorithms
 
 A searching algorithm is a step-by-step procedure used to locate a specific element (or multiple elements) within a collection of data, such as an array, list, tree, graph, or database. The goal is to determine whether the element exists in the dataset and, if so, retrieve its position or related information.
 
-### Why Are Algorithms Important in Computing?
+### Why Are Searching Algorithms Important?
 
 1. **Efficiency**: A well-designed algorithm significantly reduces the time and resources required to solve a problem. Efficient algorithms make programs faster and more responsive.
 
