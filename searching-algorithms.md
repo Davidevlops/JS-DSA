@@ -11,14 +11,13 @@ This part of the series will dive into searching algorithms
 A searching algorithm is a step-by-step procedure used to locate a specific element (or multiple elements) within a collection of data, such as an array, list, tree, graph, or database. The goal is to determine whether the element exists in the dataset and, if so, retrieve its position or related information.
 
 ### Why Are Searching Algorithms Important?
-Databases → Finding records quickly (e.g., SQL queries, indexing).
 1. **Databases**: Finding records quickly (e.g., SQL queries, indexing).
 
-2. **Scalability**: As systems grow in size and complexity, the underlying algorithms determine whether they can still perform well with large datasets or user bases.
+2. **AI & Machine Learning**: Retrieving relevant data from large datasets.
 
 3. **Automation**: Algorithms enable systems to operate without constant human intervention, allowing automation in areas like data analysis, robotics, and artificial intelligence.
 
-4. **Foundation of Software Logic**: Every program—whether a mobile app, a web service, or an AI system—relies on algorithms to control logic and decision-making.
+4. **Networking**: Routing tables, IP lookups.
 
 5. **Economic and Societal Impact**: Algorithms power everything from search engines and recommendation systems to financial models and health diagnostics, shaping the way we live and interact with technology.
 
