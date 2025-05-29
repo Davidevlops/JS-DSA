@@ -6,7 +6,7 @@ This part of the series will dive into searching algorithms
 
 ---
 
-### What Is an Algorithm?
+### What Is a searching Algorithm?
 
 An **algorithm** is a step-by-step procedure for solving a problem or performing a task. The word “algorithm” comes from the name of the 9th-century Persian mathematician **Muḥammad ibn Mūsā al-Khwārizmī**, who wrote a book in Arabic titled *Kitāb al-ḥisāb al-hindī* (*The Book of Calculation with Hindu Numerals*). His methods for arithmetic and algebra were so influential that his name was Latinized as “Algoritmi” in European texts. Over time, the term came to represent any well-defined procedure for solving computational problems.
 
