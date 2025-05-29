@@ -17,7 +17,7 @@ A searching algorithm is a step-by-step procedure used to locate a specific elem
 
 3. **Networking**: Routing tables, IP lookups.
 Everyday Computing → File search (Ctrl+F), autocomplete suggestions.
-5. **Everyday Computing**: Algorithms power everything from search engines and recommendation systems to financial models and health diagnostics, shaping the way we live and interact with technology.
+5. **Everyday Computing**: File search (Ctrl+F), autocomplete suggestions..
 
 ---
 
