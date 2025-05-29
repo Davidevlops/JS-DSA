@@ -21,7 +21,7 @@ Everyday Computing → File search (Ctrl+F), autocomplete suggestions.
 
 ---
 
-### Algorithm Design Techniques (a.k.a. Problem-Solving Patterns)
+### Types of Searching Algorithms
 
 These are abstract strategies used to craft algorithms that are efficient, reusable, and adaptable to various problem domains.
 
