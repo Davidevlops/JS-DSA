@@ -55,7 +55,7 @@ if (result !== -1) {
     console.log("Element not found in the array");
 }
 
-Binary search is an efficient searching algorithm that works on sorted arrays by repeatedly dividing the search interval in half. It compares the target value to the middle element of the array and eliminates half of the remaining elements based on this comparison. The Big O Notation of Linear Search is O(log n).
+Binary search is an efficient searching algorithm that works on sorted arrays by repeatedly dividing the search interval in half. It compares the target value to the middle element of the array and eliminates half of the remaining elements based on this comparison. The Big O Notation of Linear Search is O(log n). It uses a Divide and Conquer Algorithm Design Techniques.
 ### Conclusion 
 
 Algorithms are not just lines of code—they are logical, structured problem-solving tools that power the digital world. Whether you're sorting a list, finding the shortest path, or training a neural network, algorithms form the bedrock of how solutions are built in computing.
