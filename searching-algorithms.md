@@ -31,7 +31,7 @@ Linear search and binary search
 ---
 
 
-
+Linear search (also known as sequential search) is the simplest searching algorithm that checks each element in a list or array one by one from the start until it finds the target value. It's called "linear" because its time complexity grows linearly with the size of the input data.
 
 
 ### Conclusion 
