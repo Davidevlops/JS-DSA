@@ -266,9 +266,9 @@ console.log("Unsorted Array:", unsortedArray);
 const sortedArray = heapSort([...unsortedArray]); // Avoid modifying original
 console.log("Sorted Array:", sortedArray);
 
-### Binary Search
+### Radix Sort
 
-**Binary Search** is an efficient algorithm that works only on **sorted arrays**. It repeatedly divides the search range in half, comparing the target value to the middle element.
+**Radix Sort** Radix Sort is a non-comparative integer sorting algorithm that processes digits from the least significant digit (LSD) to the most significant digit (MSD) (or vice versa). It groups numbers by each digit and repeatedly sorts them, resulting in a fully sorted array.
 
 * **Time Complexity**: O(log n)
 * **Design Technique**: Divide and Conquer
