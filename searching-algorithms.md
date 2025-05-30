@@ -23,7 +23,9 @@ Everyday Computing → File search (Ctrl+F), autocomplete suggestions.
 
 ### Types of Searching Algorithms
 
-These are many searching algorithms used in computer science but for the sake of this series, we would be treating two of them.
+These are many searching algorithms used in computer science but for the sake of this series, we would be treating two of them which are: 
+Linear search and binary search
+
 
 ---
 
