@@ -29,8 +29,8 @@ Sorting algorithms are essential in both everyday computing and advanced softwar
 
 There are several searching algorithms used in computer science, including:
 
-* **Linear Search**
-* **Binary Search**
+* **Bubble Sort**
+* **Insertion Sort**
 * **Hash-Based Search**
 * **Tree-Based Search**
 * **Advanced Methods** (e.g., Interpolation Search, Exponential Search)
