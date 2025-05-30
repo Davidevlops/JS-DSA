@@ -80,6 +80,90 @@ const sortedArray = bubbleSort(unsortedArray);
 console.log("Sorted array:", sortedArray);
 ---
 
+### Insertion Sort
+
+**Insertion Sort** Insertion Sort is a simple, comparison-based sorting algorithm that builds the final sorted array one element at a time. It works similarly to how you might sort a hand of playing cards:
+tart with the second element (assuming the first is already "sorted").
+
+Compare it with the previous elements and insert it into the correct position in the sorted part.
+
+Repeat until the entire array is sorted.
+* **Time Complexity**: O(n²)
+* **Design Technique**: Brute Force
+* **Use Case**: Requires unsorted data
+
+**Example:**
+function insertionSort(arr) {
+    for (let i = 1; i < arr.length; i++) {
+        let current = arr[i]; // Current element to insert
+        let j = i - 1; // Start comparing with the previous element
+        
+        // Shift elements greater than 'current' to the right
+        while (j >= 0 && arr[j] > current) {
+            arr[j + 1] = arr[j]; // Shift right
+            j--;
+        }
+        
+        // Insert 'current' in the correct position
+        arr[j + 1] = current;
+    }
+    return arr;
+}
+
+// Example Usage
+const unsortedArray = [12, 11, 13, 5, 6];
+console.log("Unsorted Array:", unsortedArray);
+const sortedArray = insertionSort(unsortedArray);
+console.log("Sorted Array:", sortedArray);
+
+---
+### QuickSort
+
+**QuickSort** QuickSort is a highly efficient divide-and-conquer sorting algorithm that works by: Selecting a "pivot" element from the array. Partitioning the array into two subarrays: Elements less than the pivot (left subarray). Elements greater than the pivot (right subarray). Recursively sorting the subarrays until the entire array is sorted.
+
+* **Time Complexity**: O(n²)
+* **Design Technique**: Divide and Conquer
+* **Use Case**: Requires sorted data
+
+**Example:**
+
+function quickSort(arr, low = 0, high = arr.length - 1) {
+    if (low < high) {
+        // Partition the array and get the pivot index
+        const pivotIndex = partition(arr, low, high);
+        
+        // Recursively sort the left and right subarrays
+        quickSort(arr, low, pivotIndex - 1);
+        quickSort(arr, pivotIndex + 1, high);
+    }
+    return arr;
+}
+
+function partition(arr, low, high) {
+    const pivot = arr[high]; // Choose the last element as pivot
+    let i = low; // Index of smaller element
+    
+    for (let j = low; j < high; j++) {
+        // If current element is <= pivot, swap it with arr[i]
+        if (arr[j] <= pivot) {
+            [arr[i], arr[j]] = [arr[j], arr[i]];
+            i++;
+        }
+    }
+    
+    // Swap pivot (arr[high]) with arr[i] (correct position)
+    [arr[i], arr[high]] = [arr[high], arr[i]];
+    return i; // Return pivot index
+}
+
+// Example Usage
+const unsortedArray = [10, 7, 8, 9, 1, 5];
+console.log("Unsorted Array:", unsortedArray);
+const sortedArray = quickSort([...unsortedArray]); // Avoid modifying original
+console.log("Sorted Array:", sortedArray);
+
+---
+
 ### Binary Search
 
 **Binary Search** is an efficient algorithm that works only on **sorted arrays**. It repeatedly divides the search range in half, comparing the target value to the middle element.
@@ -117,7 +201,6 @@ console.log(binarySearch(sortedNumbers, 2)); // Output: -1
 ```
 
 ---
-
 ### Conclusion
 
 Searching algorithms are at the heart of data processing, enabling computers to quickly and accurately locate information. Whether you're working with unsorted or sorted data, understanding how to apply linear and binary search is fundamental to writing efficient and responsive code.
