@@ -23,7 +23,7 @@ Everyday Computing → File search (Ctrl+F), autocomplete suggestions.
 
 ### Types of Searching Algorithms
 
-These are abstract strategies used to craft algorithms that are efficient, reusable, and adaptable to various problem domains.
+These are many searching algorithms used in computer science but for the sake of this series, we would be treating two of them.
 
 ---
 
