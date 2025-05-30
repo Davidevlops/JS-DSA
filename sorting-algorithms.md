@@ -36,7 +36,6 @@ There are several searching algorithms used in computer science, including:
 * **Heap Sort** 
 * **Radix Sort** 
 
-
 ---
 
 ### Linear Search
