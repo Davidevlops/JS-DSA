@@ -222,27 +222,49 @@ console.log("Sorted Array:", sortedArray);
 
 **Example:**
 
-function sortTaskPriorities(tasks) {
-    const n = tasks.length;
+function heapSort(arr) {
+    const n = arr.length;
 
-    // Build max-heap
+    // Build max-heap (start from last non-leaf node)
     for (let i = Math.floor(n / 2) - 1; i >= 0; i--) {
-        heapify(tasks, n, i);
+        heapify(arr, n, i);
     }
 
-    // Extract tasks in priority order
+    // Extract elements one by one
     for (let i = n - 1; i > 0; i--) {
-        [tasks[0], tasks[i]] = [tasks[i], tasks[0]];
-        heapify(tasks, i, 0);
+        // Move root (max) to end
+        [arr[0], arr[i]] = [arr[i], arr[0]];
+        // Heapify reduced heap
+        heapify(arr, i, 0);
     }
-    return tasks;
+    return arr;
+}
+
+function heapify(arr, heapSize, rootIdx) {
+    let largest = rootIdx;
+    const left = 2 * rootIdx + 1;
+    const right = 2 * rootIdx + 2;
+
+    // Find largest among root, left, and right
+    if (left < heapSize && arr[left] > arr[largest]) {
+        largest = left;
+    }
+    if (right < heapSize && arr[right] > arr[largest]) {
+        largest = right;
+    }
+
+    // Swap and continue heapifying if needed
+    if (largest !== rootIdx) {
+        [arr[rootIdx], arr[largest]] = [arr[largest], arr[rootIdx]];
+        heapify(arr, heapSize, largest);
+    }
 }
 
 // Example Usage
-const taskPriorities = [3, 1, 4, 1, 5, 9, 2, 6];
-console.log("Original Priorities:", taskPriorities);
-const sortedPriorities = sortTaskPriorities([...taskPriorities]);
-console.log("Sorted Priorities (Ascending):", sortedPriorities);
+const unsortedArray = [12, 11, 13, 5, 6, 7];
+console.log("Unsorted Array:", unsortedArray);
+const sortedArray = heapSort([...unsortedArray]); // Avoid modifying original
+console.log("Sorted Array:", sortedArray);
 
 ### Binary Search
 
