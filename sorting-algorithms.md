@@ -247,6 +247,42 @@ const sortedNumbers = [1, 3, 5, 7, 9, 11, 13];
 console.log(binarySearch(sortedNumbers, 9)); // Output: 4
 console.log(binarySearch(sortedNumbers, 2)); // Output: -1
 ```
+
+### Binary Search
+
+**Binary Search** is an efficient algorithm that works only on **sorted arrays**. It repeatedly divides the search range in half, comparing the target value to the middle element.
+
+* **Time Complexity**: O(log n)
+* **Design Technique**: Divide and Conquer
+* **Use Case**: Requires sorted data
+
+**Example:**
+
+```javascript
+function binarySearch(arr, target) {
+    let left = 0;
+    let right = arr.length - 1;
+
+    while (left <= right) {
+        const mid = Math.floor((left + right) / 2);
+        
+        if (arr[mid] === target) {
+            return mid;
+        } else if (arr[mid] < target) {
+            left = mid + 1;
+        } else {
+            right = mid - 1;
+        }
+    }
+
+    return -1; // Target not found
+}
+
+// Example usage
+const sortedNumbers = [1, 3, 5, 7, 9, 11, 13];
+console.log(binarySearch(sortedNumbers, 9)); // Output: 4
+console.log(binarySearch(sortedNumbers, 2)); // Output: -1
+```
 ---
 ### Conclusion
 
