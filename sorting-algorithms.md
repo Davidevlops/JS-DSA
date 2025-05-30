@@ -31,8 +31,8 @@ There are several searching algorithms used in computer science, including:
 
 * **Bubble Sort**
 * **Insertion Sort**
-* **Hash-Based Search**
-* **Tree-Based Search**
+* **QuickSort**
+* **Merge Sort**
 * **Advanced Methods** (e.g., Interpolation Search, Exponential Search)
 
 In this series, we will focus on two foundational algorithms: **Linear Search** and **Binary Search**.
