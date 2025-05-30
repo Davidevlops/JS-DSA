@@ -41,35 +41,43 @@ There are several searching algorithms used in computer science, including:
 ### Bubble Sort
 
 **Bubble Sort** Bubble Sort is a simple comparison-based sorting algorithm that repeatedly steps through the list to be sorted, compares adjacent elements, and swaps them if they are in the wrong order. The pass through the list is repeated until the list is sorted. The algorithm gets its name from the way smaller elements "bubble" to the top of the list (beginning of the array) while larger elements "sink" to the bottom (end of the array) with each iteration.
-* **Time Complexity**: O(n)
+* **Time Complexity**:  O(n²)
 * **Design Technique**: Brute Force
-* **Use Case**: Works on unsorted data
+* **Use Case**: Works on sorted data
 
 **Example:**
 
-```javascript
-function linearSearch(arr, target) {
-    for (let i = 0; i < arr.length; i++) {
-        if (arr[i] === target) {
-            return i; // Return index if found
+function bubbleSort(arr) {
+    let n = arr.length;
+    let swapped;
+    
+    // Outer loop for passes
+    for (let i = 0; i < n - 1; i++) {
+        swapped = false;
+        
+        // Inner loop for comparisons
+        // The last i elements are already in place
+        for (let j = 0; j < n - i - 1; j++) {
+            // Compare adjacent elements
+            if (arr[j] > arr[j + 1]) {
+                // Swap if they are in the wrong order
+                [arr[j], arr[j + 1]] = [arr[j + 1], arr[j]];
+                swapped = true;
+            }
         }
+        
+        // If no swaps occurred in the inner loop, the array is sorted
+        if (!swapped) break;
     }
-    return -1; // Return -1 if not found
+    
+    return arr;
 }
 
 // Example usage
-const numbers = [4, 2, 7, 1, 9, 3, 6];
-const targetNumber = 9;
-
-const result = linearSearch(numbers, targetNumber);
-
-if (result !== -1) {
-    console.log(`Element found at index ${result}`);
-} else {
-    console.log("Element not found in the array");
-}
-```
-
+const unsortedArray = [64, 34, 25, 12, 22, 11, 90];
+console.log("Unsorted array:", unsortedArray);
+const sortedArray = bubbleSort(unsortedArray);
+console.log("Sorted array:", sortedArray);
 ---
 
 ### Binary Search
