@@ -38,10 +38,9 @@ There are several searching algorithms used in computer science, including:
 
 ---
 
-### Linear Search
+### Bubble Sort
 
-**Linear Search** (or sequential search) is the simplest search algorithm. It checks each element in a list or array one-by-one until the target value is found or the list ends.
-
+**Bubble Sort** Bubble Sort is a simple comparison-based sorting algorithm that repeatedly steps through the list to be sorted, compares adjacent elements, and swaps them if they are in the wrong order. The pass through the list is repeated until the list is sorted. The algorithm gets its name from the way smaller elements "bubble" to the top of the list (beginning of the array) while larger elements "sink" to the bottom (end of the array) with each iteration.
 * **Time Complexity**: O(n)
 * **Design Technique**: Brute Force
 * **Use Case**: Works on unsorted data
