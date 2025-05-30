@@ -36,7 +36,6 @@ There are several searching algorithms used in computer science, including:
 * **Heap Sort** 
 * **Radix Sort** 
 
-In this series, we will focus on two foundational algorithms: **Linear Search** and **Binary Search**.
 
 ---
 
