@@ -31,7 +31,29 @@ Linear search and binary search
 ---
 
 
-Linear search (also known as sequential search) is the simplest searching algorithm that checks each element in a list or array one by one from the start until it finds the target value. It's called "linear" because its time complexity grows linearly with the size of the input data.
+Linear search (also known as sequential search) is the simplest searching algorithm that checks each element in a list or array one by one from the start until it finds the target value. It's called "linear" because its time complexity grows linearly with the size of the input data. The Big O Notation of Linear Search is O(n). It uses a Brute force Algorithm Design Techniques.
+
+example of a linear search is implemented below:
+function linearSearch(arr, target) {
+    for (let i = 0; i < arr.length; i++) {
+        if (arr[i] === target) {
+            return i; // Return the index if found
+        }
+    }
+    return -1; // Return -1 if not found
+}
+
+// Example usage:
+const numbers = [4, 2, 7, 1, 9, 3, 6];
+const targetNumber = 9;
+
+const result = linearSearch(numbers, targetNumber);
+
+if (result !== -1) {
+    console.log(`Element found at index ${result}`);
+} else {
+    console.log("Element not found in the array");
+}
 
 
 ### Conclusion 
