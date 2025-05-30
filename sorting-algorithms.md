@@ -164,6 +164,54 @@ console.log("Sorted Array:", sortedArray);
 
 ---
 
+### Merge Sort
+
+**Merge Sort** Merge Sort is a divide-and-conquer sorting algorithm that works by: Dividing the unsorted array into two halves. Recursively sorting each half. Merging the two sorted halves into a single sorted array.
+
+* **Time Complexity**: O(n log n)
+* **Design Technique**: Divide and Conquer
+* **Use Case**: unsorted array
+
+**Example:**
+
+function mergeSort(arr) {
+    if (arr.length <= 1) return arr; // Base case
+    
+    // Split the array into two halves
+    const mid = Math.floor(arr.length / 2);
+    const left = arr.slice(0, mid);
+    const right = arr.slice(mid);
+    
+    // Recursively sort and merge
+    return merge(mergeSort(left), mergeSort(right));
+}
+
+function merge(left, right) {
+    let result = [];
+    let leftIndex = 0;
+    let rightIndex = 0;
+    
+    // Compare and merge
+    while (leftIndex < left.length && rightIndex < right.length) {
+        if (left[leftIndex] < right[rightIndex]) {
+            result.push(left[leftIndex]);
+            leftIndex++;
+        } else {
+            result.push(right[rightIndex]);
+            rightIndex++;
+        }
+    }
+    
+    // Concatenate remaining elements
+    return result.concat(left.slice(leftIndex)).concat(right.slice(rightIndex));
+}
+
+// Example Usage
+const unsortedArray = [38, 27, 43, 3, 9, 82, 10];
+console.log("Unsorted Array:", unsortedArray);
+const sortedArray = mergeSort([...unsortedArray]); // Avoid modifying original
+console.log("Sorted Array:", sortedArray);
+
 ### Binary Search
 
 **Binary Search** is an efficient algorithm that works only on **sorted arrays**. It repeatedly divides the search range in half, comparing the target value to the middle element.
@@ -199,7 +247,6 @@ const sortedNumbers = [1, 3, 5, 7, 9, 11, 13];
 console.log(binarySearch(sortedNumbers, 9)); // Output: 4
 console.log(binarySearch(sortedNumbers, 2)); // Output: -1
 ```
-
 ---
 ### Conclusion
 
