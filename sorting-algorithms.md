@@ -216,37 +216,33 @@ console.log("Sorted Array:", sortedArray);
 
 **Heap Sort** Heap Sort is a comparison-based sorting algorithm that uses a binary heap data structure to sort elements. It works in two main phases: Heap Construction: Convert the input array into a max-heap (or min-heap). Sorting: Repeatedly extract the largest element (for max-heap) and place it at the end of the array.
 
-* **Time Complexity**: O(log n)
+* **Time Complexity**: 	O(n log n)
 * **Design Technique**: Divide and Conquer
 * **Use Case**: Requires sorted data
 
 **Example:**
 
-```javascript
-function binarySearch(arr, target) {
-    let left = 0;
-    let right = arr.length - 1;
+function sortTaskPriorities(tasks) {
+    const n = tasks.length;
 
-    while (left <= right) {
-        const mid = Math.floor((left + right) / 2);
-        
-        if (arr[mid] === target) {
-            return mid;
-        } else if (arr[mid] < target) {
-            left = mid + 1;
-        } else {
-            right = mid - 1;
-        }
+    // Build max-heap
+    for (let i = Math.floor(n / 2) - 1; i >= 0; i--) {
+        heapify(tasks, n, i);
     }
 
-    return -1; // Target not found
+    // Extract tasks in priority order
+    for (let i = n - 1; i > 0; i--) {
+        [tasks[0], tasks[i]] = [tasks[i], tasks[0]];
+        heapify(tasks, i, 0);
+    }
+    return tasks;
 }
 
-// Example usage
-const sortedNumbers = [1, 3, 5, 7, 9, 11, 13];
-console.log(binarySearch(sortedNumbers, 9)); // Output: 4
-console.log(binarySearch(sortedNumbers, 2)); // Output: -1
-```
+// Example Usage
+const taskPriorities = [3, 1, 4, 1, 5, 9, 2, 6];
+console.log("Original Priorities:", taskPriorities);
+const sortedPriorities = sortTaskPriorities([...taskPriorities]);
+console.log("Sorted Priorities (Ascending):", sortedPriorities);
 
 ### Binary Search
 
