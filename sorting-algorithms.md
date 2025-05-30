@@ -270,37 +270,56 @@ console.log("Sorted Array:", sortedArray);
 
 **Radix Sort** Radix Sort is a non-comparative integer sorting algorithm that processes digits from the least significant digit (LSD) to the most significant digit (MSD) (or vice versa). It groups numbers by each digit and repeatedly sorts them, resulting in a fully sorted array.
 
-* **Time Complexity**: O(log n)
-* **Design Technique**: Divide and Conquer
+* **Time Complexity**: O(d·(n + k))
+* **Design Technique**: Digit-wise Processing
 * **Use Case**: Requires sorted data
 
 **Example:**
 
-```javascript
-function binarySearch(arr, target) {
-    let left = 0;
-    let right = arr.length - 1;
+function radixSort(arr) {
+    const maxNum = Math.max(...arr);
+    let maxDigits = maxNum.toString().length;
 
-    while (left <= right) {
-        const mid = Math.floor((left + right) / 2);
-        
-        if (arr[mid] === target) {
-            return mid;
-        } else if (arr[mid] < target) {
-            left = mid + 1;
-        } else {
-            right = mid - 1;
-        }
+    for (let digitPlace = 0; digitPlace < maxDigits; digitPlace++) {
+        arr = countingSortByDigit(arr, digitPlace);
     }
-
-    return -1; // Target not found
+    return arr;
 }
 
-// Example usage
-const sortedNumbers = [1, 3, 5, 7, 9, 11, 13];
-console.log(binarySearch(sortedNumbers, 9)); // Output: 4
-console.log(binarySearch(sortedNumbers, 2)); // Output: -1
-```
+function countingSortByDigit(arr, digitPlace) {
+    const count = Array(10).fill(0);
+    const output = Array(arr.length).fill(0);
+
+    // Count occurrences of each digit
+    for (let num of arr) {
+        const digit = getDigit(num, digitPlace);
+        count[digit]++;
+    }
+
+    // Compute cumulative counts
+    for (let i = 1; i < 10; i++) {
+        count[i] += count[i - 1];
+    }
+
+    // Place numbers in output array (stable sort)
+    for (let i = arr.length - 1; i >= 0; i--) {
+        const digit = getDigit(arr[i], digitPlace);
+        output[count[digit] - 1] = arr[i];
+        count[digit]--;
+    }
+
+    return output;
+}
+
+function getDigit(num, place) {
+    return Math.floor(Math.abs(num) / Math.pow(10, place)) % 10;
+}
+
+// Example Usage
+const unsortedArray = [170, 45, 75, 90, 802, 24, 2, 66];
+console.log("Unsorted Array:", unsortedArray);
+const sortedArray = radixSort([...unsortedArray]);
+console.log("Sorted Array:", sortedArray);
 ---
 ### Conclusion
 
