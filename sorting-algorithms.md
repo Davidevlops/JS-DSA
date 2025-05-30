@@ -212,9 +212,9 @@ console.log("Unsorted Array:", unsortedArray);
 const sortedArray = mergeSort([...unsortedArray]); // Avoid modifying original
 console.log("Sorted Array:", sortedArray);
 
-### Binary Search
+### Heap Sort
 
-**Binary Search** is an efficient algorithm that works only on **sorted arrays**. It repeatedly divides the search range in half, comparing the target value to the middle element.
+**Heap Sort** Heap Sort is a comparison-based sorting algorithm that uses a binary heap data structure to sort elements. It works in two main phases: Heap Construction: Convert the input array into a max-heap (or min-heap). Sorting: Repeatedly extract the largest element (for max-heap) and place it at the end of the array.
 
 * **Time Complexity**: O(log n)
 * **Design Technique**: Divide and Conquer
