@@ -22,7 +22,16 @@ Everyday Computing → File search (Ctrl+F), autocomplete suggestions.
 ---
 
 ### Types of Searching Algorithms
+Types of Searching Algorithms
+Sequential Search (Linear Search) → Checks each element one by one.
 
+Interval Search (Binary Search) → Works on sorted data by repeatedly dividing the search space.
+
+Hash-Based Search → Uses hash tables for near-instant lookups.
+
+Tree-Based Search → Uses structures like BSTs, AVL trees, or B-trees for efficient lookups.
+
+Advanced & Hybrid Methods → Exponential search, interpolation search, etc.
 These are many searching algorithms used in computer science but for the sake of this series, we would be treating two of them which are: 
 Linear search and binary search
 
@@ -30,18 +39,6 @@ Linear search and binary search
 ---
 
 
-
-### Real-World Applications of Algorithms
-
-Algorithms are behind many of the technologies we use every day:
-
-* **Search Engines**: Ranking pages using PageRank and indexing.
-* **Navigation Apps**: Finding optimal paths with shortest-path algorithms.
-* **AI & Machine Learning**: Training models using optimization and classification algorithms.
-* **Cybersecurity**: Encryption and hashing algorithms for data protection.
-* **Finance**: Algorithms for fraud detection, trading strategies, and risk analysis.
-
----
 
 
 
