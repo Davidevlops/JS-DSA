@@ -23,16 +23,8 @@ Everyday Computing → File search (Ctrl+F), autocomplete suggestions.
 
 ### Types of Searching Algorithms
 Types of Searching Algorithms
-Sequential Search (Linear Search) → Checks each element one by one.
-
-Interval Search (Binary Search) → Works on sorted data by repeatedly dividing the search space.
-
-Hash-Based Search → Uses hash tables for near-instant lookups.
-
-Tree-Based Search → Uses structures like BSTs, AVL trees, or B-trees for efficient lookups.
-
-Advanced & Hybrid Methods → Exponential search, interpolation search, etc.
-These are many searching algorithms used in computer science but for the sake of this series, we would be treating two of them which are: 
+These are many searching algorithms used in computer science which include:
+Linear Search , Binary Search, Hash-Based Search Tree-Based Search and Advanced & Hybrid Methods → Exponential search, interpolation search, etc. But for the sake of this series, we would be treating two of them which are: 
 Linear search and binary search
 
 
