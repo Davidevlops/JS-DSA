@@ -1,1 +1,1 @@
-## Welcome to the Algorithm Series: Sorting Algorithms
+## Welcome to the Algorithm Series: Graph Algorithms
