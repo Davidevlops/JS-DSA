@@ -7,4 +7,4 @@ Graph algorithms are a set of computational techniques used to solve problems re
 
 ### Common Types of Graph Algorithms
 - Graph Traversal
--Shortest Path
+- Shortest Path
