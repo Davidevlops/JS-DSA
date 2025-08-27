@@ -7,10 +7,9 @@ From the social networks we scroll through to the GPS navigation we rely on, gra
 ### What Is a Graph Algorithm?
 Graph algorithms are a set of computational techniques used to solve problems related to graphs, which are data structures consisting of nodes (also called vertices) and edges (connections between nodes). I understanding graph datastrutures kindly refer to (). Graph algorithms are used to help analyze and process graphs in areas like networking, social media, search engines, and more.
 
-### Common Types of Graph Algorithms
+### Common categories of Graph Algorithms
 - Graph Traversal Algorithms
 - Pathfinding Algorithms
 - Connectivity & Optimization Algorithms
 
-Graph Traversal: These are the foundational exploration algorithms. Their primary purpose is to visit all the nodes and edges in a graph in a systematic, orderly fashion. Traversal is almost always the first step in understanding a graph's structure.
-
+Graph Traversal: These are the foundational exploration algorithms. Their primary purpose is to visit all the nodes and edges in a graph in a systematic, orderly fashion. Traversal is almost always the first step in understanding a graph's structure. Graph traversal are divided
