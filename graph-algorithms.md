@@ -12,8 +12,8 @@ Vertices (Nodes): Represent entities (e.g., cities, people, computers, web pages
 Edges (Links): Represent relationships or connections between vertices (e.g., roads, friendships, network cables, hyperlinks).
 
 ### Common Types of Graph Algorithms
-- Graph Traversal
+- Graph Traversal Algorithms
 - Pathfinding Algorithms
-- MST
+- Connectivity & Optimization Algorithms
 
 Graph Traversal: Graph ,
