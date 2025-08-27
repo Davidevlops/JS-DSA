@@ -14,4 +14,4 @@ Graph algorithms are a set of computational techniques used to solve problems re
 
 Graph Traversal: These are the foundational exploration algorithms. Their primary purpose is to visit all the nodes and edges in a graph in a systematic, orderly fashion. Traversal is almost always the first step in understanding a graph's structure. Graph traversal are divided into two which are:
 - Breadth-First Search (BFS)
-- 
+- Depth-First Search (DFS)
