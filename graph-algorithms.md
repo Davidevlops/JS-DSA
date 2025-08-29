@@ -25,5 +25,25 @@ Visual Example (Tree Traversal)
      / \   \
     D   E   F
 
+Step-by-step:
+
+Start: Queue = [A]
+
+Dequeue A, process it. Enqueue its neighbors B and C.
+Queue = [B, C]
+
+Dequeue B, process it. Enqueue its neighbors D and E.
+Queue = [C, D, E]
+
+Dequeue C, process it. Enqueue its neighbor F.
+Queue = [D, E, F]
+
+Dequeue D, process it. It has no unvisited neighbors.
+Queue = [E, F]
+
+Dequeue E, process it. It has no unvisited neighbors.
+Queue = [F]
+
+Dequeue F, process it. Algorithm ends.
 
 Depth-First Search (DFS) is a fundamental algorithm for traversing or searching tree or graph data structures. The algorithm starts at a selected node (called the source or root) and explores as far as possible along each branch before backtracking.
