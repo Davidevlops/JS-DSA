@@ -138,3 +138,21 @@ Edges have weights (e.g., distance, time, cost).
 All edge weights are non-negative. This is its most critical constraint.
 
 A Detailed Walkthrough with an Example
+         4
+    (A) ------> (B)
+     |           |
+     | 2         | 5
+     |           |
+    \/          \/
+    (C) ------> (D)
+         1
+
+Explanation:
+
+We start at A (distance 0). We look at its neighbors: B (weight 4) and C (weight 2). We update their distances and previous pointers. We are done with A.
+
+The next smallest node in the PQ is C (distance 2). We look at its neighbors: D (weight 1). The potential new distance to D is distance[C] + 1 = 2 + 1 = 3. This is better than infinity, so we update D.
+
+The next smallest node is D (distance 3). Its neighbor is B. The potential new distance to B is 3 + 5 = 8. This is worse than B's current distance of 4, so we ignore it. This is the key—the algorithm never overwrites a good path with a worse one.
+
+Finally, we process B. It has no unvisited neighbors. The algorithm
