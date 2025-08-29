@@ -324,5 +324,7 @@ console.log('Shortest path to D:', pathToD); // Shortest path to D: [ 'A', 'C', 
 
 Bellman-Ford Algorithm: Bellman-Ford Algorithm finds the shortest path from a single starting point (the source node) to all other nodes in a graph. Its key advantage and differentiator is that it can handle graphs where edge weights can be negative.
 
+Furthermore, and crucially, Bellman-Ford can detect the presence of negative weight cycles—a cycle where the total sum of the edge weights is negative. Such a cycle is a problem because you could traverse it infinitely, making the total path cost negatively infinite.
+
 
 
