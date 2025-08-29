@@ -155,4 +155,6 @@ The next smallest node in the PQ is C (distance 2). We look at its neighbors: D 
 
 The next smallest node is D (distance 3). Its neighbor is B. The potential new distance to B is 3 + 5 = 8. This is worse than B's current distance of 4, so we ignore it. This is the key—the algorithm never overwrites a good path with a worse one.
 
-Finally, we process B. It has no unvisited neighbors. The algorithm
+Finally, we process B. It has no unvisited neighbors. The algorithm finishes.
+
+To get the actual path to D, we follow the previous pointers backwards: D <- C <- A. So the path is A -> C -> D.
