@@ -322,5 +322,7 @@ console.log('Previous nodes:', result.previous); // Previous nodes: { A: null, B
 const pathToD = getShortestPath(result.previous, 'D');
 console.log('Shortest path to D:', pathToD); // Shortest path to D: [ 'A', 'C', 'D' ]
 
+Bellman-Ford Algorithm
+
 
 
