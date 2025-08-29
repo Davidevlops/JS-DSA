@@ -110,3 +110,21 @@ At C (visited), go to its first neighbor: F.
 
 At F (visited). No unvisited neighbors. Backtrack to C, then to A. Algorithm ends.
 
+function depthFirstSearch(graph, currentNode, visited = new Set()) {
+  // Mark the current node as visited and process it
+  visited.add(currentNode);
+  console.log(`Visiting node: ${currentNode}`);
+
+  // Recur for all adjacent vertices
+  for (const neighbor of graph[currentNode]) {
+    if (!visited.has(neighbor)) {
+      depthFirstSearch(graph, neighbor, visited);
+    }
+  }
+}
+
+// Use the same graph as before
+depthFirstSearch(graph, 'A');
+// Possible Output: Visiting node: A, B, D, E, F, C
+// (The order can vary based on the structure of the graph and insertion order)
+
