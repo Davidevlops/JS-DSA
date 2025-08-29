@@ -158,3 +158,166 @@ The next smallest node is D (distance 3). Its neighbor is B. The potential new d
 Finally, we process B. It has no unvisited neighbors. The algorithm finishes.
 
 To get the actual path to D, we follow the previous pointers backwards: D <- C <- A. So the path is A -> C -> D.
+
+// MinHeap implementation for priority queue
+class MinHeap {
+    constructor() {
+        this.heap = [];
+    }
+
+    push(node, priority) {
+        this.heap.push({ node, priority });
+        this.bubbleUp(this.heap.length - 1);
+    }
+
+    pop() {
+        const min = this.heap[0];
+        const last = this.heap.pop();
+        
+        if (this.heap.length > 0) {
+            this.heap[0] = last;
+            this.sinkDown(0);
+        }
+        
+        return min;
+    }
+
+    isEmpty() {
+        return this.heap.length === 0;
+    }
+
+    updatePriority(node, newPriority) {
+        const index = this.heap.findIndex(item => item.node === node);
+        if (index === -1) return;
+
+        const oldPriority = this.heap[index].priority;
+        this.heap[index].priority = newPriority;
+
+        if (newPriority < oldPriority) {
+            this.bubbleUp(index);
+        } else {
+            this.sinkDown(index);
+        }
+    }
+
+    bubbleUp(index) {
+        const element = this.heap[index];
+        
+        while (index > 0) {
+            const parentIndex = Math.floor((index - 1) / 2);
+            const parent = this.heap[parentIndex];
+            
+            if (element.priority >= parent.priority) break;
+            
+            this.heap[parentIndex] = element;
+            this.heap[index] = parent;
+            index = parentIndex;
+        }
+    }
+
+    sinkDown(index) {
+        const length = this.heap.length;
+        const element = this.heap[index];
+
+        while (true) {
+            let leftChildIndex = 2 * index + 1;
+            let rightChildIndex = 2 * index + 2;
+            let swap = null;
+            let leftChild, rightChild;
+
+            if (leftChildIndex < length) {
+                leftChild = this.heap[leftChildIndex];
+                if (leftChild.priority < element.priority) {
+                    swap = leftChildIndex;
+                }
+            }
+
+            if (rightChildIndex < length) {
+                rightChild = this.heap[rightChildIndex];
+                if ((swap === null && rightChild.priority < element.priority) ||
+                    (swap !== null && rightChild.priority < leftChild.priority)) {
+                    swap = rightChildIndex;
+                }
+            }
+
+            if (swap === null) break;
+
+            this.heap[index] = this.heap[swap];
+            this.heap[swap] = element;
+            index = swap;
+        }
+    }
+}
+
+// Dijkstra's Algorithm implementation
+function dijkstra(graph, source) {
+    // Initialize distances and previous nodes
+    const dist = {};
+    const prev = {};
+    const Q = new MinHeap();
+
+    // Initialize all distances to Infinity and add to priority queue
+    for (const vertex in graph) {
+        dist[vertex] = Infinity;
+        prev[vertex] = null;
+        Q.push(vertex, Infinity);
+    }
+
+    // Set source distance to 0 and update its priority
+    dist[source] = 0;
+    Q.updatePriority(source, 0);
+
+    while (!Q.isEmpty()) {
+        // Extract node with minimum distance
+        const { node: u, priority: currentDist } = Q.pop();
+        
+        // If we've already found a better path through other nodes, skip
+        if (currentDist > dist[u]) {
+            continue;
+        }
+
+        // Process each neighbor
+        for (const neighbor in graph[u]) {
+            const weight = graph[u][neighbor];
+            const alt = dist[u] + weight;
+
+            // If found a shorter path to the neighbor
+            if (alt < dist[neighbor]) {
+                dist[neighbor] = alt;
+                prev[neighbor] = u;
+                Q.updatePriority(neighbor, alt);
+            }
+        }
+    }
+
+    return { distances: dist, previous: prev };
+}
+
+// Helper function to reconstruct the shortest path
+function getShortestPath(prev, target) {
+    const path = [];
+    let current = target;
+    
+    while (current !== null) {
+        path.unshift(current);
+        current = prev[current];
+    }
+    
+    return path;
+}
+
+// Example usage:
+const graph = {
+    'A': { 'B': 4, 'C': 2 },
+    'B': { 'D': 5 },
+    'C': { 'D': 1, 'B': 1 },
+    'D': {}
+};
+
+const result = dijkstra(graph, 'A');
+console.log('Distances:', result.distances);
+console.log('Previous nodes:', result.previous);
+
+// Get path to specific node
+const pathToD = getShortestPath(result.previous, 'D');
+console.log('Shortest path to D:', pathToD);
