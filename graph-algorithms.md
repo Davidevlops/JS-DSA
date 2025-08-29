@@ -54,3 +54,24 @@ Visual Example (Tree Traversal)
       B   C
      / \   \
     D   E   F
+
+Step-by-step (Recursive Call Stack):
+
+Start at A (visited).
+
+Go to first neighbor of A: B.
+
+At B (visited), go to its first neighbor: D.
+
+At D (visited). No unvisited neighbors. Backtrack to B.
+
+At B, go to its next unvisited neighbor: E.
+
+At E (visited). No unvisited neighbors. Backtrack to B. B has no more neighbors. Backtrack to A.
+
+At A, go to its next unvisited neighbor: C.
+
+At C (visited), go to its first neighbor: F.
+
+At F (visited). No unvisited neighbors. Backtrack to C, then to A. Algorithm ends.
+
