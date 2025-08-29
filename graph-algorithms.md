@@ -322,7 +322,7 @@ console.log('Previous nodes:', result.previous); // Previous nodes: { A: null, B
 const pathToD = getShortestPath(result.previous, 'D');
 console.log('Shortest path to D:', pathToD); // Shortest path to D: [ 'A', 'C', 'D' ]
 
-Bellman-Ford Algorithm
+Bellman-Ford Algorithm: Bellman-Ford Algorithm finds the shortest path from a single starting point (the source node) to all other nodes in a graph. Its key advantage and differentiator is that it can handle graphs where edge weights can be negative.
 
 
 
