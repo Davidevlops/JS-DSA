@@ -129,4 +129,4 @@ depthFirstSearch(graph, 'A');
 // (The order can vary based on the structure of the graph and insertion order)
 
 
-Pathfinding Algorithms: A pathfinding algorithm is a step-by-step procedure designed to find the shortest or most optimal path between two points, often referred to as the start node and the goal node. This "path" is navigated through a structured representation of the environment, typically a graph made up of nodes (or vertices) and edges (or connections). There are basic types of Pathfinding Algorithms
+Pathfinding Algorithms: A pathfinding algorithm is a step-by-step procedure designed to find the shortest or most optimal path between two points, often referred to as the start node and the goal node. This "path" is navigated through a structured representation of the environment, typically a graph made up of nodes (or vertices) and edges (or connections). There are basic types of Pathfinding Algorithms which include: Breadth-First Search (BFS) and the Depth-First Search (DFS). 
