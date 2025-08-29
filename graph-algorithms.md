@@ -326,5 +326,13 @@ Bellman-Ford Algorithm: Bellman-Ford Algorithm finds the shortest path from a si
 
 Furthermore, and crucially, Bellman-Ford can detect the presence of negative weight cycles—a cycle where the total sum of the edge weights is negative. Such a cycle is a problem because you could traverse it infinitely, making the total path cost negatively infinite.
 
+A Detailed Walkthrough with an Example
+        (A)
+       /   \
+     4/     \2
+     /       \
+    /         \
+ (B)---(-1)--->(C)
+
 
 
