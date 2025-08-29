@@ -47,6 +47,39 @@ Queue = [F]
 Dequeue F, process it. Algorithm ends.
 
 JavaScript Implementation:
+function breadthFirstSearch(graph, startNode) {
+  const queue = [startNode]; // Initialize the queue
+  const visited = new Set();
+  visited.add(startNode);
+
+  while (queue.length > 0) {
+    // Dequeue from the front
+    const currentNode = queue.shift();
+    console.log(`Visiting node: ${currentNode}`); // Process the node
+
+    // Enqueue all unvisited neighbors
+    for (const neighbor of graph[currentNode]) {
+      if (!visited.has(neighbor)) {
+        visited.add(neighbor);
+        queue.push(neighbor); // Add to the back
+      }
+    }
+  }
+}
+
+// Example graph represented as an Adjacency List
+const graph = {
+  'A': ['B', 'C'],
+  'B': ['A', 'D', 'E'],
+  'C': ['A', 'F'],
+  'D': ['B'],
+  'E': ['B', 'F'],
+  'F': ['C', 'E']
+};
+
+// Traverse starting from node 'A'
+breadthFirstSearch(graph, 'A');
+// Output: Visiting node: A, B, C, D, E, F
 
 Depth-First Search (DFS) is a fundamental algorithm for traversing or searching tree or graph data structures. The algorithm starts at a selected node (called the source or root) and explores as far as possible along each branch before backtracking.
 
