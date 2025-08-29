@@ -315,9 +315,12 @@ const graph = {
 };
 
 const result = dijkstra(graph, 'A');
-console.log('Distances:', result.distances);
-console.log('Previous nodes:', result.previous);
+console.log('Distances:', result.distances); // Distances: { A: 0, B: 3, C: 2, D: 3 }
+console.log('Previous nodes:', result.previous); // Previous nodes: { A: null, B: 'C', C: 'A', D: 'C' }
 
 // Get path to specific node
 const pathToD = getShortestPath(result.previous, 'D');
-console.log('Shortest path to D:', pathToD);
+console.log('Shortest path to D:', pathToD); // Shortest path to D: [ 'A', 'C', 'D' ]
+
+
+
