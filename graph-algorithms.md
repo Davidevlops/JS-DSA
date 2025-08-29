@@ -48,3 +48,8 @@ Dequeue F, process it. Algorithm ends.
 
 Depth-First Search (DFS) is a fundamental algorithm for traversing or searching tree or graph data structures. The algorithm starts at a selected node (called the source or root) and explores as far as possible along each branch before backtracking.
 
+        A
+       / \
+      B   C
+     / \   \
+    D   E   F
