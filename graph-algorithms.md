@@ -6,12 +6,11 @@ After unraveling the intricacies of sorting algorithms, we would be diving into 
 A **Graph algorithm** is set of computational technique used to solve problems related to graphs, which are data structures consisting of nodes (also called vertices) and edges (connections between nodes). I understanding graph datastrutures kindly refer to (). Graph algorithms are used to help analyze and process graphs in areas like networking, social media, search engines, and more.
 
 ### Common categories of Graph Algorithms
-* **Bubble Sort**
-* **Bubble Sort**
-* **Bubble Sort**
-- Graph Traversal Algorithms
-- Pathfinding Algorithms
-- Minimum Spanning Tree (MST) Algorithms
+* **Graph Traversal Algorithms**
+* **Pathfinding Algorithms**
+* **Minimum Spanning Tree (MST) Algorithms**
+- 
+- 
 
 Graph Traversal: These are the foundational exploration algorithms. Their primary purpose is to visit all the nodes and edges in a graph in a systematic, orderly fashion. Traversal is almost always the first step in understanding a graph's structure. Graph traversal are divided into two which are:
 - Breadth-First Search (BFS)
