@@ -321,8 +321,8 @@ console.log('Previous nodes:', result.previous); // Previous nodes: { A: null, B
 const pathToD = getShortestPath(result.previous, 'D');
 console.log('Shortest path to D:', pathToD); // Shortest path to D: [ 'A', 'C', 'D' ]
 
-## Pathfinding Algorithms
-Minimum Spanning Tree Algorithm: A Minimum Spanning Tree (MST) is the subset of connections in a weighted network that achieves the absolute lowest total cost for connecting all points, while rigorously avoiding any redundant loops. It guarantees that every single point is included and reachable, yet it forms a efficient "tree" structure where there is only one unique path between any two points, ensuring no resources are wasted on unnecessary connections. An example of a Minimum Spanning Tree algorithm is Kruskal's Algorithm.
+## Minimum Spanning Tree Algorithm
+: A Minimum Spanning Tree (MST) is the subset of connections in a weighted network that achieves the absolute lowest total cost for connecting all points, while rigorously avoiding any redundant loops. It guarantees that every single point is included and reachable, yet it forms a efficient "tree" structure where there is only one unique path between any two points, ensuring no resources are wasted on unnecessary connections. An example of a Minimum Spanning Tree algorithm is Kruskal's Algorithm.
 
 
 
