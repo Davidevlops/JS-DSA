@@ -13,7 +13,7 @@ A **Graph algorithm** is set of computational technique used to solve problems r
 ## Graph Traversal
 These are the foundational exploration algorithms. Their primary purpose is to visit all the nodes and edges in a graph in a systematic, orderly fashion. Traversal is almost always the first step in understanding a graph's structure. Graph traversal are divided into two which are:
 - **Breadth-First Search (BFS)**
-- Depth-First Search (DFS)
+- **Depth-First Search (DFS)**
 
 Breadth-First Search (BFS): Breadth-First Search (BFS) is a fundamental algorithm used for traversing or searching through tree or graph data structures. It starts at a selected node (called the source or root) and explores all of its neighbor nodes at the present depth level before moving on to nodes at the next depth level.
 
