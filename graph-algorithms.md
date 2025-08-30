@@ -5,8 +5,7 @@ After unraveling the intricacies of sorting algorithms, we would be diving into 
 From the social networks we scroll through to the GPS navigation we rely on, graph algorithms are the invisible engines powering the technology that defines our modern world. Let's explore how they work.
 
 ### What Is a Graph Algorithm?
-A **Graph algorithm** is a step-by-step method used to locate a specific element within a collection of data—such as an array, list, tree, graph, or database. The primary goal is to determine whether the target element exists in the dataset and, if it does, return its position or relevant information.
-Graph algorithm are a set of computational techniques used to solve problems related to graphs, which are data structures consisting of nodes (also called vertices) and edges (connections between nodes). I understanding graph datastrutures kindly refer to (). Graph algorithms are used to help analyze and process graphs in areas like networking, social media, search engines, and more.
+A **Graph algorithm** is set of computational technique used to solve problems related to graphs, which are data structures consisting of nodes (also called vertices) and edges (connections between nodes). I understanding graph datastrutures kindly refer to (). Graph algorithms are used to help analyze and process graphs in areas like networking, social media, search engines, and more.
 
 ### Common categories of Graph Algorithms
 - Graph Traversal Algorithms
