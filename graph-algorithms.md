@@ -438,6 +438,101 @@ C-D (weight 4)
 
 Total Weight (Cost) of the MST: 2 + 3 + 4 = 9
 
+class UnionFind {
+    constructor(size) {
+        this.parent = new Array(size);
+        this.rank = new Array(size);
+        
+        // Initialize each element as its own parent
+        for (let i = 0; i < size; i++) {
+            this.parent[i] = i;
+            this.rank[i] = 0;
+        }
+    }
+    
+    find(x) {
+        // Path compression
+        if (this.parent[x] !== x) {
+            this.parent[x] = this.find(this.parent[x]);
+        }
+        return this.parent[x];
+    }
+    
+    union(x, y) {
+        const rootX = this.find(x);
+        const rootY = this.find(y);
+        
+        if (rootX === rootY) return false; // Already in the same set
+        
+        // Union by rank
+        if (this.rank[rootX] < this.rank[rootY]) {
+            this.parent[rootX] = rootY;
+        } else if (this.rank[rootX] > this.rank[rootY]) {
+            this.parent[rootY] = rootX;
+        } else {
+            this.parent[rootY] = rootX;
+            this.rank[rootX]++;
+        }
+        
+        return true;
+    }
+}
+
+function kruskalsAlgorithm(edges, vertexCount) {
+    // Sort edges by weight in ascending order
+    edges.sort((a, b) => a[2] - b[2]);
+    
+    const uf = new UnionFind(vertexCount);
+    const mst = [];
+    let totalWeight = 0;
+    let edgesAdded = 0;
+    
+    for (const edge of edges) {
+        if (edgesAdded === vertexCount - 1) break;
+        
+        const [u, v, weight] = edge;
+        
+        // Check if adding this edge creates a cycle
+        if (uf.find(u) !== uf.find(v)) {
+            uf.union(u, v);
+            mst.push(edge);
+            totalWeight += weight;
+            edgesAdded++;
+        }
+    }
+    
+    return { mst, totalWeight };
+}
+
+// Example usage with the graph from our explanation:
+// Graph: A=0, B=1, C=2, D=3
+const edges = [
+    [0, 1, 5], // A-B: weight 5
+    [0, 2, 5], // A-C: weight 5
+    [0, 3, 3], // A-D: weight 3
+    [1, 3, 2], // B-D: weight 2
+    [2, 3, 4]  // C-D: weight 4
+];
+
+const vertexCount = 4; // A, B, C, D
+
+const result = kruskalsAlgorithm(edges, vertexCount);
+
+console.log("Minimum Spanning Tree Edges:");
+result.mst.forEach(edge => {
+    const [u, v, weight] = edge;
+    console.log(`${u} - ${v} : ${weight}`);
+});
+
+console.log("Total Weight:", result.totalWeight);
+
+// For better readability with vertex names
+const vertexNames = ['A', 'B', 'C', 'D'];
+console.log("\nWith vertex names:");
+result.mst.forEach(edge => {
+    const [u, v, weight] = edge;
+    console.log(`${vertexNames[u]} - ${vertexNames[v]} : ${weight}`);
+});
 ##  Conclusion
 
 Graph algorithmics remains a vibrant area of research. Current challenges involve developing scalable algorithms for distributed systems and handling streaming graph data. The classical algorithms covered herein form the foundational knowledge upon which these modern advancements are built. Future work will undoubtedly continue to refine these techniques, but the core paradigms of traversal, relaxation, and union-find will persist as cornerstones of the discipline.
