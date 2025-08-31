@@ -1,6 +1,6 @@
 ## Welcome to the Algorithm Series: Graph Algorithms
 
-This is part of the Discovering Algorithms series. After unraveling the intricacies of sorting algorithms, it’s time to step into something even more exciting — **Graph Algorithms**. Think about the social networks you scroll through, the GPS app that gets you to your destination, or even the way recommendations pop up on streaming platforms — graphs are working behind the scenes to make it all happen. They’re the hidden engines powering so much of our everyday tech. In this article, we’ll break down how they work and why they’re so important.
+This is part of the *Discovering JavaScript's Hidden Secrets* series. After unraveling the intricacies of sorting algorithms, it’s time to step into something even more exciting — **Graph Algorithms**. Think about the social networks you scroll through, the GPS app that gets you to your destination, or even the way recommendations pop up on streaming platforms — graphs are working behind the scenes to make it all happen. They’re the hidden engines powering so much of our everyday tech. In this article, we’ll break down how they work and why they’re so important.
 
 # Understanding Graphs and Graph Algorithms
 Before diving into **graph algorithms**, it’s important to first understand what a **graph** is as a data structure.
