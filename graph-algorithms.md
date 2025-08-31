@@ -295,7 +295,7 @@ Detailed Example with Visualization
         (D)
 
 
-### Steps (Simplified)  
+### Steps 
 1. Sort edges by weight: **BD(2), AD(3), CD(4), AB(5), AC(5)**.  
 2. Pick edges in order, skipping ones that form cycles.  
 3. Final MST:  
@@ -303,7 +303,7 @@ Detailed Example with Visualization
    - **A–D (3)**  
    - **C–D (4)**  
 
-✅ Total Cost = **9**  
+Total Cost = **9**  
 
 ---
 
