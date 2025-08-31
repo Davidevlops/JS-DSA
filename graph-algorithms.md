@@ -3,7 +3,7 @@
 This is part of the Discovering Algorithms series. After unraveling the intricacies of sorting algorithms, it’s time to step into something even more exciting — **Graph Algorithms**. Think about the social networks you scroll through, the GPS app that gets you to your destination, or even the way recommendations pop up on streaming platforms — graphs are working behind the scenes to make it all happen. They’re the hidden engines powering so much of our everyday tech. In this article, we’ll break down how they work and why they’re so important.
 
 ### What Is a Graph Algorithm?
-A **Graph algorithm** is set of computational technique used to solve problems related to graphs, which are data structures consisting of nodes (also called vertices) and edges (connections between nodes). I understanding graph datastrutures kindly refer to (). Graph algorithms are used to help analyze and process graphs in areas like networking, social media, search engines, and more.
+A **Graph algorithm** is set of computational technique used to solve problems related to graphs, which are data structures consisting of nodes (also called vertices) and edges (connections between nodes). In understanding graph datastrutures kindly refer to (https://dev.to/davidevlops/discovering-javascripts-hidden-secrets-understanding-graphs-as-a-non-linear-data-structure-5gap). Graph algorithms are used to help analyze and process graphs in areas like networking, social media, search engines, and more.
 
 ### Common categories of Graph Algorithms
 * **Graph Traversal Algorithms**
