@@ -326,6 +326,14 @@ A Minimum Spanning Tree (MST) is the subset of connections in a weighted network
 
 Kruskal's algorithm operates on a simple, greedy principle: "Always pick the smallest available edge, and add it to the tree if it doesn't create a cycle."
 
+Detailed Example with Visualization
+
+        (A)
+     5/  |  \5
+    (B) 3|   (C)
+     2\  |  /4
+        (D)
+
 
 
 
