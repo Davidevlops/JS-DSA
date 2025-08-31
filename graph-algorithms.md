@@ -124,13 +124,14 @@ depthFirstSearch(graph, 'A');
 ## Pathfinding Algorithms
 A pathfinding algorithm is a step-by-step procedure designed to find the shortest or most optimal path between two points in a graph. Breadth-First Search (BFS) and the Depth-First Search (DFS)  are basic types of Pathfinding Algorithms. Other advance types of pathfinding algorithms include Dijkstra's Algorithm, Bellman-Ford, Floyd-Warshall. For the purpose of this article we eould be treating Dijkstra's Algorithm.
 
-**Dijkstra's Algorithm:** Dijkstra's Algorithm finds the shortest path from a single starting point (the source node) to all other nodes in a graph. It works on graphs where:
+**Dijkstra's Algorithm:** Dijkstra's Algorithm finds the shortest path from a single starting point to all other nodes in a graph. It works on graphs where:
 
-Edges have weights (e.g., distance, time, cost).
+### Key Features  
+- Works on **weighted graphs** (edges have weights like distance, time, or cost).  
+- Requires **non-negative edge weights**.  
+- Guarantees the shortest path.
 
-All edge weights are non-negative. This is its most critical constraint.
-
-A Detailed Walkthrough with an Example
+### A Visual Image of  Dijkstra's Algorith
          4
     (A) ------> (B)
      |           |
@@ -139,181 +140,144 @@ A Detailed Walkthrough with an Example
     \/          \/
     (C) ------> (D)
          1
+Shortest path from **A to D**: `A → C → D` with total cost **3**. 
+---
 
-Explanation:
+## JavaScript Implementation  
 
-We start at A (distance 0). We look at its neighbors: B (weight 4) and C (weight 2). We update their distances and previous pointers. We are done with A.
+### MinHeap (Priority Queue)  
+Used to efficiently fetch the node with the smallest distance.  
 
-The next smallest node in the PQ is C (distance 2). We look at its neighbors: D (weight 1). The potential new distance to D is distance[C] + 1 = 2 + 1 = 3. This is better than infinity, so we update D.
-
-The next smallest node is D (distance 3). Its neighbor is B. The potential new distance to B is 3 + 5 = 8. This is worse than B's current distance of 4, so we ignore it. This is the key—the algorithm never overwrites a good path with a worse one.
-
-Finally, we process B. It has no unvisited neighbors. The algorithm finishes.
-
-To get the actual path to D, we follow the previous pointers backwards: D <- C <- A. So the path is A -> C -> D.
-
-// MinHeap implementation for priority queue
+```javascript
 class MinHeap {
-    constructor() {
-        this.heap = [];
+  constructor() {
+    this.heap = [];
+  }
+
+  push(node, priority) {
+    this.heap.push({ node, priority });
+    this.bubbleUp(this.heap.length - 1);
+  }
+
+  pop() {
+    const min = this.heap[0];
+    const last = this.heap.pop();
+    if (this.heap.length > 0) {
+      this.heap[0] = last;
+      this.sinkDown(0);
     }
+    return min;
+  }
 
-    push(node, priority) {
-        this.heap.push({ node, priority });
-        this.bubbleUp(this.heap.length - 1);
+  isEmpty() {
+    return this.heap.length === 0;
+  }
+
+  updatePriority(node, newPriority) {
+    const index = this.heap.findIndex(item => item.node === node);
+    if (index === -1) return;
+    const oldPriority = this.heap[index].priority;
+    this.heap[index].priority = newPriority;
+    if (newPriority < oldPriority) this.bubbleUp(index);
+    else this.sinkDown(index);
+  }
+
+  bubbleUp(index) {
+    const element = this.heap[index];
+    while (index > 0) {
+      const parentIndex = Math.floor((index - 1) / 2);
+      const parent = this.heap[parentIndex];
+      if (element.priority >= parent.priority) break;
+      this.heap[parentIndex] = element;
+      this.heap[index] = parent;
+      index = parentIndex;
     }
+  }
 
-    pop() {
-        const min = this.heap[0];
-        const last = this.heap.pop();
-        
-        if (this.heap.length > 0) {
-            this.heap[0] = last;
-            this.sinkDown(0);
-        }
-        
-        return min;
+  sinkDown(index) {
+    const length = this.heap.length;
+    const element = this.heap[index];
+    while (true) {
+      let left = 2 * index + 1;
+      let right = 2 * index + 2;
+      let swap = null;
+      if (left < length && this.heap[left].priority < element.priority) {
+        swap = left;
+      }
+      if (
+        right < length &&
+        ((swap === null && this.heap[right].priority < element.priority) ||
+          (swap !== null && this.heap[right].priority < this.heap[left].priority))
+      ) {
+        swap = right;
+      }
+      if (swap === null) break;
+      this.heap[index] = this.heap[swap];
+      this.heap[swap] = element;
+      index = swap;
     }
-
-    isEmpty() {
-        return this.heap.length === 0;
-    }
-
-    updatePriority(node, newPriority) {
-        const index = this.heap.findIndex(item => item.node === node);
-        if (index === -1) return;
-
-        const oldPriority = this.heap[index].priority;
-        this.heap[index].priority = newPriority;
-
-        if (newPriority < oldPriority) {
-            this.bubbleUp(index);
-        } else {
-            this.sinkDown(index);
-        }
-    }
-
-    bubbleUp(index) {
-        const element = this.heap[index];
-        
-        while (index > 0) {
-            const parentIndex = Math.floor((index - 1) / 2);
-            const parent = this.heap[parentIndex];
-            
-            if (element.priority >= parent.priority) break;
-            
-            this.heap[parentIndex] = element;
-            this.heap[index] = parent;
-            index = parentIndex;
-        }
-    }
-
-    sinkDown(index) {
-        const length = this.heap.length;
-        const element = this.heap[index];
-
-        while (true) {
-            let leftChildIndex = 2 * index + 1;
-            let rightChildIndex = 2 * index + 2;
-            let swap = null;
-            let leftChild, rightChild;
-
-            if (leftChildIndex < length) {
-                leftChild = this.heap[leftChildIndex];
-                if (leftChild.priority < element.priority) {
-                    swap = leftChildIndex;
-                }
-            }
-
-            if (rightChildIndex < length) {
-                rightChild = this.heap[rightChildIndex];
-                if ((swap === null && rightChild.priority < element.priority) ||
-                    (swap !== null && rightChild.priority < leftChild.priority)) {
-                    swap = rightChildIndex;
-                }
-            }
-
-            if (swap === null) break;
-
-            this.heap[index] = this.heap[swap];
-            this.heap[swap] = element;
-            index = swap;
-        }
-    }
+  }
 }
 
-// Dijkstra's Algorithm implementation
 function dijkstra(graph, source) {
-    // Initialize distances and previous nodes
-    const dist = {};
-    const prev = {};
-    const Q = new MinHeap();
+  const dist = {};
+  const prev = {};
+  const Q = new MinHeap();
 
-    // Initialize all distances to Infinity and add to priority queue
-    for (const vertex in graph) {
-        dist[vertex] = Infinity;
-        prev[vertex] = null;
-        Q.push(vertex, Infinity);
+  // Initialize distances
+  for (const vertex in graph) {
+    dist[vertex] = Infinity;
+    prev[vertex] = null;
+    Q.push(vertex, Infinity);
+  }
+
+  // Start node distance = 0
+  dist[source] = 0;
+  Q.updatePriority(source, 0);
+
+  while (!Q.isEmpty()) {
+    const { node: u, priority: currentDist } = Q.pop();
+    if (currentDist > dist[u]) continue;
+
+    for (const neighbor in graph[u]) {
+      const weight = graph[u][neighbor];
+      const alt = dist[u] + weight;
+      if (alt < dist[neighbor]) {
+        dist[neighbor] = alt;
+        prev[neighbor] = u;
+        Q.updatePriority(neighbor, alt);
+      }
     }
+  }
 
-    // Set source distance to 0 and update its priority
-    dist[source] = 0;
-    Q.updatePriority(source, 0);
-
-    while (!Q.isEmpty()) {
-        // Extract node with minimum distance
-        const { node: u, priority: currentDist } = Q.pop();
-        
-        // If we've already found a better path through other nodes, skip
-        if (currentDist > dist[u]) {
-            continue;
-        }
-
-        // Process each neighbor
-        for (const neighbor in graph[u]) {
-            const weight = graph[u][neighbor];
-            const alt = dist[u] + weight;
-
-            // If found a shorter path to the neighbor
-            if (alt < dist[neighbor]) {
-                dist[neighbor] = alt;
-                prev[neighbor] = u;
-                Q.updatePriority(neighbor, alt);
-            }
-        }
-    }
-
-    return { distances: dist, previous: prev };
+  return { distances: dist, previous: prev };
 }
 
-// Helper function to reconstruct the shortest path
 function getShortestPath(prev, target) {
-    const path = [];
-    let current = target;
-    
-    while (current !== null) {
-        path.unshift(current);
-        current = prev[current];
-    }
-    
-    return path;
+  const path = [];
+  let current = target;
+  while (current !== null) {
+    path.unshift(current);
+    current = prev[current];
+  }
+  return path;
 }
 
-// Example usage:
+// Example usage
 const graph = {
-    'A': { 'B': 4, 'C': 2 },
-    'B': { 'D': 5 },
-    'C': { 'D': 1, 'B': 1 },
-    'D': {}
+  'A': { 'B': 4, 'C': 2 },
+  'B': { 'D': 5 },
+  'C': { 'D': 1, 'B': 1 },
+  'D': {}
 };
 
 const result = dijkstra(graph, 'A');
-console.log('Distances:', result.distances); // Distances: { A: 0, B: 3, C: 2, D: 3 }
-console.log('Previous nodes:', result.previous); // Previous nodes: { A: null, B: 'C', C: 'A', D: 'C' }
+console.log('Distances:', result.distances);
+console.log('Previous nodes:', result.previous);
 
-// Get path to specific node
 const pathToD = getShortestPath(result.previous, 'D');
-console.log('Shortest path to D:', pathToD); // Shortest path to D: [ 'A', 'C', 'D' ]
+console.log('Shortest path to D:', pathToD); // [ 'A', 'C', 'D' ]
+```
 
 ## Minimum Spanning Tree Algorithm
 A Minimum Spanning Tree (MST) is the subset of connections in a weighted network that achieves the absolute lowest total cost for connecting all points, while rigorously avoiding any redundant loops. It guarantees that every single point is included and reachable, yet it forms a efficient "tree" structure where there is only one unique path between any two points, ensuring no resources are wasted on unnecessary connections. An example of a Minimum Spanning Tree algorithm is Kruskal's Algorithm.
