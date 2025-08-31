@@ -8,6 +8,10 @@ A **graph algorithm** is a method or set of steps used to solve problems involvi
 - *Which connections are the most important?*  
 - *How do we find groups or clusters inside a network?*  
 
+If you’re new to graph data structures, check out this article:  
+[Understanding Graphs as a Non-Linear Data Structure](https://dev.to/davidevlops/discovering-javascripts-hidden-secrets-understanding-graphs-as-a-non-linear-data-structure-5gap) 
+
+
 A **graph** is a data structure made up of:  
 - **Nodes (or vertices):** the objects or points in the graph.  
 - **Edges (or connections):** the links that connect one node to another.  
@@ -15,20 +19,7 @@ A **graph** is a data structure made up of:
 You can imagine a graph like a **map of a city**:  
 - The **intersections** are the nodes.  
 - The **roads** are the edges that connect those intersections.  
-
-
-
-### What Is a Graph Algorithm?
-# Introduction to Graph Algorithms  
-
-A **graph algorithm** is a set of computational techniques used to solve problems related to **graphs** — data structures made up of **nodes** (also called *vertices*) and **edges** (connections between nodes).  
-
-If you’re new to graph data structures, check out this article:  
-[Understanding Graphs as a Non-Linear Data Structure](https://dev.to/davidevlops/discovering-javascripts-hidden-secrets-understanding-graphs-as-a-non-linear-data-structure-5gap)  
-
-
-
-They form the backbone of many technologies that shape how we connect, search, and navigate in the digital world.  
+  
 
 
 ### Common categories of Graph Algorithms
