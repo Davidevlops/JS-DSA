@@ -43,7 +43,7 @@ It is often the first step in understanding a graph’s structure and is divided
 
 ## Breadth-First Search (BFS)  
 
-**Breadth-First Search** Breadth-First Search (BFS) is a fundamental algorithm used for traversing or searching through tree or graph data structures. It starts at a selected node (called the source or root) and explores all of its neighbor nodes at the present depth level before moving on to nodes at the next depth level. 
+**Breadth-First Search (BFS)** Breadth-First Search  is a fundamental algorithm used for traversing or searching through tree or graph data structures. It starts at a selected node (called the source or root) and explores all of its neighbor nodes at the present depth level before moving on to nodes at the next depth level. 
 
 ### A Visual Example Breadth-First Search
 
@@ -89,7 +89,7 @@ breadthFirstSearch(graph, 'A');
 // Output: A, B, C, D, E, F
 ```
 
-Depth-First Search (DFS) is a fundamental algorithm for traversing or searching tree or graph data structures. The algorithm starts at a selected node (called the source or root) and explores as far as possible along each branch before backtracking.
+**Depth-First Search (DFS):** Depth-First Search is a fundamental algorithm for traversing or searching tree or graph data structures. The algorithm starts at a selected node (called the source or root) and explores as far as possible along each branch before backtracking.
 
 ### A Visual Example of  Depth-First Search
 
@@ -122,7 +122,7 @@ depthFirstSearch(graph, 'A');
 ```
 
 ## Pathfinding Algorithms
-A pathfinding algorithm is a step-by-step procedure designed to find the shortest or most optimal path between two points in a graph. This "path" is navigated through a structured representation of the environment, typically a graph made up of nodes (or vertices) and edges (or connections). There are basic types of Pathfinding Algorithms which include: Breadth-First Search (BFS) and the Depth-First Search (DFS). othher advance types of pathfinding algorithms include Dijkstra's Algorithm.
+A pathfinding algorithm is a step-by-step procedure designed to find the shortest or most optimal path between two points in a graph. Breadth-First Search (BFS) and the Depth-First Search (DFS)  are basic types of Pathfinding Algorithms. Other advance types of pathfinding algorithms include Dijkstra's Algorithm, Bellman-Ford, Floyd-Warshall. For the purpose of this article we eould be treating Dijkstra's Algorithm.
 
 Dijkstra's Algorithm finds the shortest path from a single starting point (the source node) to all other nodes in a graph. It works on graphs where:
 
