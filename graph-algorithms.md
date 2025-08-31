@@ -17,7 +17,6 @@ For a more detailed explanation of graph data structures, you can check out this
 [Understanding Graphs as a Non-Linear Data Structure](https://dev.to/davidevlops/discovering-javascripts-hidden-secrets-understanding-graphs-as-a-non-linear-data-structure-5gap)  
 
 
-
 ## What is a Graph Algorithm?  
 
 A **graph algorithm** is a method or set of steps used to solve problems involving **graphs**.  Graph algorithms play a vital role in analyzing and processing graphs across various domains, including: Networking, Social Media, Search Engines, Recommendation Systems, Route Optimization. Graph algorithms help us work with these connections and answer questions such as:  
@@ -32,63 +31,52 @@ A **graph algorithm** is a method or set of steps used to solve problems involvi
 * **Pathfinding Algorithms**
 * **Minimum Spanning Tree (MST) Algorithms**
 
-## Graph Traversal
-These are the foundational exploration algorithms. Their primary purpose is to visit all the nodes and edges in a graph in a systematic, orderly fashion. Traversal is almost always the first step in understanding a graph's structure. Graph traversal are divided into two which are:
-- **Breadth-First Search (BFS)**
-- **Depth-First Search (DFS)**
+# Graph Traversal  
 
-Breadth-First Search (BFS): Breadth-First Search (BFS) is a fundamental algorithm used for traversing or searching through tree or graph data structures. It starts at a selected node (called the source or root) and explores all of its neighbor nodes at the present depth level before moving on to nodes at the next depth level.
+**Graph traversal** refers to the process of systematically visiting all the nodes and edges in a graph.  
+It is often the first step in understanding a graph’s structure and is divided into two main techniques:  
 
-Visual Example (Tree Traversal)
-        A
-       / \
-      B   C
-     / \   \
-    D   E   F
+- **Breadth-First Search (BFS)**  
+- **Depth-First Search (DFS)**  
 
-Step-by-step:
+---
 
-Start: Queue = [A]
+## Breadth-First Search (BFS)  
 
-Dequeue A, process it. Enqueue its neighbors B and C.
-Queue = [B, C]
+**Breadth-First Search** explores nodes level by level.  
+It starts from a chosen node (the *source*) and visits all its immediate neighbors before moving deeper.  
 
-Dequeue B, process it. Enqueue its neighbors D and E.
-Queue = [C, D, E]
+### Visual Example  
 
-Dequeue C, process it. Enqueue its neighbor F.
-Queue = [D, E, F]
+    A
+   / \
+  B   C
+ / \   \
+D   E   F
 
-Dequeue D, process it. It has no unvisited neighbors.
-Queue = [E, F]
+Traversal Order: **A → B → C → D → E → F**
 
-Dequeue E, process it. It has no unvisited neighbors.
-Queue = [F]
+### JavaScript Implementation  
 
-Dequeue F, process it. Algorithm ends.
-
-JavaScript Implementation:
+```javascript
 function breadthFirstSearch(graph, startNode) {
-  const queue = [startNode]; // Initialize the queue
-  const visited = new Set();
-  visited.add(startNode);
+  const queue = [startNode];       // Queue to manage nodes
+  const visited = new Set([startNode]);
 
   while (queue.length > 0) {
-    // Dequeue from the front
-    const currentNode = queue.shift();
-    console.log(`Visiting node: ${currentNode}`); // Process the node
+    const current = queue.shift();
+    console.log(`Visiting node: ${current}`);
 
-    // Enqueue all unvisited neighbors
-    for (const neighbor of graph[currentNode]) {
+    for (const neighbor of graph[current]) {
       if (!visited.has(neighbor)) {
         visited.add(neighbor);
-        queue.push(neighbor); // Add to the back
+        queue.push(neighbor);
       }
     }
   }
 }
 
-// Example graph represented as an Adjacency List
+// Example graph (Adjacency List)
 const graph = {
   'A': ['B', 'C'],
   'B': ['A', 'D', 'E'],
@@ -98,9 +86,9 @@ const graph = {
   'F': ['C', 'E']
 };
 
-// Traverse starting from node 'A'
 breadthFirstSearch(graph, 'A');
-// Output: Visiting node: A, B, C, D, E, F
+// Output: A, B, C, D, E, F
+
 
 Depth-First Search (DFS) is a fundamental algorithm for traversing or searching tree or graph data structures. The algorithm starts at a selected node (called the source or root) and explores as far as possible along each branch before backtracking.
 
