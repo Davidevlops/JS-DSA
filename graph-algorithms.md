@@ -323,6 +323,7 @@ console.log('Shortest path to D:', pathToD); // Shortest path to D: [ 'A', 'C', 
 
 ## Minimum Spanning Tree Algorithm
 A Minimum Spanning Tree (MST) is the subset of connections in a weighted network that achieves the absolute lowest total cost for connecting all points, while rigorously avoiding any redundant loops. It guarantees that every single point is included and reachable, yet it forms a efficient "tree" structure where there is only one unique path between any two points, ensuring no resources are wasted on unnecessary connections. An example of a Minimum Spanning Tree algorithm is Kruskal's Algorithm.
+Kruskal's Algorithm is a greedy, efficient method for finding an MST by iteratively adding the smallest available edge and using the Union-Find data structure to intelligently avoid cycles, ensuring the result is both spanning and of minimum cost.
 
 Kruskal's algorithm operates on a simple, greedy principle: "Always pick the smallest available edge, and add it to the tree if it doesn't create a cycle."
 
