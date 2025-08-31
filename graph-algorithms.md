@@ -43,8 +43,7 @@ It is often the first step in understanding a graph’s structure and is divided
 
 ## Breadth-First Search (BFS)  
 
-**Breadth-First Search** explores nodes level by level.  
-It starts from a chosen node (the *source*) and visits all its immediate neighbors before moving deeper.  
+**Breadth-First Search** Breadth-First Search (BFS) is a fundamental algorithm used for traversing or searching through tree or graph data structures. It starts at a selected node (called the source or root) and explores all of its neighbor nodes at the present depth level before moving on to nodes at the next depth level. 
 
 ### Visual Example  
 
@@ -88,7 +87,7 @@ const graph = {
 
 breadthFirstSearch(graph, 'A');
 // Output: A, B, C, D, E, F
-
+```
 
 Depth-First Search (DFS) is a fundamental algorithm for traversing or searching tree or graph data structures. The algorithm starts at a selected node (called the source or root) and explores as far as possible along each branch before backtracking.
 
@@ -99,43 +98,27 @@ Visual Example (Tree Traversal)
      / \   \
     D   E   F
 
-Step-by-step (Recursive Call Stack):
+Possible Traversal Order: A → B → D → E → C → F
 
-Start at A (visited).
+### JavaScript Implementation 
 
-Go to first neighbor of A: B.
+```javascript
+function depthFirstSearch(graph, node, visited = new Set()) {
+  visited.add(node);
+  console.log(`Visiting node: ${node}`);
 
-At B (visited), go to its first neighbor: D.
-
-At D (visited). No unvisited neighbors. Backtrack to B.
-
-At B, go to its next unvisited neighbor: E.
-
-At E (visited). No unvisited neighbors. Backtrack to B. B has no more neighbors. Backtrack to A.
-
-At A, go to its next unvisited neighbor: C.
-
-At C (visited), go to its first neighbor: F.
-
-At F (visited). No unvisited neighbors. Backtrack to C, then to A. Algorithm ends.
-
-function depthFirstSearch(graph, currentNode, visited = new Set()) {
-  // Mark the current node as visited and process it
-  visited.add(currentNode);
-  console.log(`Visiting node: ${currentNode}`);
-
-  // Recur for all adjacent vertices
-  for (const neighbor of graph[currentNode]) {
+  for (const neighbor of graph[node]) {
     if (!visited.has(neighbor)) {
       depthFirstSearch(graph, neighbor, visited);
     }
   }
 }
 
-// Use the same graph as before
+// Reuse the same graph
 depthFirstSearch(graph, 'A');
-// Possible Output: Visiting node: A, B, D, E, F, C
-// (The order can vary based on the structure of the graph and insertion order)
+// Possible Output: A, B, D, E, F, C
+
+```
 
 ## Pathfinding Algorithms
 A pathfinding algorithm is a step-by-step procedure designed to find the shortest or most optimal path between two points, often referred to as the start node and the goal node. This "path" is navigated through a structured representation of the environment, typically a graph made up of nodes (or vertices) and edges (or connections). There are basic types of Pathfinding Algorithms which include: Breadth-First Search (BFS) and the Depth-First Search (DFS). othher advance types of pathfinding algorithms include Dijkstra's Algorithm.
