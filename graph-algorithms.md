@@ -1,24 +1,25 @@
 ## Welcome to the Algorithm Series: Graph Algorithms
 
 This is part of the Discovering Algorithms series. After unraveling the intricacies of sorting algorithms, it’s time to step into something even more exciting — **Graph Algorithms**. Think about the social networks you scroll through, the GPS app that gets you to your destination, or even the way recommendations pop up on streaming platforms — graphs are working behind the scenes to make it all happen. They’re the hidden engines powering so much of our everyday tech. In this article, we’ll break down how they work and why they’re so important.
-# What is a Graph Algorithm?  
 
-A **graph algorithm** is a method or set of steps used to solve problems involving **graphs**.  Graph algorithms play a vital role in analyzing and processing graphs across various domains, including: Networking, Social Media, Search Engines, Recommendation Systems, Route Optimization. Graph algorithms help us work with these connections and answer questions such as:  
-- *What’s the fastest route from one point to another?*  
-- *Which connections are the most important?*  
-- *How do we find groups or clusters inside a network?*  
-
-If you’re new to graph data structures, check out this article:  
-[Understanding Graphs as a Non-Linear Data Structure](https://dev.to/davidevlops/discovering-javascripts-hidden-secrets-understanding-graphs-as-a-non-linear-data-structure-5gap) 
-
-
+In understanding, Graph algorithms one needs to understand what graphs as a data structure. this leads to the question 
+## What is a Graph?  
 A **graph** is a data structure made up of:  
 - **Nodes (or vertices):** the objects or points in the graph.  
 - **Edges (or connections):** the links that connect one node to another.  
 
 You can imagine a graph like a **map of a city**:  
 - The **intersections** are the nodes.  
-- The **roads** are the edges that connect those intersections.  
+- The **roads** are the edges that connect those intersections.
+
+for proper explanation of graph data structures, check out this article:  
+[Understanding Graphs as a Non-Linear Data Structure](https://dev.to/davidevlops/discovering-javascripts-hidden-secrets-understanding-graphs-as-a-non-linear-data-structure-5gap) 
+## What is a Graph Algorithm?  
+
+A **graph algorithm** is a method or set of steps used to solve problems involving **graphs**.  Graph algorithms play a vital role in analyzing and processing graphs across various domains, including: Networking, Social Media, Search Engines, Recommendation Systems, Route Optimization. Graph algorithms help us work with these connections and answer questions such as:  
+- *What’s the fastest route from one point to another?*  
+- *Which connections are the most important?*  
+- *How do we find groups or clusters inside a network?*  
   
 
 
