@@ -348,5 +348,5 @@ class UnionFind {
 
 
 ##  Conclusion
-
-Graph algorithmics remains a vibrant area of research. Current challenges involve developing scalable algorithms for distributed systems and handling streaming graph data. The classical algorithms covered herein form the foundational knowledge upon which these modern advancements are built. Future work will undoubtedly continue to refine these techniques, but the core paradigms of traversal, relaxation, and union-find will persist as cornerstones of the discipline.
+Graphs are everywhere — from mapping cities, to routing internet traffic, to suggesting your next favorite movie.
+Understanding graph algorithms isn’t just an academic exercise — it’s learning the logic that powers real-world technology. The classical algorithms covered herein form the foundational knowledge upon which these modern advancements are built. Future work will undoubtedly continue to refine these techniques, but the core paradigms of traversal, relaxation, and union-find will persist as cornerstones of the discipline.
