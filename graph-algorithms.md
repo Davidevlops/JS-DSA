@@ -335,7 +335,105 @@ Detailed Example with Visualization
      2\  |  /4
         (D)
 
+Kruskal's Algorithm has a simple rule: Sort all edges by weight and add the smallest one to the MST, but only if it doesn't create a cycle.
 
+Step 1: Sort all edges from smallest to largest weight.
 
+B-D : weight 2
 
+A-D : weight 3
 
+C-D : weight 4
+
+A-B : weight 5
+
+A-C : weight 5
+
+Step 2: Initialize.
+
+Start with an empty MST: MST = { }
+
+Total Cost = 0
+
+Imagine each vertex is its own separate tree: Trees: {A}, {B}, {C}, {D}
+
+Step 3: Process the smallest edge: B-D (weight 2)
+
+Check: Are B and D in the same tree? No ({B} vs {D}).
+
+Action: Add this edge. It connects two previously separate trees.
+
+MST = {B-D}
+
+Merge the trees of B and D.
+
+Trees: {A}, {B, D}, {C}
+
+Total Cost = 0 + 2 = 2
+
+Step 4: Process the next smallest edge: A-D (weight 3)
+
+Check: Are A and D in the same tree?
+
+A is in tree {A}
+
+D is in tree {B, D}
+
+Different trees.
+
+Action: Add this edge. It connects trees {A} and {B, D}.
+
+MST = {B-D, A-D}
+
+Merge the trees of A and B/D.
+
+Trees: {A, B, D}, {C}
+
+Total Cost = 2 + 3 = 5
+
+Step 5: Process the next smallest edge: C-D (weight 4)
+
+Check: Are C and D in the same tree?
+
+C is in tree {C}
+
+D is in tree {A, B, D}
+
+Different trees.
+
+Action: Add this edge. It connects the last separate tree {C} to the main tree.
+
+MST = {B-D, A-D, C-D}
+
+Merge the trees. Now all vertices are connected.
+
+Trees: {A, B, C, D}
+
+Total Cost = 5 + 4 = 9
+
+We now have |V| - 1 = 3 edges in our MST. The algorithm is complete.
+
+Step 6: (Skipped Edges) Process the remaining edges: A-B (5) and A-C (5)
+
+The algorithm would check A-B:
+
+Are A and B in the same tree? Yes (both are in {A, B, C, D}).
+
+Adding this edge would create a cycle (A-D-B-A). REJECT.
+
+The algorithm would check A-C:
+
+Are A and C in the same tree? Yes.
+
+Adding this edge would create a cycle (A-D-C-A). REJECT.
+
+4. The Final Result
+The Minimum Spanning Tree consists of the edges:
+
+B-D (weight 2)
+
+A-D (weight 3)
+
+C-D (weight 4)
+
+Total Weight (Cost) of the MST: 2 + 3 + 4 = 9
