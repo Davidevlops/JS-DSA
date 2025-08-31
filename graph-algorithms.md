@@ -518,13 +518,16 @@ const vertexCount = 4; // A, B, C, D
 
 const result = kruskalsAlgorithm(edges, vertexCount);
 
-console.log("Minimum Spanning Tree Edges:");
+console.log("Minimum Spanning Tree Edges:"); // Minimum Spanning Tree Edges:
+1 - 3 : 2
+0 - 3 : 3
+2 - 3 : 4
 result.mst.forEach(edge => {
     const [u, v, weight] = edge;
     console.log(`${u} - ${v} : ${weight}`);
 });
 
-console.log("Total Weight:", result.totalWeight);
+console.log("Total Weight:", result.totalWeight); // Total Weight: 9
 
 // For better readability with vertex names
 const vertexNames = ['A', 'B', 'C', 'D'];
@@ -532,7 +535,14 @@ console.log("\nWith vertex names:");
 result.mst.forEach(edge => {
     const [u, v, weight] = edge;
     console.log(`${vertexNames[u]} - ${vertexNames[v]} : ${weight}`);
-});
+}); // With vertex names:
+B - D : 2
+A - D : 3
+C - D : 4
+
+
+
+
 ##  Conclusion
 
 Graph algorithmics remains a vibrant area of research. Current challenges involve developing scalable algorithms for distributed systems and handling streaming graph data. The classical algorithms covered herein form the foundational knowledge upon which these modern advancements are built. Future work will undoubtedly continue to refine these techniques, but the core paradigms of traversal, relaxation, and union-find will persist as cornerstones of the discipline.
