@@ -281,9 +281,10 @@ console.log('Shortest path to D:', pathToD); // [ 'A', 'C', 'D' ]
 
 ## Minimum Spanning Tree Algorithm
 A Minimum Spanning Tree (MST) is the subset of connections in a weighted network that achieves the absolute lowest total cost for connecting all points, while rigorously avoiding any redundant loops. It guarantees that every single point is included and reachable, yet it forms a efficient "tree" structure where there is only one unique path between any two points, ensuring no resources are wasted on unnecessary connections. An example of a Minimum Spanning Tree algorithm is Kruskal's Algorithm.
-Kruskal's Algorithm is a greedy, efficient method for finding an MST by iteratively adding the smallest available edge and using the Union-Find data structure to intelligently avoid cycles, ensuring the result is both spanning and of minimum cost.
 
-Kruskal's algorithm operates on a simple, greedy principle: "Always pick the smallest available edge, and add it to the tree if it doesn't create a cycle."
+**Kruskal's algorithm:** Kruskal's Algorithm is a greedy, efficient method for finding an MST by iteratively adding the smallest available edge and using the Union-Find data structure to intelligently avoid cycles, ensuring the result is both spanning and of minimum cost.
+
+
 
 Detailed Example with Visualization
 
@@ -293,211 +294,56 @@ Detailed Example with Visualization
      2\  |  /4
         (D)
 
-Kruskal's Algorithm has a simple rule: Sort all edges by weight and add the smallest one to the MST, but only if it doesn't create a cycle.
 
-Step 1: Sort all edges from smallest to largest weight.
+### Steps (Simplified)  
+1. Sort edges by weight: **BD(2), AD(3), CD(4), AB(5), AC(5)**.  
+2. Pick edges in order, skipping ones that form cycles.  
+3. Final MST:  
+   - **B–D (2)**  
+   - **A–D (3)**  
+   - **C–D (4)**  
 
-B-D : weight 2
+✅ Total Cost = **9**  
 
-A-D : weight 3
+---
 
-C-D : weight 4
+## JavaScript Implementation  
 
-A-B : weight 5
+### Union-Find (Disjoint Set)  
 
-A-C : weight 5
-
-Step 2: Initialize.
-
-Start with an empty MST: MST = { }
-
-Total Cost = 0
-
-Imagine each vertex is its own separate tree: Trees: {A}, {B}, {C}, {D}
-
-Step 3: Process the smallest edge: B-D (weight 2)
-
-Check: Are B and D in the same tree? No ({B} vs {D}).
-
-Action: Add this edge. It connects two previously separate trees.
-
-MST = {B-D}
-
-Merge the trees of B and D.
-
-Trees: {A}, {B, D}, {C}
-
-Total Cost = 0 + 2 = 2
-
-Step 4: Process the next smallest edge: A-D (weight 3)
-
-Check: Are A and D in the same tree?
-
-A is in tree {A}
-
-D is in tree {B, D}
-
-Different trees.
-
-Action: Add this edge. It connects trees {A} and {B, D}.
-
-MST = {B-D, A-D}
-
-Merge the trees of A and B/D.
-
-Trees: {A, B, D}, {C}
-
-Total Cost = 2 + 3 = 5
-
-Step 5: Process the next smallest edge: C-D (weight 4)
-
-Check: Are C and D in the same tree?
-
-C is in tree {C}
-
-D is in tree {A, B, D}
-
-Different trees.
-
-Action: Add this edge. It connects the last separate tree {C} to the main tree.
-
-MST = {B-D, A-D, C-D}
-
-Merge the trees. Now all vertices are connected.
-
-Trees: {A, B, C, D}
-
-Total Cost = 5 + 4 = 9
-
-We now have |V| - 1 = 3 edges in our MST. The algorithm is complete.
-
-Step 6: (Skipped Edges) Process the remaining edges: A-B (5) and A-C (5)
-
-The algorithm would check A-B:
-
-Are A and B in the same tree? Yes (both are in {A, B, C, D}).
-
-Adding this edge would create a cycle (A-D-B-A). REJECT.
-
-The algorithm would check A-C:
-
-Are A and C in the same tree? Yes.
-
-Adding this edge would create a cycle (A-D-C-A). REJECT.
-
-4. The Final Result
-The Minimum Spanning Tree consists of the edges:
-
-B-D (weight 2)
-
-A-D (weight 3)
-
-C-D (weight 4)
-
-Total Weight (Cost) of the MST: 2 + 3 + 4 = 9
-
+```javascript
 class UnionFind {
-    constructor(size) {
-        this.parent = new Array(size);
-        this.rank = new Array(size);
-        
-        // Initialize each element as its own parent
-        for (let i = 0; i < size; i++) {
-            this.parent[i] = i;
-            this.rank[i] = 0;
-        }
+  constructor(size) {
+    this.parent = Array.from({ length: size }, (_, i) => i);
+    this.rank = new Array(size).fill(0);
+  }
+
+  find(x) {
+    if (this.parent[x] !== x) {
+      this.parent[x] = this.find(this.parent[x]); // Path compression
     }
-    
-    find(x) {
-        // Path compression
-        if (this.parent[x] !== x) {
-            this.parent[x] = this.find(this.parent[x]);
-        }
-        return this.parent[x];
+    return this.parent[x];
+  }
+
+  union(x, y) {
+    const rootX = this.find(x);
+    const rootY = this.find(y);
+    if (rootX === rootY) return false;
+
+    // Union by rank
+    if (this.rank[rootX] < this.rank[rootY]) {
+      this.parent[rootX] = rootY;
+    } else if (this.rank[rootX] > this.rank[rootY]) {
+      this.parent[rootY] = rootX;
+    } else {
+      this.parent[rootY] = rootX;
+      this.rank[rootX]++;
     }
-    
-    union(x, y) {
-        const rootX = this.find(x);
-        const rootY = this.find(y);
-        
-        if (rootX === rootY) return false; // Already in the same set
-        
-        // Union by rank
-        if (this.rank[rootX] < this.rank[rootY]) {
-            this.parent[rootX] = rootY;
-        } else if (this.rank[rootX] > this.rank[rootY]) {
-            this.parent[rootY] = rootX;
-        } else {
-            this.parent[rootY] = rootX;
-            this.rank[rootX]++;
-        }
-        
-        return true;
-    }
+    return true;
+  }
 }
 
-function kruskalsAlgorithm(edges, vertexCount) {
-    // Sort edges by weight in ascending order
-    edges.sort((a, b) => a[2] - b[2]);
-    
-    const uf = new UnionFind(vertexCount);
-    const mst = [];
-    let totalWeight = 0;
-    let edgesAdded = 0;
-    
-    for (const edge of edges) {
-        if (edgesAdded === vertexCount - 1) break;
-        
-        const [u, v, weight] = edge;
-        
-        // Check if adding this edge creates a cycle
-        if (uf.find(u) !== uf.find(v)) {
-            uf.union(u, v);
-            mst.push(edge);
-            totalWeight += weight;
-            edgesAdded++;
-        }
-    }
-    
-    return { mst, totalWeight };
-}
-
-// Example usage with the graph from our explanation:
-// Graph: A=0, B=1, C=2, D=3
-const edges = [
-    [0, 1, 5], // A-B: weight 5
-    [0, 2, 5], // A-C: weight 5
-    [0, 3, 3], // A-D: weight 3
-    [1, 3, 2], // B-D: weight 2
-    [2, 3, 4]  // C-D: weight 4
-];
-
-const vertexCount = 4; // A, B, C, D
-
-const result = kruskalsAlgorithm(edges, vertexCount);
-
-console.log("Minimum Spanning Tree Edges:"); // Minimum Spanning Tree Edges:
-1 - 3 : 2
-0 - 3 : 3
-2 - 3 : 4
-result.mst.forEach(edge => {
-    const [u, v, weight] = edge;
-    console.log(`${u} - ${v} : ${weight}`);
-});
-
-console.log("Total Weight:", result.totalWeight); // Total Weight: 9
-
-// For better readability with vertex names
-const vertexNames = ['A', 'B', 'C', 'D'];
-console.log("\nWith vertex names:");
-result.mst.forEach(edge => {
-    const [u, v, weight] = edge;
-    console.log(`${vertexNames[u]} - ${vertexNames[v]} : ${weight}`);
-}); // With vertex names:
-B - D : 2
-A - D : 3
-C - D : 4
-
+```
 
 
 
