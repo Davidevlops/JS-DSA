@@ -8,9 +8,9 @@ In this article, you’ll learn how string matching works, understand key algori
 
 ### Understanding String Matching
 
-Before diving into algorithms, let’s first understand what string matching means.
+Before diving into the  algorithms, let’s first understand what string matching means.
 
-String Matching (or Pattern Matching) is the process of finding one or more occurrences of a pattern (substring) inside a text (main string).
+String Matching Algorithms also known as Pattern Matching Algorithms is the process of finding one or more occurrences of a pattern (substring) inside a text (main string).
 
 Example
 
