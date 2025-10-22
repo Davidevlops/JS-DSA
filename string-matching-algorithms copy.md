@@ -67,7 +67,7 @@ console.log(naiveSearch("AABAACAADAABAABA", "AABA"));
 // Output: [0, 9, 12]
 ```
 
-**Depth-First Search (DFS):** Depth-First Search is a fundamental algorithm for traversing or searching tree or graph data structures. The algorithm starts at a selected node (called the source or root) and explores as far as possible along each branch before backtracking.
+**Knuth–Morris–Pratt (KMP) Algorithm** Depth-First Search is a fundamental algorithm for traversing or searching tree or graph data structures. The algorithm starts at a selected node (called the source or root) and explores as far as possible along each branch before backtracking.
 
 ### A Visual Example of Depth-First Search Algorithm
 
