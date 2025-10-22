@@ -33,29 +33,11 @@ String matching is used everywhere:
 - Compilers to tokenize source code
 
 - AI/ML preprocessing to clean and analyze text
-**What is a Graph?**  
-A **graph** is a data structure made up of:  
-- **Nodes (or vertices):** the objects or points in the graph.  
-- **Edges (or connections):** the links that connect one node to another.  
 
-You can imagine a graph like a **map of a city**:  
-- The **intersections** are the nodes.  
-- The **roads** are the edges that connect those intersections.
-
-For a more detailed explanation of graph data structures, you can check out this article: [Understanding Graphs as a Non-Linear Data Structure](https://dev.to/davidevlops/discovering-javascripts-hidden-secrets-understanding-graphs-as-a-non-linear-data-structure-5gap)
-
-**What is a Graph Algorithm?**  
-
-A **graph algorithm** is a method or set of steps used to solve problems involving **graphs**.  Graph algorithms play a vital role in analyzing and processing graphs across various domains, including: Networking, Social Media, Search Engines, Recommendation Systems, Route Optimization. 
-
-Graph algorithms help us work with these connections and answer questions such as:  
-- *What’s the fastest route from one point to another?*  
-- *Which connections are the most important?*  
-- *How do we find groups or clusters inside a network?*  
 
 ### Common categories of Graph Algorithms
 
-* **Graph Traversal Algorithms**
+* **Naïve String Matching Algorithm**
 * **Pathfinding Algorithms**
 * **Minimum Spanning Tree (MST) Algorithms**
 
