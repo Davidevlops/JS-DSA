@@ -71,35 +71,50 @@ console.log(naiveSearch("AABAACAADAABAABA", "AABA"));
 
 It precomputes the longest proper prefix of the pattern which is also a suffix, allowing the search to skip redundant comparisons.
 
-### A Visual Example of Depth-First Search Algorithm
-
-```
-        A
-       / \
-      B   C
-     / \   \
-    D   E   F
-```
-
-Possible Traversal Order: A → B → D → E → C → F
-
 ### JavaScript Implementation
 
 ```javascript
-function depthFirstSearch(graph, node, visited = new Set()) {
-  visited.add(node);
-  console.log(`Visiting node: ${node}`);
+function computeLPSArray(pattern) {
+  const lps = new Array(pattern.length).fill(0);
+  let len = 0;
+  let i = 1;
 
-  for (const neighbor of graph[node]) {
-    if (!visited.has(neighbor)) {
-      depthFirstSearch(graph, neighbor, visited);
+  while (i < pattern.length) {
+    if (pattern[i] === pattern[len]) {
+      lps[i++] = ++len;
+    } else if (len !== 0) {
+      len = lps[len - 1];
+    } else {
+      lps[i++] = 0;
     }
   }
+  return lps;
 }
 
-// Reuse the same graph
-depthFirstSearch(graph, 'A');
-// Possible Output: A, B, D, E, F, C
+function kmpSearch(text, pattern) {
+  const lps = computeLPSArray(pattern);
+  const positions = [];
+  let i = 0, j = 0;
+
+  while (i < text.length) {
+    if (pattern[j] === text[i]) {
+      i++; j++;
+    }
+
+    if (j === pattern.length) {
+      positions.push(i - j);
+      j = lps[j - 1];
+    } else if (i < text.length && pattern[j] !== text[i]) {
+      j !== 0 ? (j = lps[j - 1]) : i++;
+    }
+  }
+
+  return positions;
+}
+
+console.log(kmpSearch("ABABDABACDABABCABAB", "ABABCABAB"));
+// Output: [10]
+
 ```
 
 **Pathfinding Algorithms:** A pathfinding algorithm is a step-by-step procedure designed to find the shortest or most optimal path between two points in a graph. Breadth-First Search (BFS) and the Depth-First Search (DFS)  are basic types of Pathfinding Algorithms. Other advanced types of pathfinding algorithms include Dijkstra's Algorithm, Bellman-Ford, and Floyd-Warshall. For the purpose of this article, we will be treating Dijkstra's Algorithm.
