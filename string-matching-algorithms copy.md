@@ -209,6 +209,6 @@ console.log(boyerMooreSearch("ABAAABCD", "ABC"));
 
 ##  Conclusion
 
-Graphs give us a way to map complexity into something we can analyze, optimize, and solve with code. By learning how to implement graph algorithms in JavaScript, we open the door to practical applications like smarter navigation systems and efficient social media recommendations. What begins as a study of nodes and edges soon reveals itself as a tool for tackling some of the biggest challenges in technology and daily life.
+String matching algorithms form the backbone of modern computing — from simple text searches to complex DNA analysis. Understanding how each algorithm works not only sharpens your problem-solving skills but also teaches you how to think about efficiency and optimization.
 
-As you continue experimenting with graph algorithms, remember: the value isn’t only in writing the code, but in learning to see the world as a network of connections so that you can use that perspective to design smarter solutions.
+By learning Naïve, KMP, Rabin–Karp, and Boyer–Moore, you’ve unlocked a deeper understanding of how powerful and efficient pattern searching can be.
