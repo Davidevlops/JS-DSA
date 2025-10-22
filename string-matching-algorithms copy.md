@@ -38,8 +38,8 @@ String matching is used everywhere:
 ### Common categories of Graph Algorithms
 
 * **Naïve String Matching Algorithm**
-* **Pathfinding Algorithms**
-* **Minimum Spanning Tree (MST) Algorithms**
+* **Knuth–Morris–Pratt (KMP) Algorithm**
+* **Rabin–Karp Algorithm (Hash-Based Search)**
 
 **Graph traversal** refers to the process of systematically visiting all the nodes and edges in a graph. It is often the first step in understanding a graph’s structure and is divided into two main techniques:  
 
