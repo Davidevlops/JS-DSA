@@ -126,134 +126,38 @@ This is especially useful when searching for multiple patterns in one text.
 ## JavaScript Implementation  
 
 ```javascript
-class MinHeap {
-  constructor() {
-    this.heap = [];
+function rabinKarp(text, pattern, prime = 101) {
+  const n = text.length;
+  const m = pattern.length;
+  const d = 256; // number of possible characters
+  let h = 1;
+  let p = 0; // hash for pattern
+  let t = 0; // hash for text
+  const result = [];
+
+  for (let i = 0; i < m - 1; i++) h = (h * d) % prime;
+
+  for (let i = 0; i < m; i++) {
+    p = (d * p + pattern.charCodeAt(i)) % prime;
+    t = (d * t + text.charCodeAt(i)) % prime;
   }
 
-  push(node, priority) {
-    this.heap.push({ node, priority });
-    this.bubbleUp(this.heap.length - 1);
-  }
-
-  pop() {
-    const min = this.heap[0];
-    const last = this.heap.pop();
-    if (this.heap.length > 0) {
-      this.heap[0] = last;
-      this.sinkDown(0);
+  for (let i = 0; i <= n - m; i++) {
+    if (p === t) {
+      if (text.slice(i, i + m) === pattern) result.push(i);
     }
-    return min;
-  }
-
-  isEmpty() {
-    return this.heap.length === 0;
-  }
-
-  updatePriority(node, newPriority) {
-    const index = this.heap.findIndex(item => item.node === node);
-    if (index === -1) return;
-    const oldPriority = this.heap[index].priority;
-    this.heap[index].priority = newPriority;
-    if (newPriority < oldPriority) this.bubbleUp(index);
-    else this.sinkDown(index);
-  }
-
-  bubbleUp(index) {
-    const element = this.heap[index];
-    while (index > 0) {
-      const parentIndex = Math.floor((index - 1) / 2);
-      const parent = this.heap[parentIndex];
-      if (element.priority >= parent.priority) break;
-      this.heap[parentIndex] = element;
-      this.heap[index] = parent;
-      index = parentIndex;
+    if (i < n - m) {
+      t = (d * (t - text.charCodeAt(i) * h) + text.charCodeAt(i + m)) % prime;
+      if (t < 0) t += prime;
     }
   }
 
-  sinkDown(index) {
-    const length = this.heap.length;
-    const element = this.heap[index];
-    while (true) {
-      let left = 2 * index + 1;
-      let right = 2 * index + 2;
-      let swap = null;
-      if (left < length && this.heap[left].priority < element.priority) {
-        swap = left;
-      }
-      if (
-        right < length &&
-        ((swap === null && this.heap[right].priority < element.priority) ||
-          (swap !== null && this.heap[right].priority < this.heap[left].priority))
-      ) {
-        swap = right;
-      }
-      if (swap === null) break;
-      this.heap[index] = this.heap[swap];
-      this.heap[swap] = element;
-      index = swap;
-    }
-  }
+  return result;
 }
 
-function dijkstra(graph, source) {
-  const dist = {};
-  const prev = {};
-  const Q = new MinHeap();
+console.log(rabinKarp("GEEKS FOR GEEKS", "GEEK"));
+// Output: [0, 10]
 
-  // Initialize distances
-  for (const vertex in graph) {
-    dist[vertex] = Infinity;
-    prev[vertex] = null;
-    Q.push(vertex, Infinity);
-  }
-
-  // Start node distance = 0
-  dist[source] = 0;
-  Q.updatePriority(source, 0);
-
-  while (!Q.isEmpty()) {
-    const { node: u, priority: currentDist } = Q.pop();
-    if (currentDist > dist[u]) continue;
-
-    for (const neighbor in graph[u]) {
-      const weight = graph[u][neighbor];
-      const alt = dist[u] + weight;
-      if (alt < dist[neighbor]) {
-        dist[neighbor] = alt;
-        prev[neighbor] = u;
-        Q.updatePriority(neighbor, alt);
-      }
-    }
-  }
-
-  return { distances: dist, previous: prev };
-}
-
-function getShortestPath(prev, target) {
-  const path = [];
-  let current = target;
-  while (current !== null) {
-    path.unshift(current);
-    current = prev[current];
-  }
-  return path;
-}
-
-// Example usage
-const graph = {
-  'A': { 'B': 4, 'C': 2 },
-  'B': { 'D': 5 },
-  'C': { 'D': 1, 'B': 1 },
-  'D': {}
-};
-
-const result = dijkstra(graph, 'A');
-console.log('Distances:', result.distances);
-console.log('Previous nodes:', result.previous);
-
-const pathToD = getShortestPath(result.previous, 'D');
-console.log('Shortest path to D:', pathToD); // [ 'A', 'C', 'D' ]
 ```
 
 ## Minimum Spanning Tree Algorithm
