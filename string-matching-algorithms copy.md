@@ -49,35 +49,22 @@ It’s simple but can be slow for long texts
 ### JavaScript Implementation
 
 ```javascript
-function breadthFirstSearch(graph, startNode) {
-  const queue = [startNode];       // Queue to manage nodes
-  const visited = new Set([startNode]);
+function naiveSearch(text, pattern) {
+  const n = text.length;
+  const m = pattern.length;
+  const positions = [];
 
-  while (queue.length > 0) {
-    const current = queue.shift();
-    console.log(`Visiting node: ${current}`);
-
-    for (const neighbor of graph[current]) {
-      if (!visited.has(neighbor)) {
-        visited.add(neighbor);
-        queue.push(neighbor);
-      }
-    }
+  for (let i = 0; i <= n - m; i++) {
+    let j = 0;
+    while (j < m && text[i + j] === pattern[j]) j++;
+    if (j === m) positions.push(i);
   }
+
+  return positions;
 }
 
-// Example graph (Adjacency List)
-const graph = {
-  'A': ['B', 'C'],
-  'B': ['A', 'D', 'E'],
-  'C': ['A', 'F'],
-  'D': ['B'],
-  'E': ['B', 'F'],
-  'F': ['C', 'E']
-};
-
-breadthFirstSearch(graph, 'A');
-// Output: A, B, C, D, E, F
+console.log(naiveSearch("AABAACAADAABAABA", "AABA"));
+// Output: [0, 9, 12]
 ```
 
 **Depth-First Search (DFS):** Depth-First Search is a fundamental algorithm for traversing or searching tree or graph data structures. The algorithm starts at a selected node (called the source or root) and explores as far as possible along each branch before backtracking.
