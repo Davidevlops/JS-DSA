@@ -117,30 +117,11 @@ console.log(kmpSearch("ABABDABACDABABCABAB", "ABABCABAB"));
 
 ```
 
-**Pathfinding Algorithms:** A pathfinding algorithm is a step-by-step procedure designed to find the shortest or most optimal path between two points in a graph. Breadth-First Search (BFS) and the Depth-First Search (DFS)  are basic types of Pathfinding Algorithms. Other advanced types of pathfinding algorithms include Dijkstra's Algorithm, Bellman-Ford, and Floyd-Warshall. For the purpose of this article, we will be treating Dijkstra's Algorithm.
+**Rabin–Karp Algorithm (Hash-Based Search)** The Rabin–Karp algorithm uses a rolling hash function to compare substrings instead of checking characters one by one.
 
 **Dijkstra's Algorithm:** Dijkstra's Algorithm finds the shortest path from a single starting point to all other nodes in a graph. It works on graphs where:
 
-### Key Features of Dijkstra's Algorithm
-
-- Works on **weighted graphs** (edges have weights like distance, time, or cost).  
-- Requires **non-negative edge weights**.  
-- Guarantees the shortest path.
-
-### A Visual Example of  Dijkstra's Algorithm
-
-```
-         4
-    (A) ------> (B)
-     |           |
-     | 2         | 5
-     |           |
-    \/          \/
-    (C) ------> (D)
-         1
-```
-
-Shortest path from **A to D**: `A → C → D` with total cost **3**. 
+This is especially useful when searching for multiple patterns in one text.
 
 ## JavaScript Implementation  
 
