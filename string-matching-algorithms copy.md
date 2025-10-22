@@ -157,35 +157,18 @@ function rabinKarp(text, pattern, prime = 101) {
 
 console.log(rabinKarp("GEEKS FOR GEEKS", "GEEK"));
 // Output: [0, 10]
-
 ```
 
-## Minimum Spanning Tree Algorithm
+## Boyer–Moore Algorithm
 
-A Minimum Spanning Tree (MST) is the subset of connections in a weighted network that achieves the absolute lowest total cost for connecting all points, while rigorously avoiding any redundant loops. It guarantees that every single point is included and reachable, yet it forms a efficient "tree" structure where there is only one unique path between any two points, ensuring no resources are wasted on unnecessary connections. A common example of a Minimum Spanning Tree algorithm is Kruskal's Algorithm.
+The Boyer–Moore algorithm scans the text from right to left and skips large sections of text using two smart rules:
 
-**Kruskal's algorithm:** Kruskal's Algorithm is a greedy, efficient method for finding an MST by iteratively adding the smallest available edge and using the Union-Find data structure to intelligently avoid cycles, ensuring the result is both spanning and of minimum cost.
+Bad Character Rule
 
-### A Visual Example of  Kruskal's Algorithm
+Good Suffix Rule
 
-```
-        (A)
-     5/  |  \5
-    (B) 3|   (C)
-     2\  |  /4
-        (D)
-```
+It’s one of the fastest practical algorithms for single pattern searches.
 
-##### Steps
-
-1. Sort edges by weight: **BD(2), AD(3), CD(4), AB(5), AC(5)**.  
-2. Pick edges in order, skipping ones that form cycles.  
-3. Final MST:  
-   - **B–D (2)**  
-   - **A–D (3)**  
-   - **C–D (4)**  
-
-Total Cost = **9**
 
 ## JavaScript Implementation
 
