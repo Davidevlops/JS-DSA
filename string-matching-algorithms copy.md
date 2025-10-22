@@ -67,7 +67,9 @@ console.log(naiveSearch("AABAACAADAABAABA", "AABA"));
 // Output: [0, 9, 12]
 ```
 
-**Knuth–Morris–Pratt (KMP) Algorithm** Depth-First Search is a fundamental algorithm for traversing or searching tree or graph data structures. The algorithm starts at a selected node (called the source or root) and explores as far as possible along each branch before backtracking.
+**Knuth–Morris–Pratt (KMP) Algorithm** The KMP algorithm improves efficiency by avoiding unnecessary re-checks using a prefix table (also called an LPS — Longest Prefix Suffix array).
+
+It precomputes the longest proper prefix of the pattern which is also a suffix, allowing the search to skip redundant comparisons.
 
 ### A Visual Example of Depth-First Search Algorithm
 
