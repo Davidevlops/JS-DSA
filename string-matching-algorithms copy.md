@@ -40,9 +40,9 @@ String matching is used everywhere:
 * **Naïve String Matching Algorithm**
 * **Knuth–Morris–Pratt (KMP) Algorithm**
 * **Rabin–Karp Algorithm (Hash-Based Search)**
-* **Rabin–Karp Algorithm (Hash-Based Search)**
+* **Boyer–Moore Algorithm**
 
-**Graph traversal** refers to the process of systematically visiting all the nodes and edges in a graph. It is often the first step in understanding a graph’s structure and is divided into two main techniques:  
+**Naïve String Matching Algorithm** refers to the process of systematically visiting all the nodes and edges in a graph. It is often the first step in understanding a graph’s structure and is divided into two main techniques:  
 
 - **Breadth-First Search (BFS)**  
 - **Depth-First Search (DFS)**  
