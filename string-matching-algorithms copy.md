@@ -1,8 +1,8 @@
 ## Welcome to the Algorithm Series: String Matching Algorithms
 
-When we think about algorithms, sorting and searching often take the spotlight. But beyond these fundamental operations lies a powerful family of algorithms that quietly power everything from search engines to plagiarism detectors — String Matching Algorithms.
+When we think about algorithms, sorting, searching and graphs often take the spotlight. But beyond these fundamental operations lies a powerful family of algorithms that quietly power everything from search engines to plagiarism detectors — String Matching Algorithms.
 
-Whether you’re searching for a keyword in a document, validating user input, or building your own text editor, string matching lies at the heart of it. These algorithms make searching through text efficient and intelligent — far beyond the basic indexOf() or includes() methods.
+Whether you’re searching for a keyword in a document, validating user input, or building your own text editor, string matching lies at the heart of it. These algorithms make searching through text efficient and intelligent — far beyond the basic indexOf() or includes() methods in javascript.
 
 In this article, you’ll learn how string matching works, understand key algorithms like Naïve Search, Knuth–Morris–Pratt (KMP), Rabin–Karp, and Boyer–Moore, and implement them using JavaScript.
 
@@ -42,26 +42,9 @@ String matching is used everywhere:
 * **Rabin–Karp Algorithm (Hash-Based Search)**
 * **Boyer–Moore Algorithm**
 
-**Naïve String Matching Algorithm** refers to the process of systematically visiting all the nodes and edges in a graph. It is often the first step in understanding a graph’s structure and is divided into two main techniques:  
+**Naïve String Matching Algorithm** The Naïve approach checks the pattern at every position in the text.
+It’s simple but can be slow for long texts 
 
-- **Breadth-First Search (BFS)**  
-- **Depth-First Search (DFS)**  
-
----
-
-**Breadth-First Search (BFS)** Breadth-First Search  is a fundamental algorithm used for traversing or searching through tree or graph data structures. It starts at a selected node (called the source or root) and explores all of its neighbor nodes at the present depth level before moving on to nodes at the next depth level.
-
-### A Visual Example Of Breadth-First Search Algorithm
-```
-        A
-       / \
-      B   C
-     / \   \
-    D   E   F
-```
-
-
-Traversal Order: **A → B → C → D → E → F**
 
 ### JavaScript Implementation
 
