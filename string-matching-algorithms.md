@@ -249,7 +249,7 @@ This heuristic lets Boyer–Moore **reuse previously matched information** effic
 
 ---
 
-## JavaScript Implementation
+### JavaScript Implementation
 
 ```javascript
 function badCharHeuristic(pattern) {
