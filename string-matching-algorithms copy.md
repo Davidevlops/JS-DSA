@@ -46,7 +46,7 @@ String matching is used everywhere:
 
 **Naïve String Matching Algorithm** The Naïve approach is also called the Brute-Force String Matching Algorithm. It operates by sliding the pattern over the text one character at a time and checking, at each position, whether the pattern matches the substring of the text beginning at that point. This comparison continues character by character until a mismatch occurs or the entire pattern matches.
 
-The algorithm works as follows:
+How it works:
 1. Start at index 0 of the text and compare each character of P with the corresponding character in T.
 2. If all characters match, record the index as a match position.
 3. If a mismatch occurs, shift the pattern one character to the right and compare again.
