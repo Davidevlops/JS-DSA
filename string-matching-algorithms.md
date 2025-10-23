@@ -292,6 +292,8 @@ console.log(boyerMooreSearch("ABAAABCD", "ABC"));
 
 ##  Conclusion
 
-String matching algorithms form the backbone of modern computing — from simple text searches to complex DNA analysis. Understanding how each algorithm works not only sharpens your problem-solving skills but also teaches you how to think about efficiency and optimization.
+e Boyer–Moore excels in practical performance by skipping ahead intelligently.
 
-By learning Naïve, KMP, Rabin–Karp, and Boyer–Moore, you’ve unlocked a deeper understanding of how powerful and efficient pattern searching can be.
+Beyond theory, these algorithms teach a crucial engineering lesson: the right approach depends on your data and context. Whether you’re building a search feature, validating input, or analyzing text, knowing how these algorithms work gives you the power to make software faster and smarter.
+
+In essence, string matching turns plain text into meaningful information and understanding it turns a good developer into a great problem solver.
