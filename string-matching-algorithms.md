@@ -214,11 +214,9 @@ The Boyer–Moore algorithm is widely regarded as one of the fastest and most ef
 
 This makes it especially powerful for large texts and long patterns, often outperforming all other algorithms in real-world scenarios.
 
-How It Works — Step by Step
+How It Works
 
-Let’s say we are searching for a pattern P inside a text T.
-
-1. Start Matching from the Right
+step 1. Start Matching from the Right
 
 Instead of starting from the first character of the pattern, Boyer–Moore compares from rightmost character to leftmost.
 
