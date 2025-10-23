@@ -214,7 +214,47 @@ The Boyer–Moore algorithm is widely regarded as one of the fastest and most ef
 
 This makes it especially powerful for large texts and long patterns, often outperforming all other algorithms in real-world scenarios.
 
+How It Works — Step by Step
 
+Let’s say we are searching for a pattern P inside a text T.
+
+1. Start Matching from the Right
+
+Instead of starting from the first character of the pattern, Boyer–Moore compares from rightmost character to leftmost.
+
+If all characters match, a pattern is found.
+
+If a mismatch occurs, Boyer–Moore decides how far to shift the pattern based on the mismatched character and the partial match information.
+
+🔹 1. The Bad Character Heuristic
+
+When a mismatch occurs at a text character c while matching P[j] (pattern index j):
+
+If c appears somewhere to the left in the pattern, shift the pattern so that the rightmost occurrence of c in the pattern aligns with the mismatched text character.
+
+If c doesn’t appear in the pattern at all, shift the pattern past that character entirely.
+
+This rule helps Boyer–Moore skip characters in the text that can’t possibly match the pattern.
+
+Example:
+
+Text:    A B C D E F G H
+Pattern:     E F G
+
+
+When mismatch occurs at D, and since D does not appear in "EFG", the algorithm can safely shift the pattern beyond D, skipping unnecessary comparisons.
+
+🔹 2. The Good Suffix Heuristic
+
+When a mismatch occurs after some part of the pattern has already matched, the algorithm uses the matched suffix (called a good suffix) to decide how far to shift.
+
+If a portion of the pattern at the end matched successfully:
+
+Shift the pattern so that the next occurrence of that suffix aligns with it in the text.
+
+If the suffix doesn’t appear anywhere else, shift the pattern so that the longest prefix matching the suffix aligns.
+
+This rule lets Boyer–Moore reuse matched information effectively.
 ## JavaScript Implementation
 
 ```javascript
