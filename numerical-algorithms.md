@@ -31,9 +31,10 @@ Without numerical computation, most of modern engineering, data science, and mac
 ### Common categories of Graph Algorithms
 
 * **Euclidean Algorithm for GCD**
-* **Knuth–Morris–Pratt (KMP) Algorithm**
-* **Rabin–Karp Algorithm (Hash-Based Search)**
-* **Boyer–Moore Algorithm**
+* **Fast Exponentiation (Modular Exponentiation)**
+* **Newton-Raphson Method**
+* **Gaussian Elimination**
+* **Numerical Integration (Quadrature)**
 
 **Naïve String Matching Algorithm** The Naïve approach checks the pattern at every position in the text.
 It’s simple but can be slow for long texts 
