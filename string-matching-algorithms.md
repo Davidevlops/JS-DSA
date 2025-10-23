@@ -153,26 +153,20 @@ function kmpSearch(text, pattern) {
 console.log(kmpSearch("ABABDABACDABABCABAB", "ABABCABAB"));
 // Output: [10]
 ```
-
 ## Rabin–Karp Algorithm (Hash-Based Search)
-The Rabin–Karp algorithm , is a powerful pattern-searching technique that introduces the concept of hashing into string matching. Rabin–Karp transforms the pattern and text substrings into numerical hash values, allowing the algorithm to compare numbers instead of strings — a process that’s much faster and efficient, especially for multiple pattern searches.
 
-How It Works
+The **Rabin–Karp Algorithm** is a string-searching method that uses **hashing** to find a pattern inside a text.  
+Instead of checking each character, it converts substrings into **hash values** for faster comparison.
 
-step 1: Compute a hash value for the pattern
-step 2: Compute the Hash of the First Substring of the Text
-Step 3: Slide the Window
-Now, slide the window one character at a time over the text and:
 
-1. Recompute the new hash efficiently using the rolling hash technique instead of recalculating from scratch.
+### How It Works
+1. Compute the **hash of the pattern**.
+2. Compute the **hash of the first window** of text (same length as the pattern).
+3. **Slide the window** one character at a time and update the hash using a **rolling hash formula**:
+    - If the hash of the window matches the pattern hash, check the actual substring to confirm.  
+    -  Repeat until the end of the text.  
 
-2. Compare the new hash with the pattern’s hash:
-
-If hashes are different → move on.
-
-If hashes are the same → check characters one by one to confirm a true match (to avoid false positives from hash collisions).
-
-## JavaScript Implementation  
+### JavaScript Implementation  
 
 ```javascript
 function rabinKarp(text, pattern, prime = 101) {
