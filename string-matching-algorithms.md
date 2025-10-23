@@ -218,7 +218,6 @@ This makes it **especially effective** for long texts and complex patterns, ofte
   1. **Bad Character Heuristic**
   2. **Good Suffix Heuristic**
 
-
 ### 1. Bad Character Heuristic
 
 When a mismatch occurs at text character `c` while comparing pattern character `P[j]`:
@@ -233,9 +232,7 @@ This allows Boyer–Moore to **skip text characters** that could never lead to a
 When a mismatch occurs at **D**, and since **D** does not appear in `"EFG"`,  
 the algorithm shifts the pattern **past D**, skipping unnecessary comparisons.
 
----
-
-### 🔹 2. Good Suffix Heuristic
+### 2. Good Suffix Heuristic
 
 When a mismatch occurs **after part of the pattern has matched**,  
 Boyer–Moore uses the **matched suffix** (called the *good suffix*) to determine the next shift.
@@ -246,8 +243,6 @@ Boyer–Moore uses the **matched suffix** (called the *good suffix*) to determin
   - Shift so that the **longest prefix** matching the suffix aligns instead.
 
 This heuristic lets Boyer–Moore **reuse previously matched information** efficiently and skip redundant checks.
-
----
 
 ### JavaScript Implementation
 
@@ -288,7 +283,7 @@ console.log(boyerMooreSearch("ABAAABCD", "ABC"));
 
 ##  Conclusion
 
-String matching algorithms may seem simple, but they’re the invisible power behind search engines, code editors, and even DNA analysis. 
+String matching algorithms may seem simple, but they’re the **invisible power** behind search engines, code editors, and even DNA analysis. 
 
 The Naïve algorithm is easy to understand but slow for large data. KMP improves efficiency by avoiding redundant checks. Rabin–Karp shines when comparing multiple patterns using hashing, while Boyer–Moore excels in practical performance by skipping ahead intelligently.
 
