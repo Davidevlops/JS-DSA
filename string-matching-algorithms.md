@@ -76,38 +76,37 @@ console.log(naiveSearch("AABAACAADAABAABA", "AABA"));
 ```
 
 ## Knuth–Morris–Pratt (KMP) Algorithm
-The KMP algorithm is a pattern searching algorithm designed to improve upon the inefficiencies of the Naïve String Matching Algorithm. designed to improve upon the inefficiencies of the Naïve String Matching Algorithm.
 
-It precomputes the longest proper prefix of the pattern which is also a suffix, allowing the search to skip redundant comparisons.
+The **KMP algorithm** is a pattern searching algorithm designed to improve upon the inefficiencies of the Naïve String Matching Algorithm.  
+It precomputes the **Longest Proper Prefix** of the pattern which is also a **Suffix**, allowing the search to skip redundant comparisons.
 
-How It Works
-step 1. Preprocessing Phase (Build the LPS Array)
+---
 
-Before searching, KMP preprocesses the pattern to build the LPS (Longest Proper Prefix which is also a Suffix) array.
+### How It Works
 
+#### Step 1: Preprocessing Phase (Build the LPS Array)
+
+Before searching, KMP preprocesses the pattern to build the **LPS (Longest Proper Prefix which is also a Suffix)** array.  
 This array tells the algorithm how many characters can be skipped after a mismatch occurs.
 
-Prefix → A substring starting at the beginning of the pattern.
-
-Suffix → A substring ending at the end of the pattern.
+- **Prefix** → A substring starting at the beginning of the pattern.  
+- **Suffix** → A substring ending at the end of the pattern.  
 
 The LPS value for each position indicates the length of the longest proper prefix that is also a suffix up to that point.
 
-step 2. Searching Phase
+---
 
-Now, using the LPS array:
+#### Step 2: Searching Phase
 
-Start comparing the pattern with the text from left to right.
+Using the LPS array:
 
-When characters match, move both pointers (text and pattern) forward.
+1. Start comparing the pattern with the text from left to right.  
+2. When characters match, move both pointers (text and pattern) forward.  
+3. If a mismatch occurs:
+   - Instead of restarting the pattern from index `0`, use the **LPS value** of the previous pattern index to skip ahead.  
+4. Continue this process until the end of the text.
 
-If a mismatch occurs:
-
-Instead of restarting the pattern from index 0,
-
-Use the LPS value of the previous pattern index to skip ahead to the next best possible position.
-
-Continue until the end of the text.
+---
 
 ### JavaScript Implementation
 
@@ -136,7 +135,8 @@ function kmpSearch(text, pattern) {
 
   while (i < text.length) {
     if (pattern[j] === text[i]) {
-      i++; j++;
+      i++;
+      j++;
     }
 
     if (j === pattern.length) {
@@ -152,7 +152,6 @@ function kmpSearch(text, pattern) {
 
 console.log(kmpSearch("ABABDABACDABABCABAB", "ABABCABAB"));
 // Output: [10]
-
 ```
 
 ## Rabin–Karp Algorithm (Hash-Based Search)
