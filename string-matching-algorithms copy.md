@@ -105,6 +105,7 @@ Instead of restarting the pattern from index 0,
 Use the LPS value of the previous pattern index to skip ahead to the next best possible position.
 
 Continue until the end of the text.
+
 ### JavaScript Implementation
 
 ```javascript
