@@ -1,6 +1,6 @@
 ## Welcome to the Algorithm Series: String Matching Algorithms
 
-Imagine trying to find a single word in a thousand-page book — flipping through every page, scanning every line, and hoping your eyes catch the right sequence of letters.  
+Imagine trying to find a single word in a thousand-page book by flipping through every page, scanning every line, and hoping your eyes catch the right sequence of letters.  
 Now imagine a system that can do the same thing across millions of documents in milliseconds.
 
 That’s the magic of **String Matching Algorithms**, the invisible engines making modern search possible.  
@@ -68,8 +68,6 @@ console.log(naiveSearch("AABAACAADAABAABA", "AABA"));
 The **KMP algorithm** is a pattern searching algorithm designed to improve upon the inefficiencies of the Naïve String Matching Algorithm.  
 It precomputes the **Longest Proper Prefix** of the pattern which is also a **Suffix**, allowing the search to skip redundant comparisons.
 
----
-
 ### How It Works
 
 #### Step 1: Preprocessing Phase (Build the LPS Array)
@@ -81,8 +79,6 @@ This array tells the algorithm how many characters can be skipped after a mismat
 - **Suffix** → A substring ending at the end of the pattern.  
 
 The LPS value for each position indicates the length of the longest proper prefix that is also a suffix up to that point.
-
----
 
 #### Step 2: Searching Phase
 
@@ -197,7 +193,7 @@ It compares the **pattern from right to left**, and when a mismatch occurs, it u
 
 This makes it **especially effective** for long texts and complex patterns, often outperforming other algorithms in real-world applications.
 
-### 🧠 How It Works
+### How It Works
 
 #### Start Matching from the Right
 - The comparison starts from the **rightmost character** of the pattern and moves **leftward**.  
