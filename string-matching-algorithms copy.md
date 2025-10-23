@@ -44,8 +44,7 @@ String matching is used everywhere:
 * **Rabin–Karp Algorithm (Hash-Based Search)**
 * **Boyer–Moore Algorithm**
 
-**Naïve String Matching Algorithm** The Naïve approach is also called the Brute-Force String Matching Algorithmchecks the pattern at every position in the text.
-It’s simple but can be slow for long texts 
+**Naïve String Matching Algorithm** The Naïve approach is also called the Brute-Force String Matching Algorithm. It operates by sliding the pattern over the text one character at a time and checking, at each position, whether the pattern matches the substring of the text beginning at that point. This comparison continues character by character until a mismatch occurs or the entire pattern matches.
 
 
 ### JavaScript Implementation
