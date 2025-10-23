@@ -44,7 +44,8 @@ String matching is used everywhere:
 * **Rabin–Karp Algorithm (Hash-Based Search)**
 * **Boyer–Moore Algorithm**
 
-**Naïve String Matching Algorithm** The Naïve approach is also called the Brute-Force String Matching Algorithm. It operates by sliding the pattern over the text one character at a time and checking, at each position, whether the pattern matches the substring of the text beginning at that point. This comparison continues character by character until a mismatch occurs or the entire pattern matches.
+## Naïve String Matching Algorithm
+The Naïve approach is also called the Brute-Force String Matching Algorithm. It operates by sliding the pattern over the text one character at a time and checking, at each position, whether the pattern matches the substring of the text beginning at that point. This comparison continues character by character until a mismatch occurs or the entire pattern matches.
 
 How It Works
 1. Start at index 0 of the text and compare each character of P with the corresponding character in T.
@@ -73,7 +74,8 @@ console.log(naiveSearch("AABAACAADAABAABA", "AABA"));
 // Output: [0, 9, 12]
 ```
 
-**Knuth–Morris–Pratt (KMP) Algorithm** The KMP algorithm is a pattern searching algorithm designed to improve upon the inefficiencies of the Naïve String Matching Algorithm. designed to improve upon the inefficiencies of the Naïve String Matching Algorithm.
+## Knuth–Morris–Pratt (KMP) Algorithm
+The KMP algorithm is a pattern searching algorithm designed to improve upon the inefficiencies of the Naïve String Matching Algorithm. designed to improve upon the inefficiencies of the Naïve String Matching Algorithm.
 
 It precomputes the longest proper prefix of the pattern which is also a suffix, allowing the search to skip redundant comparisons.
 
@@ -152,9 +154,8 @@ console.log(kmpSearch("ABABDABACDABABCABAB", "ABABCABAB"));
 
 ```
 
-**Rabin–Karp Algorithm (Hash-Based Search)** The Rabin–Karp algorithm uses a rolling hash function to compare substrings instead of checking characters one by one.
-
-**Dijkstra's Algorithm:** Dijkstra's Algorithm finds the shortest path from a single starting point to all other nodes in a graph. It works on graphs where:
+## Rabin–Karp Algorithm (Hash-Based Search)
+The Rabin–Karp algorithm uses a rolling hash function to compare substrings instead of checking characters one by one.
 
 This is especially useful when searching for multiple patterns in one text.
 
