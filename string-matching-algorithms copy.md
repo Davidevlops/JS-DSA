@@ -4,7 +4,7 @@ Imagine trying to find a single word in a thousand-page book from flipping throu
 
 That’s the magic of String Matching Algorithms, the invisible engines making modern search possible. They’re the hidden force behind Google’s lightning-fast searches, code editors that highlight matches as you type, plagiarism detectors that scan billions of texts, and even bioinformatics tools that compare DNA sequences.
 
-At their core, these algorithms teach computers how to “read” and recognize patterns within text — a deceptively simple task that underpins countless applications in computing. From validating user input and parsing data to building full-scale search engines, string matching lies at the heart of how machines understand language.
+At their core, these algorithms teach computers how to “read” and recognize patterns within text. From validating user input and parsing data to building full-scale search engines, string matching lies at the heart of how machines understand language.
 
 In this article, we’ll peel back the curtain to understand how string matching truly works, explore the mechanics and intuition behind legendary algorithms like Naïve Search, Knuth–Morris–Pratt (KMP), Rabin–Karp, and Boyer–Moore, and implement them step by step using JavaScript — revealing how a few lines of logic can transform raw text into intelligent, searchable data.
 
@@ -44,7 +44,7 @@ String matching is used everywhere:
 * **Rabin–Karp Algorithm (Hash-Based Search)**
 * **Boyer–Moore Algorithm**
 
-**Naïve String Matching Algorithm** The Naïve approach checks the pattern at every position in the text.
+**Naïve String Matching Algorithm** The Naïve approach is also called the Brute-Force String Matching Algorithmchecks the pattern at every position in the text.
 It’s simple but can be slow for long texts 
 
 
