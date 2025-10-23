@@ -77,6 +77,18 @@ console.log(naiveSearch("AABAACAADAABAABA", "AABA"));
 
 It precomputes the longest proper prefix of the pattern which is also a suffix, allowing the search to skip redundant comparisons.
 
+How It Works — Step by Step
+1. Preprocessing Phase (Build the LPS Array)
+
+Before searching, KMP preprocesses the pattern to build the LPS (Longest Proper Prefix which is also a Suffix) array.
+
+This array tells the algorithm how many characters can be skipped after a mismatch occurs.
+
+Prefix → A substring starting at the beginning of the pattern.
+
+Suffix → A substring ending at the end of the pattern.
+
+The LPS value for each position indicates the length of the longest proper prefix that is also a suffix up to that point.
 ### JavaScript Implementation
 
 ```javascript
