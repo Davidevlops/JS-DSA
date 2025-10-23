@@ -155,7 +155,7 @@ console.log(kmpSearch("ABABDABACDABABCABAB", "ABABCABAB"));
 ```
 
 ## Rabin–Karp Algorithm (Hash-Based Search)
-The Rabin–Karp algorithm uses a rolling hash function to compare substrings instead of checking characters one by one.
+The Rabin–Karp algorithm , is a powerful pattern-searching technique that introduces the concept of hashing into string matching.
 
 This is especially useful when searching for multiple patterns in one text.
 
