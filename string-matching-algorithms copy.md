@@ -210,13 +210,9 @@ console.log(rabinKarp("GEEKS FOR GEEKS", "GEEK"));
 
 ## Boyer–Moore Algorithm
 
-The Boyer–Moore algorithm is widely regarded as one of the fastest and most efficient string matching algorithms in practice. two smart rules:
+The Boyer–Moore algorithm is widely regarded as one of the fastest and most efficient string matching algorithms in practice. It compares the pattern from right to left, and when a mismatch occurs, it uses two clever heuristics to skip over as much of the text as possible, rather than shifting by just one character.
 
-Bad Character Rule
-
-Good Suffix Rule
-
-It’s one of the fastest practical algorithms for single pattern searches.
+This makes it especially powerful for large texts and long patterns, often outperforming all other algorithms in real-world scenarios.
 
 
 ## JavaScript Implementation
