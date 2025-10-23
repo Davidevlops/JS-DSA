@@ -1,10 +1,12 @@
 ## Welcome to the Algorithm Series: String Matching Algorithms
 
-When we think about algorithms, sorting, searching and graphs often take the spotlight. But beyond these fundamental operations lies a powerful family of algorithms that quietly power everything from search engines to plagiarism detectors — String Matching Algorithms.
+Imagine trying to find a single word in a thousand-page book from flipping through every page, scanning every line, and hoping your eyes catch the right sequence of letters. Now imagine a system that can do the same thing across millions of documents in milliseconds.
 
-Whether you’re searching for a keyword in a document, validating user input, or building your own text editor, string matching lies at the heart of it. These algorithms make searching through text efficient and intelligent — far beyond the basic indexOf() or includes() methods in javascript.
+That’s the magic of String Matching Algorithms, the invisible engines making modern search possible. They’re the hidden force behind Google’s lightning-fast searches, code editors that highlight matches as you type, plagiarism detectors that scan billions of texts, and even bioinformatics tools that compare DNA sequences.
 
-In this article, you’ll learn how string matching works, understand key algorithms like Naïve Search, Knuth–Morris–Pratt (KMP), Rabin–Karp, and Boyer–Moore, and implement them using JavaScript.
+At their core, these algorithms teach computers how to “read” and recognize patterns within text. From validating user input and parsing data to building full-scale search engines, string matching lies at the heart of how machines understand language.
+
+In this article, we’ll peel back the curtain to understand how string matching truly works, explore the mechanics and intuition behind legendary algorithms like Naïve Search, Knuth–Morris–Pratt (KMP), Rabin–Karp, and Boyer–Moore, and implement them step by step using JavaScript — revealing how a few lines of logic can transform raw text into intelligent, searchable data.
 
 ### Understanding String Matching
 
@@ -42,9 +44,14 @@ String matching is used everywhere:
 * **Rabin–Karp Algorithm (Hash-Based Search)**
 * **Boyer–Moore Algorithm**
 
-**Naïve String Matching Algorithm** The Naïve approach checks the pattern at every position in the text.
-It’s simple but can be slow for long texts 
+## Naïve String Matching Algorithm
+The Naïve approach is also called the Brute-Force String Matching Algorithm. It operates by sliding the pattern over the text one character at a time and checking, at each position, whether the pattern matches the substring of the text beginning at that point. This comparison continues character by character until a mismatch occurs or the entire pattern matches.
 
+How It Works
+1. Start at index 0 of the text and compare each character of P with the corresponding character in T.
+2. If all characters match, record the index as a match position.
+3. If a mismatch occurs, shift the pattern one character to the right and compare again.
+4. Continue this process until the pattern has been aligned with every possible substring of the text.
 
 ### JavaScript Implementation
 
@@ -67,9 +74,39 @@ console.log(naiveSearch("AABAACAADAABAABA", "AABA"));
 // Output: [0, 9, 12]
 ```
 
-**Knuth–Morris–Pratt (KMP) Algorithm** The KMP algorithm improves efficiency by avoiding unnecessary re-checks using a prefix table (also called an LPS — Longest Prefix Suffix array).
+## Knuth–Morris–Pratt (KMP) Algorithm
+The KMP algorithm is a pattern searching algorithm designed to improve upon the inefficiencies of the Naïve String Matching Algorithm. designed to improve upon the inefficiencies of the Naïve String Matching Algorithm.
 
 It precomputes the longest proper prefix of the pattern which is also a suffix, allowing the search to skip redundant comparisons.
+
+How It Works
+step 1. Preprocessing Phase (Build the LPS Array)
+
+Before searching, KMP preprocesses the pattern to build the LPS (Longest Proper Prefix which is also a Suffix) array.
+
+This array tells the algorithm how many characters can be skipped after a mismatch occurs.
+
+Prefix → A substring starting at the beginning of the pattern.
+
+Suffix → A substring ending at the end of the pattern.
+
+The LPS value for each position indicates the length of the longest proper prefix that is also a suffix up to that point.
+
+step 2. Searching Phase
+
+Now, using the LPS array:
+
+Start comparing the pattern with the text from left to right.
+
+When characters match, move both pointers (text and pattern) forward.
+
+If a mismatch occurs:
+
+Instead of restarting the pattern from index 0,
+
+Use the LPS value of the previous pattern index to skip ahead to the next best possible position.
+
+Continue until the end of the text.
 
 ### JavaScript Implementation
 
@@ -117,11 +154,23 @@ console.log(kmpSearch("ABABDABACDABABCABAB", "ABABCABAB"));
 
 ```
 
-**Rabin–Karp Algorithm (Hash-Based Search)** The Rabin–Karp algorithm uses a rolling hash function to compare substrings instead of checking characters one by one.
+## Rabin–Karp Algorithm (Hash-Based Search)
+The Rabin–Karp algorithm , is a powerful pattern-searching technique that introduces the concept of hashing into string matching. Rabin–Karp transforms the pattern and text substrings into numerical hash values, allowing the algorithm to compare numbers instead of strings — a process that’s much faster and efficient, especially for multiple pattern searches.
 
-**Dijkstra's Algorithm:** Dijkstra's Algorithm finds the shortest path from a single starting point to all other nodes in a graph. It works on graphs where:
+How It Works
 
-This is especially useful when searching for multiple patterns in one text.
+step 1: Compute a hash value for the pattern
+step 2: Compute the Hash of the First Substring of the Text
+Step 3: Slide the Window
+Now, slide the window one character at a time over the text and:
+
+1. Recompute the new hash efficiently using the rolling hash technique instead of recalculating from scratch.
+
+2. Compare the new hash with the pattern’s hash:
+
+If hashes are different → move on.
+
+If hashes are the same → check characters one by one to confirm a true match (to avoid false positives from hash collisions).
 
 ## JavaScript Implementation  
 
@@ -161,13 +210,9 @@ console.log(rabinKarp("GEEKS FOR GEEKS", "GEEK"));
 
 ## Boyer–Moore Algorithm
 
-The Boyer–Moore algorithm scans the text from right to left and skips large sections of text using two smart rules:
+The Boyer–Moore algorithm is widely regarded as one of the fastest and most efficient string matching algorithms in practice. It compares the pattern from right to left, and when a mismatch occurs, it uses two clever heuristics to skip over as much of the text as possible, rather than shifting by just one character.
 
-Bad Character Rule
-
-Good Suffix Rule
-
-It’s one of the fastest practical algorithms for single pattern searches.
+This makes it especially powerful for large texts and long patterns, often outperforming all other algorithms in real-world scenarios.
 
 
 ## JavaScript Implementation
