@@ -204,49 +204,51 @@ console.log(rabinKarp("GEEKS FOR GEEKS", "GEEK"));
 
 ## Boyer–Moore Algorithm
 
-The Boyer–Moore algorithm is widely regarded as one of the fastest and most efficient string matching algorithms in practice. It compares the pattern from right to left, and when a mismatch occurs, it uses two clever heuristics to skip over as much of the text as possible, rather than shifting by just one character.
+The **Boyer–Moore Algorithm** is one of the **fastest and most efficient** string matching algorithms in practice.  
+It compares the **pattern from right to left**, and when a mismatch occurs, it uses two powerful heuristics to skip over large sections of text — rather than moving just one character at a time.
 
-This makes it especially powerful for large texts and long patterns, often outperforming all other algorithms in real-world scenarios.
+This makes it **especially effective** for long texts and complex patterns, often outperforming other algorithms in real-world applications.
 
-How It Works
+### 🧠 How It Works
 
-step 1. Start Matching from the Right
-
-Instead of starting from the first character of the pattern, Boyer–Moore compares from rightmost character to leftmost.
-
-If all characters match, a pattern is found.
-
-If a mismatch occurs, Boyer–Moore decides how far to shift the pattern based on the mismatched character and the partial match information.
-
-🔹 1. The Bad Character Heuristic
-
-When a mismatch occurs at a text character c while matching P[j] (pattern index j):
-
-If c appears somewhere to the left in the pattern, shift the pattern so that the rightmost occurrence of c in the pattern aligns with the mismatched text character.
-
-If c doesn’t appear in the pattern at all, shift the pattern past that character entirely.
-
-This rule helps Boyer–Moore skip characters in the text that can’t possibly match the pattern.
-
-Example:
-
-Text:    A B C D E F G H
-Pattern:     E F G
+#### Start Matching from the Right
+- The comparison starts from the **rightmost character** of the pattern and moves **leftward**.  
+- If all characters match → ✅ **Pattern found**.  
+- If a mismatch occurs → the algorithm decides **how far to shift** the pattern using two heuristics:
+  1. **Bad Character Heuristic**
+  2. **Good Suffix Heuristic**
 
 
-When mismatch occurs at D, and since D does not appear in "EFG", the algorithm can safely shift the pattern beyond D, skipping unnecessary comparisons.
+### 1. Bad Character Heuristic
 
-🔹 2. The Good Suffix Heuristic
+When a mismatch occurs at text character `c` while comparing pattern character `P[j]`:
 
-When a mismatch occurs after some part of the pattern has already matched, the algorithm uses the matched suffix (called a good suffix) to decide how far to shift.
+- If `c` exists **to the left** in the pattern, shift the pattern so that the **rightmost occurrence** of `c` in the pattern aligns with the mismatched text character.  
+- If `c` **does not exist** in the pattern, shift the pattern **beyond that character entirely**.
 
-If a portion of the pattern at the end matched successfully:
+This allows Boyer–Moore to **skip text characters** that could never lead to a match.
 
-Shift the pattern so that the next occurrence of that suffix aligns with it in the text.
+**Example:**
 
-If the suffix doesn’t appear anywhere else, shift the pattern so that the longest prefix matching the suffix aligns.
+When a mismatch occurs at **D**, and since **D** does not appear in `"EFG"`,  
+the algorithm shifts the pattern **past D**, skipping unnecessary comparisons.
 
-This rule lets Boyer–Moore reuse matched information effectively.
+---
+
+### 🔹 2. Good Suffix Heuristic
+
+When a mismatch occurs **after part of the pattern has matched**,  
+Boyer–Moore uses the **matched suffix** (called the *good suffix*) to determine the next shift.
+
+- If a portion at the end of the pattern matched:
+  - Shift the pattern so the **next occurrence** of that suffix aligns in the text.
+- If the suffix does **not appear elsewhere**:
+  - Shift so that the **longest prefix** matching the suffix aligns instead.
+
+This heuristic lets Boyer–Moore **reuse previously matched information** efficiently and skip redundant checks.
+
+---
+
 ## JavaScript Implementation
 
 ```javascript
