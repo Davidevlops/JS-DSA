@@ -89,6 +89,22 @@ Prefix → A substring starting at the beginning of the pattern.
 Suffix → A substring ending at the end of the pattern.
 
 The LPS value for each position indicates the length of the longest proper prefix that is also a suffix up to that point.
+
+2. Searching Phase
+
+Now, using the LPS array:
+
+Start comparing the pattern with the text from left to right.
+
+When characters match, move both pointers (text and pattern) forward.
+
+If a mismatch occurs:
+
+Instead of restarting the pattern from index 0,
+
+Use the LPS value of the previous pattern index to skip ahead to the next best possible position.
+
+Continue until the end of the text.
 ### JavaScript Implementation
 
 ```javascript
