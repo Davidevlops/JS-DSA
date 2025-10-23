@@ -2,7 +2,7 @@
 
 Imagine trying to find a single word in a thousand-page book — flipping through every page, scanning every line, and hoping your eyes catch the right sequence of letters. Now imagine a system that can do the same thing across millions of documents in milliseconds.
 
-That’s the magic of String Matching Algorithms — the invisible engines powering modern search possible. They’re the hidden force behind Google’s lightning-fast searches, code editors that highlight matches as you type, plagiarism detectors that scan billions of texts, and even bioinformatics tools that compare DNA sequences.
+That’s the magic of String Matching Algorithms — the invisible engines modern search possible. They’re the hidden force behind Google’s lightning-fast searches, code editors that highlight matches as you type, plagiarism detectors that scan billions of texts, and even bioinformatics tools that compare DNA sequences.
 
 At their core, these algorithms teach computers how to “read” and recognize patterns within text — a deceptively simple task that underpins countless applications in computing. From validating user input and parsing data to building full-scale search engines, string matching lies at the heart of how machines understand language.
 
