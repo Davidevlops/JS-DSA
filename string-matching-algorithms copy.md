@@ -73,7 +73,7 @@ console.log(naiveSearch("AABAACAADAABAABA", "AABA"));
 // Output: [0, 9, 12]
 ```
 
-**Knuth–Morris–Pratt (KMP) Algorithm** The KMP algorithm was designed to improve upon the inefficiencies of the Naïve String Matching Algorithm.
+**Knuth–Morris–Pratt (KMP) Algorithm** The KMP algorithm is a pattern searching algorithm designed to improve upon the inefficiencies of the Naïve String Matching Algorithm. designed to improve upon the inefficiencies of the Naïve String Matching Algorithm.
 
 It precomputes the longest proper prefix of the pattern which is also a suffix, allowing the search to skip redundant comparisons.
 
