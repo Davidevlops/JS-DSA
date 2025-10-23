@@ -292,8 +292,10 @@ console.log(boyerMooreSearch("ABAAABCD", "ABC"));
 
 ##  Conclusion
 
-e Boyer–Moore excels in practical performance by skipping ahead intelligently.
+String matching algorithms may seem simple, but they’re the invisible power behind search engines, code editors, and even DNA analysis. 
+
+The Naïve algorithm is easy to understand but slow for large data. KMP improves efficiency by avoiding redundant checks. Rabin–Karp shines when comparing multiple patterns using hashing, while Boyer–Moore excels in practical performance by skipping ahead intelligently.
 
 Beyond theory, these algorithms teach a crucial engineering lesson: the right approach depends on your data and context. Whether you’re building a search feature, validating input, or analyzing text, knowing how these algorithms work gives you the power to make software faster and smarter.
 
-In essence, string matching turns plain text into meaningful information and understanding it turns a good developer into a great problem solver.
+In essence, string matching turns plain text into meaningful information — and understanding it turns a good developer into a great problem solver.
