@@ -80,7 +80,7 @@ The KMP algorithm is a pattern searching algorithm designed to improve upon the 
 It precomputes the longest proper prefix of the pattern which is also a suffix, allowing the search to skip redundant comparisons.
 
 How It Works
-1. Preprocessing Phase (Build the LPS Array)
+step 1. Preprocessing Phase (Build the LPS Array)
 
 Before searching, KMP preprocesses the pattern to build the LPS (Longest Proper Prefix which is also a Suffix) array.
 
@@ -92,7 +92,7 @@ Suffix → A substring ending at the end of the pattern.
 
 The LPS value for each position indicates the length of the longest proper prefix that is also a suffix up to that point.
 
-2. Searching Phase
+step 2. Searching Phase
 
 Now, using the LPS array:
 
@@ -157,7 +157,9 @@ console.log(kmpSearch("ABABDABACDABABCABAB", "ABABCABAB"));
 ## Rabin–Karp Algorithm (Hash-Based Search)
 The Rabin–Karp algorithm , is a powerful pattern-searching technique that introduces the concept of hashing into string matching. Rabin–Karp transforms the pattern and text substrings into numerical hash values, allowing the algorithm to compare numbers instead of strings — a process that’s much faster and efficient, especially for multiple pattern searches.
 
-This is especially useful when searching for multiple patterns in one text.
+How It Works
+
+step 1:
 
 ## JavaScript Implementation  
 
