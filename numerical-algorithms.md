@@ -30,7 +30,7 @@ Without numerical computation, most of modern engineering, data science, and mac
 
 ### Common categories of Graph Algorithms
 
-* **Naïve String Matching Algorithm**
+* **Euclidean Algorithm for GCD**
 * **Knuth–Morris–Pratt (KMP) Algorithm**
 * **Rabin–Karp Algorithm (Hash-Based Search)**
 * **Boyer–Moore Algorithm**
