@@ -1,18 +1,19 @@
 ## Welcome to the Algorithm Series: String Matching Algorithms
 
-Imagine trying to find a single word in a thousand-page book from flipping through every page, scanning every line, and hoping your eyes catch the right sequence of letters. Now imagine a system that can do the same thing across millions of documents in milliseconds.
+Imagine trying to find a single word in a thousand-page book — flipping through every page, scanning every line, and hoping your eyes catch the right sequence of letters.  
+Now imagine a system that can do the same thing across millions of documents in milliseconds.
 
-That’s the magic of String Matching Algorithms, the invisible engines making modern search possible. They’re the hidden force behind Google’s lightning-fast searches, code editors that highlight matches as you type, plagiarism detectors that scan billions of texts, and even bioinformatics tools that compare DNA sequences.
+That’s the magic of **String Matching Algorithms**, the invisible engines making modern search possible.  
+They’re the hidden force behind Google’s lightning-fast searches, code editors that highlight matches as you type, plagiarism detectors that scan billions of texts, and even bioinformatics tools that compare DNA sequences.
 
-At their core, these algorithms teach computers how to “read” and recognize patterns within text. From validating user input and parsing data to building full-scale search engines, string matching lies at the heart of how machines understand language.
+**String Matching Algorithms**,also known as **Pattern Matching Algorithms** is the process of finding one or more occurrences of a pattern (substring) inside a text (main string). these algorithms teach computers how to “read” and recognize patterns within text.  
+From validating user input and parsing data to building full-scale search engines, string matching lies at the heart of how machines understand language.
 
-In this article, we’ll peel back the curtain to understand how string matching truly works, explore the mechanics and intuition behind legendary algorithms like Naïve Search, Knuth–Morris–Pratt (KMP), Rabin–Karp, and Boyer–Moore, and implement them step by step using JavaScript — revealing how a few lines of logic can transform raw text into intelligent, searchable data.
+In this article, we’ll peel back the curtain to understand how string matching truly works, explore the mechanics and intuition behind legendary algorithms like **Naïve Search**, **Knuth–Morris–Pratt (KMP)**, **Rabin–Karp**, and **Boyer–Moore**, and implement them step by step using **JavaScript** — revealing how a few lines of logic can transform raw text into intelligent, searchable data.
+
+
 
 ### Understanding String Matching
-
-Before diving into the  algorithms, let’s first understand what string matching means.
-
-String Matching Algorithms also known as Pattern Matching Algorithms is the process of finding one or more occurrences of a pattern (substring) inside a text (main string).
 
 Example
 
@@ -22,35 +23,35 @@ Pattern: "brown"
 
 Output: The pattern starts at index 10
 
-**Why String Matching Matters**
+
+### Why String Matching Matters
 
 String matching is used everywhere:
 
-- Search engines to find keywords in web pages
+- Search engines to find keywords in web pages  
+- Chat filters to detect banned words  
+- Bioinformatics to find gene sequences  
+- Compilers to tokenize source code  
+- AI/ML preprocessing to clean and analyze text  
 
-- Chat filters to detect banned words
+### Common Categories of String Matching Algorithms
 
-- Bioinformatics to find gene sequences
+- **Naïve String Matching Algorithm**  
+- **Knuth–Morris–Pratt (KMP) Algorithm**  
+- **Rabin–Karp Algorithm (Hash-Based Search)**  
+- **Boyer–Moore Algorithm**
 
-- Compilers to tokenize source code
-
-- AI/ML preprocessing to clean and analyze text
-
-
-### Common categories of Graph Algorithms
-
-* **Naïve String Matching Algorithm**
-* **Knuth–Morris–Pratt (KMP) Algorithm**
-* **Rabin–Karp Algorithm (Hash-Based Search)**
-* **Boyer–Moore Algorithm**
 
 ## Naïve String Matching Algorithm
-The Naïve approach is also called the Brute-Force String Matching Algorithm. It operates by sliding the pattern over the text one character at a time and checking, at each position, whether the pattern matches the substring of the text beginning at that point. This comparison continues character by character until a mismatch occurs or the entire pattern matches.
 
-How It Works
-1. Start at index 0 of the text and compare each character of P with the corresponding character in T.
-2. If all characters match, record the index as a match position.
-3. If a mismatch occurs, shift the pattern one character to the right and compare again.
+The **Naïve approach** (also called the **Brute-Force String Matching Algorithm**) operates by sliding the pattern over the text one character at a time and checking, at each position, whether the pattern matches the substring of the text beginning at that point.  
+This comparison continues character by character until a mismatch occurs or the entire pattern matches.
+
+### How It Works
+
+1. Start at index `0` of the text and compare each character of `P` with the corresponding character in `T`.  
+2. If all characters match, record the index as a match position.  
+3. If a mismatch occurs, shift the pattern one character to the right and compare again.  
 4. Continue this process until the pattern has been aligned with every possible substring of the text.
 
 ### JavaScript Implementation
