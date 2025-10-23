@@ -160,6 +160,7 @@ The Rabin–Karp algorithm , is a powerful pattern-searching technique that intr
 How It Works
 
 step 1: Compute a hash value for the pattern
+step 2: Compute the Hash of the First Substring of the Text
 
 ## JavaScript Implementation  
 
