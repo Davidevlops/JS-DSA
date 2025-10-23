@@ -6,22 +6,10 @@ Now imagine a system that can do the same thing across millions of documents in 
 That’s the magic of **String Matching Algorithms**, the invisible engines making modern search possible.  
 They’re the hidden force behind Google’s lightning-fast searches, code editors that highlight matches as you type, plagiarism detectors that scan billions of texts, and even bioinformatics tools that compare DNA sequences.
 
-**String Matching Algorithms**,also known as **Pattern Matching Algorithms** is the process of finding one or more occurrences of a pattern (substring) inside a text (main string). these algorithms teach computers how to “read” and recognize patterns within text.  
+**String Matching Algorithms**, also known as **Pattern Matching Algorithms** is the process of finding one or more occurrences of a pattern (substring) inside a text (main string). these algorithms teach computers how to “read” and recognize patterns within text.  
 From validating user input and parsing data to building full-scale search engines, string matching lies at the heart of how machines understand language.
 
 In this article, we’ll peel back the curtain to understand how string matching truly works, explore the mechanics and intuition behind legendary algorithms like **Naïve Search**, **Knuth–Morris–Pratt (KMP)**, **Rabin–Karp**, and **Boyer–Moore**, and implement them step by step using **JavaScript** — revealing how a few lines of logic can transform raw text into intelligent, searchable data.
-
-
-
-### Understanding String Matching
-
-Example
-
-Text: "the quick brown fox jumps over the lazy dog"
-
-Pattern: "brown"
-
-Output: The pattern starts at index 10
 
 
 ### Why String Matching Matters
