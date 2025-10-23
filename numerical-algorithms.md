@@ -1,39 +1,32 @@
-## Welcome to the Algorithm Series: String Matching Algorithms
+## Welcome to the Algorithm Series: Numerical Algorithms
 
-When we think about algorithms, sorting, searching and graphs often take the spotlight. But beyond these fundamental operations lies a powerful family of algorithms that quietly power everything from search engines to plagiarism detectors — String Matching Algorithms.
+Imagine trying to calculate the exact trajectory of a rocket, simulate weather patterns, or predict financial market behavior — all problems that depend on solving complex mathematical equations.
+Now imagine a system that can perform millions of such calculations accurately and efficiently within seconds.
 
-Whether you’re searching for a keyword in a document, validating user input, or building your own text editor, string matching lies at the heart of it. These algorithms make searching through text efficient and intelligent — far beyond the basic indexOf() or includes() methods in javascript.
+That’s the power of Numerical Algorithms — the mathematical engines that make computers capable of solving problems from physics, engineering, finance, and even artificial intelligence.
+They turn theoretical mathematics into practical computation, bridging the gap between continuous equations and digital logic.
 
-In this article, you’ll learn how string matching works, understand key algorithms like Naïve Search, Knuth–Morris–Pratt (KMP), Rabin–Karp, and Boyer–Moore, and implement them using JavaScript.
+Numerical Algorithms are the backbone of scientific and engineering computing.
+They teach computers how to approximate, simulate, and optimize mathematical models when exact analytical solutions are impossible or too complex to obtain.
+From calculating planetary orbits to training deep learning models, these algorithms ensure results are both accurate and efficient.
 
-### Understanding String Matching
+In this article, we’ll dive deep into the world of numerical algorithms — exploring how they work, their major categories, the reasoning behind them, and their implementation principles using JavaScript or Python-style pseudocode.
+By the end, you’ll understand how mathematics and computation merge to solve real-world problems.
 
-Before diving into the  algorithms, let’s first understand what string matching means.
+**Why Numerical Matching Matters**
+Numerical algorithms are at the heart of nearly every scientific and technological advancement:
 
-String Matching Algorithms also known as Pattern Matching Algorithms is the process of finding one or more occurrences of a pattern (substring) inside a text (main string).
+- Simulating physical systems (fluid flow, heat transfer, motion)
 
-Example
+- Predicting stock market trends and financial risks
 
-Text: "the quick brown fox jumps over the lazy dog"
+- Training AI models using optimization and gradient methods
 
-Pattern: "brown"
+- Rendering realistic graphics and game physics
 
-Output: The pattern starts at index 10
+- Performing weather forecasts, seismic analysis, and space exploration
 
-**Why String Matching Matters**
-
-String matching is used everywhere:
-
-- Search engines to find keywords in web pages
-
-- Chat filters to detect banned words
-
-- Bioinformatics to find gene sequences
-
-- Compilers to tokenize source code
-
-- AI/ML preprocessing to clean and analyze text
-
+Without numerical computation, most of modern engineering, data science, and machine learning would not exist.
 
 ### Common categories of Graph Algorithms
 
@@ -209,6 +202,9 @@ console.log(boyerMooreSearch("ABAAABCD", "ABC"));
 
 ##  Conclusion
 
-String matching algorithms form the backbone of modern computing — from simple text searches to complex DNA analysis. Understanding how each algorithm works not only sharpens your problem-solving skills but also teaches you how to think about efficiency and optimization.
+Numerical algorithms are the mathematical muscle of computation — quietly powering simulations, predictions, and optimizations behind the world’s most advanced technologies.
 
-By learning Naïve, KMP, Rabin–Karp, and Boyer–Moore, you’ve unlocked a deeper understanding of how powerful and efficient pattern searching can be.
+From finding roots and solving equations to integrating curves and optimizing systems, each algorithm transforms abstract math into real, usable insights.
+They teach an essential engineering lesson: in computation, perfection is rare — but good approximations, done efficiently, change the world.
+
+Understanding numerical algorithms not only sharpens your mathematical thinking but also equips you with the tools to design systems that calculate, predict, and evolve — from rockets and robots to neural networks and beyond.
