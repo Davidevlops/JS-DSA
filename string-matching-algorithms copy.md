@@ -161,6 +161,7 @@ How It Works
 
 step 1: Compute a hash value for the pattern
 step 2: Compute the Hash of the First Substring of the Text
+Step 3: Slide the Window
 
 ## JavaScript Implementation  
 
