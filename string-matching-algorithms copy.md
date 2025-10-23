@@ -51,8 +51,7 @@ The algorithm works as follows:
 1. Start at index 0 of the text and compare each character of P with the corresponding character in T.
 2. If all characters match, record the index as a match position.
 3. If a mismatch occurs, shift the pattern one character to the right and compare again.
-
-Continue this process until the pattern has been aligned with every possible substring of the text.
+4. Continue this process until the pattern has been aligned with every possible substring of the text.
 ### JavaScript Implementation
 
 ```javascript
