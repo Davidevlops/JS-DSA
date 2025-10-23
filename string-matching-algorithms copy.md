@@ -210,7 +210,7 @@ console.log(rabinKarp("GEEKS FOR GEEKS", "GEEK"));
 
 ## Boyer–Moore Algorithm
 
-The Boyer–Moore algorithm scans the text from right to left and skips large sections of text using two smart rules:
+The Boyer–Moore algorithm is widely regarded as one of the fastest and most efficient string matching algorithms in practice. two smart rules:
 
 Bad Character Rule
 
