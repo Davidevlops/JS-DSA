@@ -155,7 +155,7 @@ console.log(kmpSearch("ABABDABACDABABCABAB", "ABABCABAB"));
 ```
 
 ## Rabin–Karp Algorithm (Hash-Based Search)
-The Rabin–Karp algorithm , is a powerful pattern-searching technique that introduces the concept of hashing into string matching.
+The Rabin–Karp algorithm , is a powerful pattern-searching technique that introduces the concept of hashing into string matching. Rabin–Karp transforms the pattern and text substrings into numerical hash values, allowing the algorithm to compare numbers instead of strings — a process that’s much faster and efficient, especially for multiple pattern searches.
 
 This is especially useful when searching for multiple patterns in one text.
 
