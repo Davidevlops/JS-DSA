@@ -164,9 +164,9 @@ step 2: Compute the Hash of the First Substring of the Text
 Step 3: Slide the Window
 Now, slide the window one character at a time over the text and:
 
-Recompute the new hash efficiently using the rolling hash technique instead of recalculating from scratch.
+1. Recompute the new hash efficiently using the rolling hash technique instead of recalculating from scratch.
 
-Compare the new hash with the pattern’s hash:
+2. Compare the new hash with the pattern’s hash:
 
 If hashes are different → move on.
 
