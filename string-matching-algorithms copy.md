@@ -51,6 +51,7 @@ The algorithm works as follows:
 2. If all characters match, record the index as a match position.
 3. If a mismatch occurs, shift the pattern one character to the right and compare again.
 4. Continue this process until the pattern has been aligned with every possible substring of the text.
+
 ### JavaScript Implementation
 
 ```javascript
