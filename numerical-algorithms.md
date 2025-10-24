@@ -55,7 +55,7 @@ function naiveSearch(text, pattern) {
   }
 
   return positions;
-}
+// }
 
 console.log(naiveSearch("AABAACAADAABAABA", "AABA"));
 // Output: [0, 9, 12]
