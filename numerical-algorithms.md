@@ -1,6 +1,6 @@
 ## Welcome to the Algorithm Series: Numerical Algorithms
 
-Imagine trying to calculate the exact trajectory of a rocket, simulate weather patterns, or predict financial market behavior — all problems that depend on solving complex mathematical equations.
+Glad to see you complete our Algorithms series. This is the last topic we would be discussing on Discovering JavaScript's Hidden Secrets. Imagine trying to calculate the exact trajectory of a rocket, simulate weather patterns, or predict financial market behavior — all problems that depend on solving complex mathematical equations.
 Now imagine a system that can perform millions of such calculations accurately and efficiently within seconds.
 
 That’s the power of Numerical Algorithms — the mathematical engines that make computers capable of solving problems from physics, engineering, finance, and even artificial intelligence.
