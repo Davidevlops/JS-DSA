@@ -38,7 +38,120 @@ Naive exponentiation: O(n) Fast Exponentiation (Exponentiation by Squaring): O(l
 * **Gaussian Elimination**
 * **Numerical Integration (Quadrature)**
 
-## Euclidean Algorithm for GCD
+#### Euclidean Algorithm (for GCD)
+
+The Euclidean Algorithm is one of the oldest and most fundamental algorithms in mathematics, dating back over 2,000 years to ancient Greece. It provides an efficient way to compute the Greatest Common Divisor (GCD) — the largest positive integer that divides two numbers a and b without leaving a remainder.
+
+The core idea behind the algorithm is simple yet powerful:
+The GCD of two numbers does not change if the larger number is replaced by its remainder when divided by the smaller number.
+
+### JavaScript Implementation
+
+```javascript
+// Recursive implementation of the Euclidean Algorithm
+function gcd(a, b) {
+  if (b === 0) return a;
+  return gcd(b, a % b);
+}
+
+// Example usage
+console.log(gcd(48, 18)); // Output: 6
+```
+
+
+#### n computational mathematics, directly calculating 
+𝑎
+𝑏
+a
+b
+ can be extremely inefficient, especially when b is large. Imagine trying to compute something like 
+7
+1000000
+7
+1000000
+—the number of multiplications would be enormous, and the result far too large to handle in memory.
+
+To solve this, we use Fast Exponentiation, also known as Exponentiation by Squaring. When combined with modular arithmetic, it becomes Modular Exponentiation, which efficiently computes:
+
+𝑎
+𝑏
+m
+o
+d
+ 
+ 
+𝑚
+a
+b
+modm
+
+This method dramatically reduces computation time by repeatedly squaring and taking remainders at each step, keeping numbers manageable and operations efficient.
+### JavaScript Implementation
+
+```javascript
+function modExp(a, b, m) {
+  if (b === 0) return 1;
+  if (b % 2 === 0) {
+    const half = modExp(a, b / 2, m);
+    return (half * half) % m;
+  } else {
+    const half = modExp(a, Math.floor(b / 2), m);
+    return (a * half * half) % m;
+  }
+}
+
+// Example usage
+console.log(modExp(3, 5, 13)); // Output: 9
+```
+
+#### Root-Finding Algorithms
+
+Used when we need to solve ( f(x) = 0 ).
+Popular methods:
+
+* **Bisection Method** → Safe, but slower
+* **Newton–Raphson Method** → Fast, needs a good starting point
+* **Secant Method** → Doesn’t require derivatives
+
+✅ **Use Case:** Engineering simulations, finance, scientific computing
+
+
+#### Numerical Integration and Differentiation
+
+When exact calculus is impossible, approximation methods step in:
+
+* **Trapezoidal Rule**
+* **Simpson’s Rule**
+* **Monte Carlo Integration**
+
+✅ **Use Case:** Estimating areas, solving physics equations, data-driven analytics
+
+
+#### Solving Linear Systems
+
+Equations like ( Ax = b ) appear everywhere — from machine learning to engineering.
+Key methods include:
+
+* **Gaussian Elimination** (direct method)
+* **LU Decomposition**
+* **Jacobi & Gauss–Seidel Methods** (iterative methods)
+* **Conjugate Gradient Method** (for large sparse systems)
+
+✅ **Use Case:** Data fitting, physics simulations, optimization problems
+
+
+#### Optimization Algorithms
+
+Used to find minima or maxima of functions.
+Core techniques:
+
+* **Gradient Descent**
+* **Newton’s Method**
+* **Simulated Annealing**
+* **Genetic Algorithms**
+
+✅ **Use Case:** Machine learning, control systems, portfolio optimization
+
 
 ##  Conclusion
 
