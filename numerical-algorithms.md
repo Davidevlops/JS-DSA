@@ -9,22 +9,28 @@ At the heart of this revolution are **Numerical Algorithms**. They are the quiet
 In this article, we’ll explore the core ideas that make these algorithms so powerful. Through clear explanations and practical pseudocode in JavaScript and Python styles, you will learn how these computational techniques are applied. Join us one last time to discover how mathematics and code unite to engineer a better, smarter world.
 By the end, you’ll understand how mathematics and computation merge to solve real-world problems.
 
-**Why Numerical Matching Matters**
-Numerical algorithms are at the heart of nearly every scientific and technological advancement:
+**What Are Numerical Algorithms?**
+Numerical algorithms are systematic, step-by-step computational methods designed to perform numerical calculations — things like solving equations, integrating functions, or approximating results that are too complex for direct calculation.
 
-- Simulating physical systems (fluid flow, heat transfer, motion)
+Unlike symbolic math (which gives exact answers), numerical algorithms focus on approximation, accuracy, and efficiency, especially for real-world problems where perfect solutions don’t exist.
 
-- Predicting stock market trends and financial risks
+### Core Principles to Understand
+1. Number Representation:  Computers represent numbers using floating-point arithmetic, meaning: Real numbers are approximated, not exact. This leads to rounding and truncation errors. Understanding how these errors propagate is key to writing stable algorithms.
+Example: The number 0.1 cannot be represented exactly in binary — tiny errors add up over millions of computations.
 
-- Training AI models using optimization and gradient methods
+2. Error Analysis: In numerical computing, small mistakes can grow large:
+Absolute Error: ( |x_{true} - x_{approx}| )
+Relative Error: ( \frac{|x_{true} - x_{approx}|}{|x_{true}|} )
+Error Propagation: How early errors affect later results.
 
-- Rendering realistic graphics and game physics
+A good numerical algorithm minimizes these errors and ensures results remain reliable even with imperfect inputs.
 
-- Performing weather forecasts, seismic analysis, and space exploration
+3. Efficiency and Complexity: Speed matters. Efficiency is measured by: Time Complexity → How fast the algorithm runs and Space Complexity → How much memory it uses
 
-Without numerical computation, most of modern engineering, data science, and machine learning would not exist.
+For instance:
+Naive exponentiation: O(n) Fast Exponentiation (Exponentiation by Squaring): O(log n) ia a huge improvement for cryptography and large computations.
 
-### Common categories of Graph Algorithms
+### Essential Numerical Algorithms to Know
 
 * **Euclidean Algorithm for GCD**
 * **Fast Exponentiation (Modular Exponentiation)**
@@ -32,170 +38,7 @@ Without numerical computation, most of modern engineering, data science, and mac
 * **Gaussian Elimination**
 * **Numerical Integration (Quadrature)**
 
-**Naïve String Matching Algorithm** The Naïve approach checks the pattern at every position in the text.
-It’s simple but can be slow for long texts 
-
-
-### JavaScript Implementation
-
-```javascript
-function naiveSearch(text, pattern) {
-  const n = text.length;
-  const m = pattern.length;
-  const positions = [];
-
-  for (let i = 0; i <= n - m; i++) {
-    let j = 0;
-    while (j < m && text[i + j] === pattern[j]) j++;
-    if (j === m) positions.push(i);
-  }
-
-  return positions;
-}
-
-console.log(naiveSearch("AABAACAADAABAABA", "AABA"));
-// Output: [0, 9, 12]
-```
-
-**Knuth–Morris–Pratt (KMP) Algorithm** The KMP algorithm improves efficiency by avoiding unnecessary re-checks using a prefix table (also called an LPS — Longest Prefix Suffix array).
-
-It precomputes the longest proper prefix of the pattern which is also a suffix, allowing the search to skip redundant comparisons.
-
-### JavaScript Implementation
-
-```javascript
-function computeLPSArray(pattern) {
-  const lps = new Array(pattern.length).fill(0);
-  let len = 0;
-  let i = 1;
-
-  while (i < pattern.length) {
-    if (pattern[i] === pattern[len]) {
-      lps[i++] = ++len;
-    } else if (len !== 0) {
-      len = lps[len - 1];
-    } else {
-      lps[i++] = 0;
-    }
-  }
-  return lps;
-}
-
-function kmpSearch(text, pattern) {
-  const lps = computeLPSArray(pattern);
-  const positions = [];
-  let i = 0, j = 0;
-
-  while (i < text.length) {
-    if (pattern[j] === text[i]) {
-      i++; j++;
-    }
-
-    if (j === pattern.length) {
-      positions.push(i - j);
-      j = lps[j - 1];
-    } else if (i < text.length && pattern[j] !== text[i]) {
-      j !== 0 ? (j = lps[j - 1]) : i++;
-    }
-  }
-
-  return positions;
-}
-
-console.log(kmpSearch("ABABDABACDABABCABAB", "ABABCABAB"));
-// Output: [10]
-
-```
-
-**Rabin–Karp Algorithm (Hash-Based Search)** The Rabin–Karp algorithm uses a rolling hash function to compare substrings instead of checking characters one by one.
-
-**Dijkstra's Algorithm:** Dijkstra's Algorithm finds the shortest path from a single starting point to all other nodes in a graph. It works on graphs where:
-
-This is especially useful when searching for multiple patterns in one text.
-
-## JavaScript Implementation  
-
-```javascript
-function rabinKarp(text, pattern, prime = 101) {
-  const n = text.length;
-  const m = pattern.length;
-  const d = 256; // number of possible characters
-  let h = 1;
-  let p = 0; // hash for pattern
-  let t = 0; // hash for text
-  const result = [];
-
-  for (let i = 0; i < m - 1; i++) h = (h * d) % prime;
-
-  for (let i = 0; i < m; i++) {
-    p = (d * p + pattern.charCodeAt(i)) % prime;
-    t = (d * t + text.charCodeAt(i)) % prime;
-  }
-
-  for (let i = 0; i <= n - m; i++) {
-    if (p === t) {
-      if (text.slice(i, i + m) === pattern) result.push(i);
-    }
-    if (i < n - m) {
-      t = (d * (t - text.charCodeAt(i) * h) + text.charCodeAt(i + m)) % prime;
-      if (t < 0) t += prime;
-    }
-  }
-
-  return result;
-}
-
-console.log(rabinKarp("GEEKS FOR GEEKS", "GEEK"));
-// Output: [0, 10]
-```
-
-## Boyer–Moore Algorithm
-
-The Boyer–Moore algorithm scans the text from right to left and skips large sections of text using two smart rules:
-
-Bad Character Rule
-
-Good Suffix Rule
-
-It’s one of the fastest practical algorithms for single pattern searches.
-
-
-## JavaScript Implementation
-
-```javascript
-function badCharHeuristic(pattern) {
-  const badChar = {};
-  for (let i = 0; i < pattern.length; i++) {
-    badChar[pattern[i]] = i;
-  }
-  return badChar;
-}
-
-function boyerMooreSearch(text, pattern) {
-  const badChar = badCharHeuristic(pattern);
-  const n = text.length, m = pattern.length;
-  let s = 0;
-  const result = [];
-
-  while (s <= n - m) {
-    let j = m - 1;
-
-    while (j >= 0 && pattern[j] === text[s + j]) j--;
-
-    if (j < 0) {
-      result.push(s);
-      s += m - (badChar[text[s + m]] || -1);
-    } else {
-      s += Math.max(1, j - (badChar[text[s + j]] ?? -1));
-    }
-  }
-
-  return result;
-}
-
-console.log(boyerMooreSearch("ABAAABCD", "ABC"));
-// Output: [4]
-```
+## Naïve String Matching Algorithm
 
 ##  Conclusion
 
