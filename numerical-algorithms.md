@@ -38,7 +38,7 @@ Naive exponentiation: O(n) Fast Exponentiation (Exponentiation by Squaring): O(l
 * **Gaussian Elimination**
 * **Numerical Integration (Quadrature)**
 
-## Naïve String Matching Algorithm
+## Euclidean Algorithm for GCD
 
 ##  Conclusion
 
