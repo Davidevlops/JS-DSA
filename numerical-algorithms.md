@@ -654,6 +654,9 @@ const f2 = x => 2;             // Second derivative
 
 console.log("Minimum at x ≈", newtonsMethod(f1, f2, 5));
 ```
+✅ Pros: Fast convergence near the minimum
+⚠️ Cons: Requires computing second derivatives; can diverge with poor initial guesses
+
 3. Simulated Annealing
 
 Idea:
