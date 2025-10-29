@@ -272,11 +272,11 @@ console.log("Trapezoidal Rule Result:", result.toFixed(4));
 ```
 ## 2. Simpson’s Rule
 
-Simpson’s Rule provides a more accurate approximation by fitting parabolas through sections of the curve rather than straight lines. It requires that the number of intervals $n$ be even.
+Simpson’s Rule provides a more accurate approximation by fitting parabolas through sections of the curve rather than straight lines. It requires that the number of intervals n be even.
 
 **Mathematically:**
 
-$$\int_a^b f(x) \, dx \approx \frac{h}{3} \left[ f(a) + 4 \sum_{\text{odd } i} f(x_i) + 2 \sum_{\text{even } i} f(x_i) + f(b) \right]$$
+∫[a to b] f(x) dx ≈ (h/3) × [f(a) + 4 × Σ(odd i) f(x_i) + 2 × Σ(even i) f(x_i) + f(b)]
 
 ### JavaScript Implementation
 
