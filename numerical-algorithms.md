@@ -380,7 +380,7 @@ console.log(
     1.5
   )
 ); // Output ≈ 1.521
-
+```
 3. Secant Method
 
 Idea:
@@ -466,8 +466,8 @@ f
 (x).
 Cons: May fail to converge if guesses are poor.
 
-🧮 JavaScript Implementation:
-
+### JavaScript Implementation
+```javascript
 function secant(f, x0, x1, tolerance = 1e-6, maxIter = 100) {
   for (let i = 0; i < maxIter; i++) {
     const f0 = f(x0);
@@ -483,7 +483,7 @@ function secant(f, x0, x1, tolerance = 1e-6, maxIter = 100) {
 
 // Example: f(x) = x^3 - x - 2
 console.log(secant(x => x ** 3 - x - 2, 1, 2)); // Output ≈ 1.521
-
+```
 🧩 Use Cases
 
 Root-finding algorithms appear across numerous fields:
