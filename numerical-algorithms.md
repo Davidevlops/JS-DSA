@@ -239,93 +239,27 @@ Root-finding algorithms appear across numerous fields:
 - **Scientific computing**: Solving nonlinear equations in physics and chemistry models
 
 
-#### Numerical Integration (Approximation Methods)
-In many real-world scenarios, finding the exact integral of a function analytically is impossible or extremely complex. This is where numerical integration methods — or approximation techniques — come in.
+### Numerical Integration (Approximation Methods)
+
+In many real-world scenarios, finding the exact integral of a function analytically is impossible or extremely complex. This is where **numerical integration methods** — or approximation techniques — come in.
+
 These methods estimate the area under a curve by breaking it into smaller, manageable parts that can be computed efficiently.
 
+### Popular Numerical Integration Methods
 Below are three of the most popular and widely used numerical integration methods:
 
-1. Trapezoidal Rule
+## 1. Trapezoidal Rule
 
 The Trapezoidal Rule approximates the area under a curve by dividing it into trapezoids instead of rectangles. It then sums up the areas of these trapezoids to estimate the integral.
 
-Mathematically:
+**Mathematically:**
 
-∫
-𝑎
-𝑏
-𝑓
-(
-𝑥
-)
- 
-𝑑
-𝑥
-≈
-ℎ
-2
-[
-𝑓
-(
-𝑎
-)
-+
-2
-∑
-𝑖
-=
-1
-𝑛
-−
-1
-𝑓
-(
-𝑥
-𝑖
-)
-+
-𝑓
-(
-𝑏
-)
-]
-∫
-a
-b
-	​
+$$\int_a^b f(x) \, dx \approx \frac{h}{2} \left[ f(a) + 2 \sum_{i=1}^{n-1} f(x_i) + f(b) \right]$$
 
-f(x)dx≈
-2
-h
-	​
-
-[f(a)+2
-i=1
-∑
-n−1
-	​
-
-f(x
-i
-	​
-
-)+f(b)]
-
-where 
-ℎ
-=
-𝑏
-−
-𝑎
-𝑛
-h=
-n
-b−a
-	​
-
- is the width of each subinterval.
+where $h = \frac{b - a}{n}$ is the width of each subinterval.
 
 ### JavaScript Implementation
+
 ```javascript
 function trapezoidalRule(f, a, b, n) {
   const h = (b - a) / n;
