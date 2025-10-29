@@ -118,9 +118,9 @@ console.log(modExp(2, 10, 100)); // Output: 24
 
 In many scientific, engineering, and financial problems, we often face equations that cannot be solved analytically (that is, using algebra alone). In such cases, we turn to **root-finding algorithms** — numerical methods used to approximate solutions for equations of the form:
 
-$$f(x) = 0$$
+f(x) = 0
 
-A **root** (or **zero**) of a function is a value of $x$ for which the function equals zero. These algorithms iteratively refine guesses for $x$ until they converge to an acceptable approximation of the true root.
+A **root** (or **zero**) of a function is a value of x for which the function equals zero. These algorithms iteratively refine guesses for x until they converge to an acceptable approximation of the true root.
 
 ### Popular Root-Finding Methods
 
@@ -525,12 +525,12 @@ Operations Research: Scheduling, routing, and resource allocation
 
 In mathematics and computational science, many real-world problems boil down to solving a system of linear equations, often written as:
 
-$$A\mathbf{x} = \mathbf{b}$$
+Ax = b
 
 where:
-- $A$ is a matrix of coefficients,
-- $\mathbf{x}$ is a vector of unknowns, and
-- $\mathbf{b}$ is a vector of constants.
+- A is a matrix of coefficients,
+- x is a vector of unknowns, and
+- b is a vector of constants.
 
 Linear systems appear everywhere — from machine learning (solving for model parameters) to engineering simulations, computer graphics, and optimization problems.
 
