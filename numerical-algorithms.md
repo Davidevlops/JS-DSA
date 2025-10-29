@@ -128,9 +128,6 @@ Below are three commonly used approaches — each with unique strengths and trad
 
 #### 1. Bisection Method
 
-## Bisection Method
-
-### Idea
 The Bisection Method is one of the simplest and most reliable root-finding techniques. It works by repeatedly dividing an interval in half and selecting the subinterval in which the sign of f(x) changes — meaning a root must lie within it (by the Intermediate Value Theorem).
 
 ### Steps
