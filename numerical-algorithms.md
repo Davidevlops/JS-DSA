@@ -941,6 +941,8 @@ When the system is large or sparse, direct methods become computationally expens
 Iterative methods like Jacobi and Gauss–Seidel approximate solutions by refining guesses over multiple iterations.
 
 Jacobi Method (Example):
+### JavaScript Implementation
+```javascript
 function jacobiMethod(A, b, tolerance = 1e-6, maxIterations = 1000) {
   const n = A.length;
   let x = new Array(n).fill(0);
@@ -972,14 +974,15 @@ const A3 = [
 ];
 const b3 = [6, 25, -11, 15];
 console.log("Jacobi Method Result:", jacobiMethod(A3, b3));
-
+```
 4. Conjugate Gradient Method
 
 The Conjugate Gradient (CG) method is a powerful iterative algorithm optimized for large, sparse, symmetric, and positive-definite systems — common in scientific computing and machine learning.
 
 It converges faster than basic iterative methods for well-conditioned systems.
 
-JavaScript (Simplified Implementation):
+### JavaScript Implementation
+```javascript (Simplified Implementation):
 
 function conjugateGradient(A, b, tolerance = 1e-6, maxIterations = 1000) {
   const n = b.length;
