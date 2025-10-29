@@ -70,7 +70,58 @@ function gcd(a, b) {
 console.log(gcd(48, 18)); // Output: 6
 ```
 
+# Fast Exponentiation (Modular Exponentiation)
 
+## Introduction
+
+In computational mathematics, directly calculating aᵇ can be extremely inefficient, especially when b is large. Imagine trying to compute something like 7¹⁰⁰⁰⁰⁰⁰ — the number of multiplications would be enormous, and the result far too large to handle in memory.
+
+To solve this, we use **Fast Exponentiation**, also known as **Exponentiation by Squaring**. When combined with modular arithmetic, it becomes **Modular Exponentiation**, which efficiently computes:
+
+aᵇ mod m
+
+This method dramatically reduces computation time by repeatedly squaring and taking remainders at each step, keeping numbers manageable and operations efficient.
+
+## Mathematical Concept
+
+The recursive logic behind the algorithm is based on the parity (evenness or oddness) of the exponent b:
+
+- **If b is even:** aᵇ = (aᵇ/²)²
+- **If b is odd:** aᵇ = a × (a⁽ᵇ⁻¹⁾/²)²
+
+At each step, the exponent b is halved, reducing the number of multiplications from **O(b)** to **O(log b)** — a major performance improvement.
+
+## JavaScript Implementation
+
+```javascript
+/**
+ * Fast Modular Exponentiation using Exponentiation by Squaring
+ * @param {number} a - base
+ * @param {number} b - exponent
+ * @param {number} m - modulus
+ * @returns {number} a^b mod m
+ */
+function modExp(a, b, m) {
+  // Base case: anything to the power of 0 is 1
+  if (b === 0) return 1;
+  
+  // If exponent is even
+  if (b % 2 === 0) {
+    const half = modExp(a, b / 2, m);
+    return (half * half) % m;
+  } 
+  // If exponent is odd
+  else {
+    const half = modExp(a, Math.floor(b / 2), m);
+    return (a * half * half) % m;
+  }
+}
+
+// Example usage
+console.log(modExp(3, 5, 13));  // Output: 9
+console.log(modExp(7, 3, 11));  // Output: 2
+console.log(modExp(2, 10, 100)); // Output: 24
+```
 #### Fast Exponentiation (Modular Exponentiation)
 
 In computational mathematics, directly calculating 
