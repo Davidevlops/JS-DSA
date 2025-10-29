@@ -657,16 +657,16 @@ console.log("Minimum at x ≈", newtonsMethod(f1, f2, 5));
 ✅ Pros: Fast convergence near the minimum
 ⚠️ Cons: Requires computing second derivatives; can diverge with poor initial guesses
 
-3. Simulated Annealing
+## 3. Simulated Annealing
 
-Idea:
-Inspired by metallurgical annealing, this method explores the search space randomly, accepting worse solutions with a certain probability that decreases over time (the “cooling schedule”).
-This helps the algorithm escape local minima — something gradient-based methods struggle with.
+### Idea
+Inspired by metallurgical annealing, this method explores the search space randomly, accepting worse solutions with a certain probability that decreases over time (the "cooling schedule"). This helps the algorithm escape local minima — something gradient-based methods struggle with.
 
-It’s particularly useful for non-convex, discrete, or combinatorial problems (like traveling salesman or scheduling).
+It's particularly useful for non-convex, discrete, or combinatorial problems (like traveling salesman or scheduling).
 
-JavaScript Implementation (Simplified):
+### JavaScript Implementation (Simplified)
 
+```javascript
 function simulatedAnnealing(f, x0, temp = 100, coolingRate = 0.95, tolerance = 1e-6) {
   let x = x0;
   let best = x;
@@ -694,11 +694,7 @@ function simulatedAnnealing(f, x0, temp = 100, coolingRate = 0.95, tolerance = 1
 // Example: Minimize f(x) = (x - 5)^2 + Math.sin(5x)
 const f2 = x => (x - 5) ** 2 + Math.sin(5 * x);
 console.log("Best solution ≈", simulatedAnnealing(f2, 0));
-
-
-✅ Pros: Can escape local minima; works for complex landscapes
-⚠️ Cons: Computationally slower; requires tuning cooling parameters
-
+```
 4. Genetic Algorithms
 
 Idea:
