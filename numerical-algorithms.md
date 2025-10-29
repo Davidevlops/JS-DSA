@@ -276,8 +276,8 @@ Repeat until the result is within a desired tolerance.
 Pros: Simple, stable, guaranteed to converge.
 Cons: Converges slowly compared to other methods.
 
-🧮 JavaScript Implementation:
-
+### JavaScript Implementation
+```javascript
 function bisection(f, a, b, tolerance = 1e-6, maxIter = 1000) {
   if (f(a) * f(b) >= 0) throw new Error("f(a) and f(b) must have opposite signs");
 
@@ -294,7 +294,7 @@ function bisection(f, a, b, tolerance = 1e-6, maxIter = 1000) {
 
 // Example: Solve f(x) = x^3 - x - 2 = 0
 console.log(bisection(x => x ** 3 - x - 2, 1, 2)); // Output ≈ 1.521
-
+```
 2. Newton–Raphson Method
 
 Idea:
@@ -356,8 +356,8 @@ f
 ′
 (x); can diverge if the initial guess is poor.
 
-🧮 JavaScript Implementation:
-
+### JavaScript Implementation
+```javascript
 function newtonRaphson(f, df, x0, tolerance = 1e-6, maxIter = 100) {
   let x = x0;
 
@@ -455,7 +455,7 @@ n−1
 	​
 
 
-✅ Pros: Faster than Bisection and doesn’t need 
+Pros: Faster than Bisection and doesn’t need 
 𝑓
 ′
 (
@@ -464,7 +464,7 @@ n−1
 f
 ′
 (x).
-⚠️ Cons: May fail to converge if guesses are poor.
+Cons: May fail to converge if guesses are poor.
 
 🧮 JavaScript Implementation:
 
