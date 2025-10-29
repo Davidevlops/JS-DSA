@@ -6,7 +6,7 @@ Imagine a world where we can perfectly simulate the behavior of new medicines, d
 
 At the heart of this revolution are **Numerical Algorithms**. They are the quiet, mathematical engines that empower computers to tackle problems in physics, engineering, and finance that were once thought impossible. By translating the elegant language of continuous mathematics into practical, step-by-step digital processes, they unlock solutions that drive innovation.
 
-In this article, we'll explore the core ideas that make these algorithms so powerful. Through clear explanations and practical pseudocode in JavaScript and Python styles, you will learn how these computational techniques are applied. Join us one last time to discover how mathematics and code unite to engineer a better, smarter world.
+In this article, we'll explore the core ideas that make these algorithms so powerful. Through clear explanations and practical pseudocode in JavaScript, you will learn how these computational techniques are applied. Join us one last time to discover how mathematics and code unite to engineer a better, smarter world.
 
 By the end, you'll understand how mathematics and computation merge to solve real-world problems.
 
@@ -92,13 +92,6 @@ At each step, the exponent b is halved, reducing the number of multiplications f
 ## JavaScript Implementation
 
 ```javascript
-/**
- * Fast Modular Exponentiation using Exponentiation by Squaring
- * @param {number} a - base
- * @param {number} b - exponent
- * @param {number} m - modulus
- * @returns {number} a^b mod m
- */
 function modExp(a, b, m) {
   // Base case: anything to the power of 0 is 1
   if (b === 0) return 1;
