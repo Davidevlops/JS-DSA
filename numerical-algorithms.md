@@ -653,8 +653,6 @@ console.log("U =", U);
 
 When the system is large or sparse, direct methods become computationally expensive. Iterative methods like Jacobi and Gauss–Seidel approximate solutions by refining guesses over multiple iterations.
 
-### Jacobi Method
-
 #### JavaScript Implementation
 
 ```javascript
