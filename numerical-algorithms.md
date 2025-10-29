@@ -303,9 +303,9 @@ The Monte Carlo Method uses random sampling to estimate the area under a curve. 
 
 **Mathematically:**
 
-$$\int_a^b f(x) \, dx \approx (b - a) \times \frac{1}{N} \sum_{i=1}^N f(x_i)$$
+∫[a to b] f(x) dx ≈ (b - a) × (1/N) × Σ(i=1 to N) f(x_i)
 
-where $x_i$ are random points between $a$ and $b$.
+where x_i are random points between a and b.
 
 ### JavaScript Implementation
 
@@ -345,19 +345,19 @@ Optimization lies at the heart of machine learning, engineering design, finance,
 
 Mathematically, the problem is often expressed as:
 
-$$\min_x f(x) \quad \text{or} \quad \max_x f(x)$$
+min_x f(x)   or   max_x f(x)
 
-where $f(x)$ is the objective function we want to optimize.
+where f(x) is the objective function we want to optimize.
 
-Because many real-world problems are too complex for exact calculus-based solutions, these algorithms iteratively improve guesses for $x$ to move closer to the optimal point.
+Because many real-world problems are too complex for exact calculus-based solutions, these algorithms iteratively improve guesses for x to move closer to the optimal point.
 
 ## 1. Gradient Descent
 Gradient Descent is one of the most widely used optimization algorithms, especially in machine learning. It works by iteratively moving in the direction of steepest descent — the negative gradient — to minimize the objective function.
 
 ### Mathematically
-$$x_{n+1} = x_n - \eta \cdot f'(x_n)$$
+x_{n+1} = x_n - η · f'(x_n)
 
-where $\eta$ (eta) is the learning rate, controlling the step size.
+where η (eta) is the learning rate, controlling the step size.
 
 ### JavaScript Implementation
 
@@ -386,12 +386,10 @@ console.log("Minimum at x ≈", gradientDescent(f, df, 10));
 ⚠️ Cons: May get stuck in local minima; choice of learning rate affects performance
 
 ## 2. Newton's Method (for Optimization)
-
-### Idea
 While Gradient Descent uses only the first derivative, Newton's Method also considers the second derivative (curvature) of the function for faster convergence. It adjusts the step size adaptively based on how steep or flat the function is.
 
 ### Formula
-$$x_{n+1} = x_n - \frac{f'(x_n)}{f''(x_n)}$$
+x_{n+1} = x_n - f'(x_n)/f''(x_n)
 
 ### JavaScript Implementation
 
@@ -422,8 +420,6 @@ console.log("Minimum at x ≈", newtonsMethod(f1, f2, 5));
 ⚠️ Cons: Requires computing second derivatives; can diverge with poor initial guesses
 
 ## 3. Simulated Annealing
-
-### Idea
 Inspired by metallurgical annealing, this method explores the search space randomly, accepting worse solutions with a certain probability that decreases over time (the "cooling schedule"). This helps the algorithm escape local minima — something gradient-based methods struggle with.
 
 It's particularly useful for non-convex, discrete, or combinatorial problems (like traveling salesman or scheduling).
@@ -464,8 +460,6 @@ Pros & Cons
 ⚠️ Cons: Computationally slower; requires tuning cooling parameters
 
 ## 4. Genetic Algorithms
-
-### Idea
 Genetic Algorithms (GAs) mimic biological evolution — using operations like selection, crossover, and mutation to evolve a population of candidate solutions toward optimal results.
 
 These algorithms are especially effective for multi-variable, non-differentiable, or discrete optimization problems.
@@ -541,8 +535,7 @@ where:
 Linear systems appear everywhere — from machine learning (solving for model parameters) to engineering simulations, computer graphics, and optimization problems.
 
 ## 1. Gaussian Elimination (Direct Method)
-
-The Gaussian Elimination method systematically transforms the matrix $A$ into an upper triangular form, then uses back-substitution to find the values of the unknowns. It's a foundational algorithm used in almost all linear algebra libraries.
+The Gaussian Elimination method systematically transforms the matrix A into an upper triangular form, then uses back-substitution to find the values of the unknowns. It's a foundational algorithm used in almost all linear algebra libraries.
 
 ### JavaScript Implementation
 
@@ -596,15 +589,15 @@ console.log("Solution (Gaussian Elimination):", gaussianElimination(A, b));
 
 ## 2. LU Decomposition
 
-Instead of transforming the matrix multiple times, LU Decomposition splits $A$ into two simpler matrices:
+Instead of transforming the matrix multiple times, LU Decomposition splits A into two simpler matrices:
 
-$$A = L \times U$$
+A = L × U
 
 where:
-- $L$ is a lower triangular matrix,
-- $U$ is an upper triangular matrix.
+- L is a lower triangular matrix,
+- U is an upper triangular matrix.
 
-This makes solving for multiple $\mathbf{b}$ vectors efficient — useful in machine learning and simulations.
+This makes solving for multiple b vectors efficient — useful in machine learning and simulations.
 
 ### JavaScript Implementation
 
