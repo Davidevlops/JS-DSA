@@ -127,7 +127,6 @@ A **root** (or **zero**) of a function is a value of $x$ for which the function 
 Below are three commonly used approaches — each with unique strengths and trade-offs.
 
 #### 1. Bisection Method
-
 The Bisection Method is one of the simplest and most reliable root-finding techniques. It works by repeatedly dividing an interval in half and selecting the subinterval in which the sign of f(x) changes — meaning a root must lie within it (by the Intermediate Value Theorem).
 
 ### Steps
@@ -163,16 +162,14 @@ function bisection(f, a, b, tolerance = 1e-6, maxIter = 1000) {
 console.log(bisection(x => x ** 3 - x - 2, 1, 2)); // Output ≈ 1.521
 ```
 #### 2. Newton–Raphson Method
-
-#### Idea
 This is one of the fastest root-finding methods, using calculus to refine guesses. It approximates the root by iteratively following the tangent line at the current point until it converges to zero.
 
 #### Formula
-$$x_{n+1} = x_n - \frac{f(x_n)}{f'(x_n)}$$
+x_{n+1} = x_n - f(x_n)/f'(x_n)
 
 #### Pros & Cons
 - **Pros**: Very fast convergence when the starting guess is close to the root
-- **Cons**: Requires derivative $f'(x)$; can diverge if the initial guess is poor
+- **Cons**: Requires derivative f'(x); can diverge if the initial guess is poor
 
 ### JavaScript Implementation
 ```javascript
