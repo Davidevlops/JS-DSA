@@ -276,86 +276,16 @@ function trapezoidalRule(f, a, b, n) {
 const result = trapezoidalRule(x => x ** 2, 0, 3, 1000);
 console.log("Trapezoidal Rule Result:", result.toFixed(4));
 ```
-2. Simpson’s Rule
+## 2. Simpson’s Rule
 
-The Simpson’s Rule provides a more accurate approximation by fitting parabolas through sections of the curve rather than straight lines.
-It requires that the number of intervals n be even.
+Simpson’s Rule provides a more accurate approximation by fitting parabolas through sections of the curve rather than straight lines. It requires that the number of intervals $n$ be even.
 
-∫
-𝑎
-𝑏
-𝑓
-(
-𝑥
-)
- 
-𝑑
-𝑥
-≈
-ℎ
-3
-[
-𝑓
-(
-𝑎
-)
-+
-4
-∑
-odd 
-𝑖
-𝑓
-(
-𝑥
-𝑖
-)
-+
-2
-∑
-even 
-𝑖
-𝑓
-(
-𝑥
-𝑖
-)
-+
-𝑓
-(
-𝑏
-)
-]
-∫
-a
-b
-	​
+**Mathematically:**
 
-f(x)dx≈
-3
-h
-	​
-
-[f(a)+4
-odd i
-∑
-	​
-
-f(x
-i
-	​
-
-)+2
-even i
-∑
-	​
-
-f(x
-i
-	​
-
-)+f(b)]
+$$\int_a^b f(x) \, dx \approx \frac{h}{3} \left[ f(a) + 4 \sum_{\text{odd } i} f(x_i) + 2 \sum_{\text{even } i} f(x_i) + f(b) \right]$$
 
 ### JavaScript Implementation
+
 ```javascript
 function simpsonsRule(f, a, b, n) {
   if (n % 2 !== 0) throw new Error("n must be even for Simpson's Rule");
