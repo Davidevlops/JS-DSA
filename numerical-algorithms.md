@@ -197,15 +197,13 @@ console.log(
 ); // Output ≈ 1.521
 ```
 ## 3. Secant Method
-
-### Idea
 The Secant Method is similar to Newton–Raphson but doesn't require the derivative of the function. Instead, it approximates the derivative using the slope of a secant line through two recent points.
 
 ### Formula
-$$x_{n+1} = x_n - f(x_n) \times \frac{x_n - x_{n-1}}{f(x_n) - f(x_{n-1})}$$
+x_{n+1} = x_n - f(x_n) × (x_n - x_{n-1})/(f(x_n) - f(x_{n-1}))
 
 ### Pros & Cons
-- **Pros**: Faster than Bisection and doesn't need $f'(x)$
+- **Pros**: Faster than Bisection and doesn't need f'(x)
 - **Cons**: May fail to converge if guesses are poor
 
 ### JavaScript Implementation
