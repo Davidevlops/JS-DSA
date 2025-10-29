@@ -676,8 +676,8 @@ i
 
 )+f(b)]
 
-JavaScript Implementation:
-
+### JavaScript Implementation
+```javascript
 function simpsonsRule(f, a, b, n) {
   if (n % 2 !== 0) throw new Error("n must be even for Simpson's Rule");
   const h = (b - a) / n;
@@ -693,7 +693,7 @@ function simpsonsRule(f, a, b, n) {
 // Example: integrate f(x) = Math.sin(x) from 0 to π
 const resultSimpson = simpsonsRule(Math.sin, 0, Math.PI, 100);
 console.log("Simpson’s Rule Result:", resultSimpson.toFixed(4));
-
+```
 3. Monte Carlo Integration
 
 The Monte Carlo Method uses random sampling to estimate the area under a curve.
