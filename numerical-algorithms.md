@@ -128,19 +128,21 @@ Below are three commonly used approaches — each with unique strengths and trad
 
 #### 1. Bisection Method
 
-#### Idea
-The Bisection Method is one of the simplest and most reliable root-finding techniques. It works by repeatedly dividing an interval in half and selecting the subinterval in which the sign of $f(x)$ changes — meaning a root must lie within it (by the Intermediate Value Theorem).
+## Bisection Method
 
-##### Steps
-1. Choose two initial points $a$ and $b$ such that $f(a)$ and $f(b)$ have opposite signs
-2. Compute the midpoint $c = \frac{a + b}{2}$
-3. Evaluate $f(c)$:
-   - If $f(c) = 0$, you've found the root
-   - If $f(a)$ and $f(c)$ have opposite signs, the root lies in $[a, c]$
-   - Otherwise, it lies in $[c, b]$
+### Idea
+The Bisection Method is one of the simplest and most reliable root-finding techniques. It works by repeatedly dividing an interval in half and selecting the subinterval in which the sign of f(x) changes — meaning a root must lie within it (by the Intermediate Value Theorem).
+
+### Steps
+1. Choose two initial points a and b such that f(a) and f(b) have opposite signs
+2. Compute the midpoint c = (a + b) / 2
+3. Evaluate f(c):
+   - If f(c) = 0, you've found the root
+   - If f(a) and f(c) have opposite signs, the root lies in [a, c]
+   - Otherwise, it lies in [c, b]
 4. Repeat until the result is within a desired tolerance
 
-#### Pros & Cons
+### Pros & Cons
 - **Pros**: Simple, stable, guaranteed to converge
 - **Cons**: Converges slowly compared to other methods
 
