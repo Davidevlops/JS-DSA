@@ -163,6 +163,73 @@ function bisection(f, a, b, tolerance = 1e-6, maxIter = 1000) {
 // Example: Solve f(x) = x^3 - x - 2 = 0
 console.log(bisection(x => x ** 3 - x - 2, 1, 2)); // Output ≈ 1.521
 ```
+#### 2. Newton–Raphson Method
+
+#### Idea
+This is one of the fastest root-finding methods, using calculus to refine guesses. It approximates the root by iteratively following the tangent line at the current point until it converges to zero.
+
+#### Formula
+$$x_{n+1} = x_n - \frac{f(x_n)}{f'(x_n)}$$
+
+#### Pros & Cons
+- **Pros**: Very fast convergence when the starting guess is close to the root
+- **Cons**: Requires derivative $f'(x)$; can diverge if the initial guess is poor
+
+### JavaScript Implementation
+```javascript
+function newtonRaphson(f, df, x0, tolerance = 1e-6, maxIter = 100) {
+  let x = x0;
+
+  for (let i = 0; i < maxIter; i++) {
+    const fx = f(x);
+    const dfx = df(x);
+    if (Math.abs(fx) < tolerance) return x;
+    if (dfx === 0) throw new Error("Derivative is zero — method fails.");
+
+    x = x - fx / dfx;
+  }
+  return x;
+}
+
+// Example: f(x) = x^3 - x - 2
+console.log(
+  newtonRaphson(
+    x => x ** 3 - x - 2,
+    x => 3 * x ** 2 - 1,
+    1.5
+  )
+); // Output ≈ 1.521
+```
+## 3. Secant Method
+
+### Idea
+The Secant Method is similar to Newton–Raphson but doesn't require the derivative of the function. Instead, it approximates the derivative using the slope of a secant line through two recent points.
+
+### Formula
+$$x_{n+1} = x_n - f(x_n) \times \frac{x_n - x_{n-1}}{f(x_n) - f(x_{n-1})}$$
+
+### Pros & Cons
+- **Pros**: Faster than Bisection and doesn't need $f'(x)$
+- **Cons**: May fail to converge if guesses are poor
+
+### JavaScript Implementation
+```javascript
+function secant(f, x0, x1, tolerance = 1e-6, maxIter = 100) {
+  for (let i = 0; i < maxIter; i++) {
+    const f0 = f(x0);
+    const f1 = f(x1);
+    if (Math.abs(f1) < tolerance) return x1;
+
+    const x2 = x1 - f1 * ((x1 - x0) / (f1 - f0));
+    x0 = x1;
+    x1 = x2;
+  }
+  return x1;
+}
+
+// Example: f(x) = x^3 - x - 2
+console.log(secant(x => x ** 3 - x - 2, 1, 2)); // Output ≈ 1.521
+```
 #### Root-Finding Algorithms
 
 In many scientific, engineering, and financial problems, we often face equations that cannot be solved analytically (that is, using algebra alone). In such cases, we turn to root-finding algorithms — numerical methods used to approximate solutions for equations of the form:
