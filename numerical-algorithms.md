@@ -762,8 +762,8 @@ a and
 𝑏
 b.
 
-JavaScript Implementation:
-
+### JavaScript Implementation
+```javascript
 function monteCarloIntegration(f, a, b, n) {
   let sum = 0;
   for (let i = 0; i < n; i++) {
@@ -776,7 +776,7 @@ function monteCarloIntegration(f, a, b, n) {
 // Example: integrate f(x) = Math.exp(-x*x) from -2 to 2
 const resultMonteCarlo = monteCarloIntegration(x => Math.exp(-x * x), -2, 2, 100000);
 console.log("Monte Carlo Result:", resultMonteCarlo.toFixed(4));
-
+```
 ✅ Use Cases
 
 Estimating areas under complex curves
@@ -797,16 +797,230 @@ When exact calculus is impossible, approximation methods step in:
 
 
 #### Solving Linear Systems
+In mathematics and computational science, many real-world problems boil down to solving a system of linear equations, often written as:
 
-Equations like ( Ax = b ) appear everywhere — from machine learning to engineering.
-Key methods include:
+𝐴
+𝑥
+=
+𝑏
+Ax=b
 
-* **Gaussian Elimination** (direct method)
-* **LU Decomposition**
-* **Jacobi & Gauss–Seidel Methods** (iterative methods)
-* **Conjugate Gradient Method** (for large sparse systems)
+where
 
-✅ **Use Case:** Data fitting, physics simulations, optimization problems
+𝐴
+A is a matrix of coefficients,
+
+𝑥
+x is a vector of unknowns, and
+
+𝑏
+b is a vector of constants.
+
+Linear systems appear everywhere — from machine learning (solving for model parameters) to engineering simulations, computer graphics, and optimization problems.
+
+1. Gaussian Elimination (Direct Method)
+
+The Gaussian Elimination method systematically transforms the matrix 
+𝐴
+A into an upper triangular form, then uses back-substitution to find the values of the unknowns.
+It’s a foundational algorithm used in almost all linear algebra libraries.
+
+### JavaScript Implementation
+```javascript
+function gaussianElimination(A, b) {
+  const n = A.length;
+
+  // Forward elimination
+  for (let i = 0; i < n; i++) {
+    // Pivot for numerical stability
+    let maxRow = i;
+    for (let k = i + 1; k < n; k++) {
+      if (Math.abs(A[k][i]) > Math.abs(A[maxRow][i])) maxRow = k;
+    }
+    [A[i], A[maxRow]] = [A[maxRow], A[i]];
+    [b[i], b[maxRow]] = [b[maxRow], b[i]];
+
+    // Eliminate below
+    for (let k = i + 1; k < n; k++) {
+      const factor = A[k][i] / A[i][i];
+      for (let j = i; j < n; j++) {
+        A[k][j] -= factor * A[i][j];
+      }
+      b[k] -= factor * b[i];
+    }
+  }
+
+  // Back substitution
+  const x = new Array(n).fill(0);
+  for (let i = n - 1; i >= 0; i--) {
+    let sum = b[i];
+    for (let j = i + 1; j < n; j++) {
+      sum -= A[i][j] * x[j];
+    }
+    x[i] = sum / A[i][i];
+  }
+
+  return x;
+}
+
+// Example: Solve A·x = b
+const A = [
+  [2, 1, -1],
+  [-3, -1, 2],
+  [-2, 1, 2]
+];
+const b = [8, -11, -3];
+
+console.log("Solution (Gaussian Elimination):", gaussianElimination(A, b));
+```
+
+2. LU Decomposition
+
+Instead of transforming the matrix multiple times, LU Decomposition splits 
+𝐴
+A into two simpler matrices:
+
+𝐴
+=
+𝐿
+×
+𝑈
+A=L×U
+
+where
+
+𝐿
+L is a lower triangular matrix,
+
+𝑈
+U is an upper triangular matrix.
+
+This makes solving for multiple 
+𝑏
+b vectors efficient — useful in machine learning and simulations.
+
+### JavaScript Implementation
+```javascript
+function luDecomposition(A) {
+  const n = A.length;
+  const L = Array.from({ length: n }, () => Array(n).fill(0));
+  const U = Array.from({ length: n }, () => Array(n).fill(0));
+
+  for (let i = 0; i < n; i++) {
+    for (let k = i; k < n; k++) {
+      let sum = 0;
+      for (let j = 0; j < i; j++) sum += L[i][j] * U[j][k];
+      U[i][k] = A[i][k] - sum;
+    }
+
+    for (let k = i; k < n; k++) {
+      if (i === k) L[i][i] = 1;
+      else {
+        let sum = 0;
+        for (let j = 0; j < i; j++) sum += L[k][j] * U[j][i];
+        L[k][i] = (A[k][i] - sum) / U[i][i];
+      }
+    }
+  }
+
+  return { L, U };
+}
+
+// Example
+const A2 = [
+  [4, 3],
+  [6, 3]
+];
+const { L, U } = luDecomposition(A2);
+console.log("L =", L);
+console.log("U =", U);
+```
+3. Jacobi and Gauss–Seidel Methods (Iterative Methods)
+
+When the system is large or sparse, direct methods become computationally expensive.
+Iterative methods like Jacobi and Gauss–Seidel approximate solutions by refining guesses over multiple iterations.
+
+Jacobi Method (Example):
+function jacobiMethod(A, b, tolerance = 1e-6, maxIterations = 1000) {
+  const n = A.length;
+  let x = new Array(n).fill(0);
+  let xNew = new Array(n).fill(0);
+
+  for (let iter = 0; iter < maxIterations; iter++) {
+    for (let i = 0; i < n; i++) {
+      let sum = 0;
+      for (let j = 0; j < n; j++) {
+        if (i !== j) sum += A[i][j] * x[j];
+      }
+      xNew[i] = (b[i] - sum) / A[i][i];
+    }
+
+    // Check for convergence
+    if (xNew.every((val, i) => Math.abs(val - x[i]) < tolerance)) break;
+    x = [...xNew];
+  }
+
+  return x;
+}
+
+// Example
+const A3 = [
+  [10, -1, 2, 0],
+  [-1, 11, -1, 3],
+  [2, -1, 10, -1],
+  [0, 3, -1, 8]
+];
+const b3 = [6, 25, -11, 15];
+console.log("Jacobi Method Result:", jacobiMethod(A3, b3));
+
+4. Conjugate Gradient Method
+
+The Conjugate Gradient (CG) method is a powerful iterative algorithm optimized for large, sparse, symmetric, and positive-definite systems — common in scientific computing and machine learning.
+
+It converges faster than basic iterative methods for well-conditioned systems.
+
+JavaScript (Simplified Implementation):
+
+function conjugateGradient(A, b, tolerance = 1e-6, maxIterations = 1000) {
+  const n = b.length;
+  let x = new Array(n).fill(0);
+  let r = b.map((val, i) => val - A[i].reduce((sum, aij, j) => sum + aij * x[j], 0));
+  let p = [...r];
+  let rsOld = r.reduce((sum, val) => sum + val * val, 0);
+
+  for (let i = 0; i < maxIterations; i++) {
+    const Ap = A.map(row => row.reduce((sum, val, j) => sum + val * p[j], 0));
+    const alpha = rsOld / p.reduce((sum, val, j) => sum + val * Ap[j], 0);
+    x = x.map((xi, j) => xi + alpha * p[j]);
+    r = r.map((ri, j) => ri - alpha * Ap[j]);
+
+    const rsNew = r.reduce((sum, val) => sum + val * val, 0);
+    if (Math.sqrt(rsNew) < tolerance) break;
+
+    p = r.map((ri, j) => ri + (rsNew / rsOld) * p[j]);
+    rsOld = rsNew;
+  }
+
+  return x;
+}
+
+// Example
+const A4 = [
+  [4, 1],
+  [1, 3]
+];
+const b4 = [1, 2];
+console.log("Conjugate Gradient Result:", conjugateGradient(A4, b4));
+
+✅ Use Cases
+
+Machine Learning: Solving systems in linear regression, SVMs, and optimization problems
+
+Physics Simulations: Modeling motion, energy, or stress systems
+
+Computer Graphics: Solving transformation and rendering equations
+
+Optimization & Control Systems: Computing constraints or equilibrium states
 
 
 #### Optimization Algorithms
