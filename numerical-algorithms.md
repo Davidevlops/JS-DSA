@@ -61,7 +61,7 @@ console.log(gcd(48, 18)); // Output: 6
 
 #### Fast Exponentiation (Modular Exponentiation)
 
- n computational mathematics, directly calculating 
+In computational mathematics, directly calculating 
 𝑎
 𝑏
 a
@@ -88,6 +88,69 @@ b
 modm
 
 This method dramatically reduces computation time by repeatedly squaring and taking remainders at each step, keeping numbers manageable and operations efficient.
+
+Mathematical Concept
+
+The recursive logic behind the algorithm is based on the parity (evenness or oddness) of the exponent b:
+
+𝑎
+𝑏
+=
+{
+(
+𝑎
+𝑏
+/
+2
+)
+2
+,
+	
+if 
+𝑏
+ is even
+
+
+𝑎
+×
+(
+𝑎
+(
+𝑏
+−
+1
+)
+/
+2
+)
+2
+,
+	
+if 
+𝑏
+ is odd
+a
+b
+={
+(a
+b/2
+)
+2
+,
+a×(a
+(b−1)/2
+)
+2
+,
+	​
+
+if b is even
+if b is odd
+	​
+
+
+At each step, the exponent b is halved, reducing the number of multiplications from O(b) to O(log b) — a major performance improvement.
+
 ### JavaScript Implementation
 
 ```javascript
