@@ -59,7 +59,9 @@ console.log(gcd(48, 18)); // Output: 6
 ```
 
 
-#### n computational mathematics, directly calculating 
+#### Fast Exponentiation (Modular Exponentiation)
+
+ n computational mathematics, directly calculating 
 𝑎
 𝑏
 a
@@ -106,15 +108,328 @@ console.log(modExp(3, 5, 13)); // Output: 9
 
 #### Root-Finding Algorithms
 
-Used when we need to solve ( f(x) = 0 ).
-Popular methods:
+In many scientific, engineering, and financial problems, we often face equations that cannot be solved analytically (that is, using algebra alone). In such cases, we turn to root-finding algorithms — numerical methods used to approximate solutions for equations of the form:
 
-* **Bisection Method** → Safe, but slower
-* **Newton–Raphson Method** → Fast, needs a good starting point
-* **Secant Method** → Doesn’t require derivatives
+𝑓
+(
+𝑥
+)
+=
+0
+f(x)=0
 
-✅ **Use Case:** Engineering simulations, finance, scientific computing
+A root (or zero) of a function is a value of 
+𝑥
+x for which the function equals zero. These algorithms iteratively refine guesses for 
+𝑥
+x until they converge to an acceptable approximation of the true root.
 
+⚙️ Popular Root-Finding Methods
+
+Below are three commonly used approaches — each with unique strengths and trade-offs.
+
+1. Bisection Method
+
+Idea:
+The Bisection Method is one of the simplest and most reliable root-finding techniques. It works by repeatedly dividing an interval in half and selecting the subinterval in which the sign of 
+𝑓
+(
+𝑥
+)
+f(x) changes — meaning a root must lie within it (by the Intermediate Value Theorem).
+
+Steps:
+
+Choose two initial points a and b such that 
+𝑓
+(
+𝑎
+)
+f(a) and 
+𝑓
+(
+𝑏
+)
+f(b) have opposite signs.
+
+Compute the midpoint 
+𝑐
+=
+𝑎
++
+𝑏
+2
+c=
+2
+a+b
+	​
+
+.
+
+Evaluate 
+𝑓
+(
+𝑐
+)
+f(c):
+
+If 
+𝑓
+(
+𝑐
+)
+=
+0
+f(c)=0, you’ve found the root.
+
+If 
+𝑓
+(
+𝑎
+)
+f(a) and 
+𝑓
+(
+𝑐
+)
+f(c) have opposite signs, the root lies in 
+[
+𝑎
+,
+𝑐
+]
+[a,c].
+
+Otherwise, it lies in 
+[
+𝑐
+,
+𝑏
+]
+[c,b].
+
+Repeat until the result is within a desired tolerance.
+
+✅ Pros: Simple, stable, guaranteed to converge.
+⚠️ Cons: Converges slowly compared to other methods.
+
+🧮 JavaScript Implementation:
+
+function bisection(f, a, b, tolerance = 1e-6, maxIter = 1000) {
+  if (f(a) * f(b) >= 0) throw new Error("f(a) and f(b) must have opposite signs");
+
+  let c;
+  for (let i = 0; i < maxIter; i++) {
+    c = (a + b) / 2;
+    if (Math.abs(f(c)) < tolerance) return c;
+
+    if (f(a) * f(c) < 0) b = c;
+    else a = c;
+  }
+  return c;
+}
+
+// Example: Solve f(x) = x^3 - x - 2 = 0
+console.log(bisection(x => x ** 3 - x - 2, 1, 2)); // Output ≈ 1.521
+
+2. Newton–Raphson Method
+
+Idea:
+This is one of the fastest root-finding methods, using calculus to refine guesses. It approximates the root by iteratively following the tangent line at the current point until it converges to zero.
+
+Formula:
+
+𝑥
+𝑛
++
+1
+=
+𝑥
+𝑛
+−
+𝑓
+(
+𝑥
+𝑛
+)
+𝑓
+′
+(
+𝑥
+𝑛
+)
+x
+n+1
+	​
+
+=x
+n
+	​
+
+−
+f
+′
+(x
+n
+	​
+
+)
+f(x
+n
+	​
+
+)
+	​
+
+
+✅ Pros: Very fast convergence when the starting guess is close to the root.
+⚠️ Cons: Requires derivative 
+𝑓
+′
+(
+𝑥
+)
+f
+′
+(x); can diverge if the initial guess is poor.
+
+🧮 JavaScript Implementation:
+
+function newtonRaphson(f, df, x0, tolerance = 1e-6, maxIter = 100) {
+  let x = x0;
+
+  for (let i = 0; i < maxIter; i++) {
+    const fx = f(x);
+    const dfx = df(x);
+    if (Math.abs(fx) < tolerance) return x;
+    if (dfx === 0) throw new Error("Derivative is zero — method fails.");
+
+    x = x - fx / dfx;
+  }
+  return x;
+}
+
+// Example: f(x) = x^3 - x - 2
+console.log(
+  newtonRaphson(
+    x => x ** 3 - x - 2,
+    x => 3 * x ** 2 - 1,
+    1.5
+  )
+); // Output ≈ 1.521
+
+3. Secant Method
+
+Idea:
+The Secant Method is similar to Newton–Raphson but doesn’t require the derivative of the function. Instead, it approximates the derivative using the slope of a secant line through two recent points.
+
+Formula:
+
+𝑥
+𝑛
++
+1
+=
+𝑥
+𝑛
+−
+𝑓
+(
+𝑥
+𝑛
+)
+×
+𝑥
+𝑛
+−
+𝑥
+𝑛
+−
+1
+𝑓
+(
+𝑥
+𝑛
+)
+−
+𝑓
+(
+𝑥
+𝑛
+−
+1
+)
+x
+n+1
+	​
+
+=x
+n
+	​
+
+−f(x
+n
+	​
+
+)×
+f(x
+n
+	​
+
+)−f(x
+n−1
+	​
+
+)
+x
+n
+	​
+
+−x
+n−1
+	​
+
+	​
+
+
+✅ Pros: Faster than Bisection and doesn’t need 
+𝑓
+′
+(
+𝑥
+)
+f
+′
+(x).
+⚠️ Cons: May fail to converge if guesses are poor.
+
+🧮 JavaScript Implementation:
+
+function secant(f, x0, x1, tolerance = 1e-6, maxIter = 100) {
+  for (let i = 0; i < maxIter; i++) {
+    const f0 = f(x0);
+    const f1 = f(x1);
+    if (Math.abs(f1) < tolerance) return x1;
+
+    const x2 = x1 - f1 * ((x1 - x0) / (f1 - f0));
+    x0 = x1;
+    x1 = x2;
+  }
+  return x1;
+}
+
+// Example: f(x) = x^3 - x - 2
+console.log(secant(x => x ** 3 - x - 2, 1, 2)); // Output ≈ 1.521
+
+🧩 Use Cases
+
+Root-finding algorithms appear across numerous fields:
+
+Engineering simulations: To find equilibrium points, stresses, and voltages.
+
+Finance: Calculating interest rates (IRR), option pricing, or break-even points.
+
+Scientific computing: Solving nonlinear equations in physics and chemistry models.
 
 #### Numerical Integration and Differentiation
 
