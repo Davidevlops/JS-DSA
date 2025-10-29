@@ -303,75 +303,18 @@ function simpsonsRule(f, a, b, n) {
 const resultSimpson = simpsonsRule(Math.sin, 0, Math.PI, 100);
 console.log("Simpson’s Rule Result:", resultSimpson.toFixed(4));
 ```
-3. Monte Carlo Integration
+## 3. Monte Carlo Integration
 
-The Monte Carlo Method uses random sampling to estimate the area under a curve.
-It’s particularly useful for high-dimensional integrals or cases where the function is too complex for analytical or deterministic numerical methods.
+The Monte Carlo Method uses random sampling to estimate the area under a curve. It's particularly useful for high-dimensional integrals or cases where the function is too complex for analytical or deterministic numerical methods.
 
-∫
-𝑎
-𝑏
-𝑓
-(
-𝑥
-)
- 
-𝑑
-𝑥
-≈
-(
-𝑏
-−
-𝑎
-)
-×
-1
-𝑁
-∑
-𝑖
-=
-1
-𝑁
-𝑓
-(
-𝑥
-𝑖
-)
-∫
-a
-b
-	​
+**Mathematically:**
 
-f(x)dx≈(b−a)×
-N
-1
-	​
+$$\int_a^b f(x) \, dx \approx (b - a) \times \frac{1}{N} \sum_{i=1}^N f(x_i)$$
 
-i=1
-∑
-N
-	​
-
-f(x
-i
-	​
-
-)
-
-where 
-𝑥
-𝑖
-x
-i
-	​
-
- are random points between 
-𝑎
-a and 
-𝑏
-b.
+where $x_i$ are random points between $a$ and $b$.
 
 ### JavaScript Implementation
+
 ```javascript
 function monteCarloIntegration(f, a, b, n) {
   let sum = 0;
@@ -401,9 +344,6 @@ When exact calculus is impossible, approximation methods step in:
 * **Trapezoidal Rule**
 * **Simpson’s Rule**
 * **Monte Carlo Integration**
-
-✅ **Use Case:** Estimating areas, solving physics equations, data-driven analytics
-
 
 #### Solving Linear Systems
 In mathematics and computational science, many real-world problems boil down to solving a system of linear equations, often written as:
