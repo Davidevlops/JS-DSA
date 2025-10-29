@@ -690,15 +690,15 @@ const A3 = [
 const b3 = [6, 25, -11, 15];
 console.log("Jacobi Method Result:", jacobiMethod(A3, b3));
 ```
-4. Conjugate Gradient Method
+## 4. Conjugate Gradient Method
 
 The Conjugate Gradient (CG) method is a powerful iterative algorithm optimized for large, sparse, symmetric, and positive-definite systems — common in scientific computing and machine learning.
 
 It converges faster than basic iterative methods for well-conditioned systems.
 
-### JavaScript Implementation
-```javascript (Simplified Implementation):
+### JavaScript Implementation (Simplified)
 
+```javascript
 function conjugateGradient(A, b, tolerance = 1e-6, maxIterations = 1000) {
   const n = b.length;
   let x = new Array(n).fill(0);
