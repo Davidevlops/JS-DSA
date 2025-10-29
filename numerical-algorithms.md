@@ -580,8 +580,8 @@ b−a
 
  is the width of each subinterval.
 
-JavaScript Implementation:
-
+### JavaScript Implementation
+```javascript
 function trapezoidalRule(f, a, b, n) {
   const h = (b - a) / n;
   let sum = f(a) + f(b);
@@ -596,7 +596,7 @@ function trapezoidalRule(f, a, b, n) {
 // Example: integrate f(x) = x^2 from 0 to 3
 const result = trapezoidalRule(x => x ** 2, 0, 3, 1000);
 console.log("Trapezoidal Rule Result:", result.toFixed(4));
-
+```
 2. Simpson’s Rule
 
 The Simpson’s Rule provides a more accurate approximation by fitting parabolas through sections of the curve rather than straight lines.
