@@ -273,8 +273,8 @@ Otherwise, it lies in
 
 Repeat until the result is within a desired tolerance.
 
-✅ Pros: Simple, stable, guaranteed to converge.
-⚠️ Cons: Converges slowly compared to other methods.
+Pros: Simple, stable, guaranteed to converge.
+Cons: Converges slowly compared to other methods.
 
 🧮 JavaScript Implementation:
 
