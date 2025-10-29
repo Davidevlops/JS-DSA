@@ -621,63 +621,17 @@ console.log("Minimum at x ≈", gradientDescent(f, df, 10));
 ✅ Pros: Simple, efficient, and widely applicable
 ⚠️ Cons: May get stuck in local minima; choice of learning rate affects performance
 
-2. Newton’s Method (for Optimization)
+## 2. Newton's Method (for Optimization)
 
-Idea:
-While Gradient Descent uses only the first derivative, Newton’s Method also considers the second derivative (curvature) of the function for faster convergence.
-It adjusts the step size adaptively based on how steep or flat the function is.
+### Idea
+While Gradient Descent uses only the first derivative, Newton's Method also considers the second derivative (curvature) of the function for faster convergence. It adjusts the step size adaptively based on how steep or flat the function is.
 
-Formula:
+### Formula
+$$x_{n+1} = x_n - \frac{f'(x_n)}{f''(x_n)}$$
 
-𝑥
-𝑛
-+
-1
-=
-𝑥
-𝑛
-−
-𝑓
-′
-(
-𝑥
-𝑛
-)
-𝑓
-′
-′
-(
-𝑥
-𝑛
-)
-x
-n+1
-	​
+### JavaScript Implementation
 
-=x
-n
-	​
-
-−
-f
-′′
-(x
-n
-	​
-
-)
-f
-′
-(x
-n
-	​
-
-)
-	​
-
-
-JavaScript Implementation:
-
+```javascript
 function newtonsMethod(f1, f2, x0, tolerance = 1e-6, maxIter = 100) {
   let x = x0;
 
@@ -686,7 +640,7 @@ function newtonsMethod(f1, f2, x0, tolerance = 1e-6, maxIter = 100) {
     const hess = f2(x);
 
     if (Math.abs(grad) < tolerance) break;
-    if (hess === 0) throw new Error("Zero curvature — Newton’s Method fails.");
+    if (hess === 0) throw new Error("Zero curvature — Newton's Method fails.");
 
     x = x - grad / hess;
   }
@@ -699,11 +653,7 @@ const f1 = x => 2 * (x - 2);   // First derivative
 const f2 = x => 2;             // Second derivative
 
 console.log("Minimum at x ≈", newtonsMethod(f1, f2, 5));
-
-
-✅ Pros: Fast convergence near the minimum
-⚠️ Cons: Requires computing second derivatives; can diverge with poor initial guesses
-
+```
 3. Simulated Annealing
 
 Idea:
