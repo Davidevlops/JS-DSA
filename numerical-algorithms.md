@@ -649,7 +649,7 @@ const { L, U } = luDecomposition(A2);
 console.log("L =", L);
 console.log("U =", U);
 ```
-3.## 3. Jacobi and Gauss–Seidel Methods (Iterative Methods)
+## 3. Jacobi and Gauss–Seidel Methods (Iterative Methods)
 
 When the system is large or sparse, direct methods become computationally expensive. Iterative methods like Jacobi and Gauss–Seidel approximate solutions by refining guesses over multiple iterations.
 
