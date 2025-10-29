@@ -345,8 +345,8 @@ n
 	​
 
 
-✅ Pros: Very fast convergence when the starting guess is close to the root.
-⚠️ Cons: Requires derivative 
+Pros: Very fast convergence when the starting guess is close to the root.
+Cons: Requires derivative 
 𝑓
 ′
 (
