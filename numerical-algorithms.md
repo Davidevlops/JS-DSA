@@ -89,7 +89,7 @@ The recursive logic behind the algorithm is based on the parity (evenness or odd
 
 At each step, the exponent b is halved, reducing the number of multiplications from **O(b)** to **O(log b)** — a major performance improvement.
 
-## JavaScript Implementation
+### JavaScript Implementation
 
 ```javascript
 function modExp(a, b, m) {
