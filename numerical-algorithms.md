@@ -72,8 +72,6 @@ console.log(gcd(48, 18)); // Output: 6
 
 # Fast Exponentiation (Modular Exponentiation)
 
-## Introduction
-
 In computational mathematics, directly calculating aᵇ can be extremely inefficient, especially when b is large. Imagine trying to compute something like 7¹⁰⁰⁰⁰⁰⁰ — the number of multiplications would be enormous, and the result far too large to handle in memory.
 
 To solve this, we use **Fast Exponentiation**, also known as **Exponentiation by Squaring**. When combined with modular arithmetic, it becomes **Modular Exponentiation**, which efficiently computes:
@@ -124,95 +122,27 @@ console.log(modExp(2, 10, 100)); // Output: 24
 ```
 #### Fast Exponentiation (Modular Exponentiation)
 
-In computational mathematics, directly calculating 
-𝑎
-𝑏
-a
-b
- can be extremely inefficient, especially when b is large. Imagine trying to compute something like 
-7
-1000000
-7
-1000000
-—the number of multiplications would be enormous, and the result far too large to handle in memory.
+In computational mathematics, directly calculating $a^b$ can be extremely inefficient, especially when $b$ is large. Imagine trying to compute something like $7^{1000000}$—the number of multiplications would be enormous, and the result far too large to handle in memory.
 
-To solve this, we use Fast Exponentiation, also known as Exponentiation by Squaring. When combined with modular arithmetic, it becomes Modular Exponentiation, which efficiently computes:
+To solve this, we use **Fast Exponentiation**, also known as **Exponentiation by Squaring**. When combined with modular arithmetic, it becomes **Modular Exponentiation**, which efficiently computes:
 
-𝑎
-𝑏
-m
-o
-d
- 
- 
-𝑚
-a
-b
-modm
+$$a^b \mod m$$
 
 This method dramatically reduces computation time by repeatedly squaring and taking remainders at each step, keeping numbers manageable and operations efficient.
 
-Mathematical Concept
+### Mathematical Concept
 
-The recursive logic behind the algorithm is based on the parity (evenness or oddness) of the exponent b:
+The recursive logic behind the algorithm is based on the parity (evenness or oddness) of the exponent $b$:
 
-𝑎
-𝑏
-=
-{
-(
-𝑎
-𝑏
-/
-2
-)
-2
-,
-	
-if 
-𝑏
- is even
+$$
+a^b = 
+\begin{cases} 
+(a^{b/2})^2, & \text{if } b \text{ is even} \\
+a \times (a^{(b-1)/2})^2, & \text{if } b \text{ is odd}
+\end{cases}
+$$
 
-
-𝑎
-×
-(
-𝑎
-(
-𝑏
-−
-1
-)
-/
-2
-)
-2
-,
-	
-if 
-𝑏
- is odd
-a
-b
-={
-(a
-b/2
-)
-2
-,
-a×(a
-(b−1)/2
-)
-2
-,
-	​
-
-if b is even
-if b is odd
-	​
-
-
-At each step, the exponent b is halved, reducing the number of multiplications from O(b) to O(log b) — a major performance improvement.
+At each step, the exponent $b$ is halved, reducing the number of multiplications from $O(b)$ to $O(\log b)$ — a major performance improvement.
 
 ### JavaScript Implementation
 
@@ -229,6 +159,7 @@ function modExp(a, b, m) {
 }
 
 // Example usage
+console.log(modExp(3, 5, 13)); // Output: 9
 console.log(modExp(3, 5, 13)); // Output: 9
 ```
 
