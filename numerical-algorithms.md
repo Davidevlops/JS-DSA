@@ -34,9 +34,12 @@ Naive exponentiation: O(n) Fast Exponentiation (Exponentiation by Squaring): O(l
 
 * **Euclidean Algorithm for GCD**
 * **Fast Exponentiation (Modular Exponentiation)**
-* **Newton-Raphson Method**
+* **Root-Finding Algorithms**
 * **Gaussian Elimination**
 * **Numerical Integration (Quadrature)**
+Numerical Integration and Differentiation
+Solving Linear Systems
+Optimization Algorithms
 
 #### Euclidean Algorithm (for GCD)
 
