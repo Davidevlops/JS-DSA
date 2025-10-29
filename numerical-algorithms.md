@@ -600,32 +600,20 @@ const b = [8, -11, -3];
 console.log("Solution (Gaussian Elimination):", gaussianElimination(A, b));
 ```
 
-2. LU Decomposition
+## 2. LU Decomposition
 
-Instead of transforming the matrix multiple times, LU Decomposition splits 
-𝐴
-A into two simpler matrices:
+Instead of transforming the matrix multiple times, LU Decomposition splits $A$ into two simpler matrices:
 
-𝐴
-=
-𝐿
-×
-𝑈
-A=L×U
+$$A = L \times U$$
 
-where
+where:
+- $L$ is a lower triangular matrix,
+- $U$ is an upper triangular matrix.
 
-𝐿
-L is a lower triangular matrix,
-
-𝑈
-U is an upper triangular matrix.
-
-This makes solving for multiple 
-𝑏
-b vectors efficient — useful in machine learning and simulations.
+This makes solving for multiple $\mathbf{b}$ vectors efficient — useful in machine learning and simulations.
 
 ### JavaScript Implementation
+
 ```javascript
 function luDecomposition(A) {
   const n = A.length;
