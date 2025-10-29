@@ -196,7 +196,7 @@ console.log(
   )
 ); // Output ≈ 1.521
 ```
-## 3. Secant Method
+#### 3. Secant Method
 The Secant Method is similar to Newton–Raphson but doesn't require the derivative of the function. Instead, it approximates the derivative using the slope of a secant line through two recent points.
 
 ### Formula
@@ -248,9 +248,9 @@ The Trapezoidal Rule approximates the area under a curve by dividing it into tra
 
 **Mathematically:**
 
-$$\int_a^b f(x) \, dx \approx \frac{h}{2} \left[ f(a) + 2 \sum_{i=1}^{n-1} f(x_i) + f(b) \right]$$
+∫[a to b] f(x) dx ≈ (h/2) × [f(a) + 2 × Σ(i=1 to n-1) f(x_i) + f(b)]
 
-where $h = \frac{b - a}{n}$ is the width of each subinterval.
+where h = (b - a)/n is the width of each subinterval.
 
 ### JavaScript Implementation
 
