@@ -1,4 +1,4 @@
-# Welcome to the Algorithm Series: Numerical Algorithms
+## Welcome to the Algorithm Series: Numerical Algorithms
 
 Our journey through "Discovering JavaScript's Hidden Secrets" has reached its final destination. We're incredibly grateful to have shared this exploration with you. For our final series, we're looking at the algorithms that don't just solve problems but build the future.
 
@@ -70,7 +70,7 @@ function gcd(a, b) {
 console.log(gcd(48, 18)); // Output: 6
 ```
 
-# Fast Exponentiation (Modular Exponentiation)
+## Fast Exponentiation (Modular Exponentiation)
 
 In computational mathematics, directly calculating aᵇ can be extremely inefficient, especially when b is large. Imagine trying to compute something like 7¹⁰⁰⁰⁰⁰⁰ — the number of multiplications would be enormous, and the result far too large to handle in memory.
 
@@ -80,7 +80,7 @@ aᵇ mod m
 
 This method dramatically reduces computation time by repeatedly squaring and taking remainders at each step, keeping numbers manageable and operations efficient.
 
-## Mathematical Concept
+### Mathematical Concept
 
 The recursive logic behind the algorithm is based on the parity (evenness or oddness) of the exponent b:
 
@@ -112,48 +112,6 @@ function modExp(a, b, m) {
 console.log(modExp(3, 5, 13));  // Output: 9
 console.log(modExp(7, 3, 11));  // Output: 2
 console.log(modExp(2, 10, 100)); // Output: 24
-```
-#### Fast Exponentiation (Modular Exponentiation)
-
-In computational mathematics, directly calculating $a^b$ can be extremely inefficient, especially when $b$ is large. Imagine trying to compute something like $7^{1000000}$—the number of multiplications would be enormous, and the result far too large to handle in memory.
-
-To solve this, we use **Fast Exponentiation**, also known as **Exponentiation by Squaring**. When combined with modular arithmetic, it becomes **Modular Exponentiation**, which efficiently computes:
-
-$$a^b \mod m$$
-
-This method dramatically reduces computation time by repeatedly squaring and taking remainders at each step, keeping numbers manageable and operations efficient.
-
-### Mathematical Concept
-
-The recursive logic behind the algorithm is based on the parity (evenness or oddness) of the exponent $b$:
-
-$$
-a^b = 
-\begin{cases} 
-(a^{b/2})^2, & \text{if } b \text{ is even} \\
-a \times (a^{(b-1)/2})^2, & \text{if } b \text{ is odd}
-\end{cases}
-$$
-
-At each step, the exponent $b$ is halved, reducing the number of multiplications from $O(b)$ to $O(\log b)$ — a major performance improvement.
-
-### JavaScript Implementation
-
-```javascript
-function modExp(a, b, m) {
-  if (b === 0) return 1;
-  if (b % 2 === 0) {
-    const half = modExp(a, b / 2, m);
-    return (half * half) % m;
-  } else {
-    const half = modExp(a, Math.floor(b / 2), m);
-    return (a * half * half) % m;
-  }
-}
-
-// Example usage
-console.log(modExp(3, 5, 13)); // Output: 9
-console.log(modExp(3, 5, 13)); // Output: 9
 ```
 
 #### Root-Finding Algorithms
