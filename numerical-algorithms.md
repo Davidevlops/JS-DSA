@@ -695,15 +695,20 @@ function simulatedAnnealing(f, x0, temp = 100, coolingRate = 0.95, tolerance = 1
 const f2 = x => (x - 5) ** 2 + Math.sin(5 * x);
 console.log("Best solution ≈", simulatedAnnealing(f2, 0));
 ```
-4. Genetic Algorithms
+Pros & Cons
+✅ Pros: Can escape local minima; works for complex landscapes
+⚠️ Cons: Computationally slower; requires tuning cooling parameters
 
-Idea:
+## 4. Genetic Algorithms
+
+### Idea
 Genetic Algorithms (GAs) mimic biological evolution — using operations like selection, crossover, and mutation to evolve a population of candidate solutions toward optimal results.
 
 These algorithms are especially effective for multi-variable, non-differentiable, or discrete optimization problems.
 
-JavaScript Implementation (Simplified):
+### JavaScript Implementation (Simplified)
 
+```javascript
 function geneticAlgorithm(f, popSize = 20, generations = 100, mutationRate = 0.1) {
   let population = Array.from({ length: popSize }, () => Math.random() * 10 - 5);
 
@@ -739,7 +744,7 @@ function geneticAlgorithm(f, popSize = 20, generations = 100, mutationRate = 0.1
 // Example: Minimize f(x) = x^2 + sin(3x)
 const f3 = x => x ** 2 + Math.sin(3 * x);
 console.log("Optimal x ≈", geneticAlgorithm(f3));
-
+```
 
 ✅ Pros: Works on complex, non-differentiable problems
 ⚠️ Cons: Slow; requires parameter tuning (population size, mutation rate, etc.)
