@@ -114,6 +114,55 @@ console.log(modExp(7, 3, 11));  // Output: 2
 console.log(modExp(2, 10, 100)); // Output: 24
 ```
 
+## Root-Finding Algorithms
+
+In many scientific, engineering, and financial problems, we often face equations that cannot be solved analytically (that is, using algebra alone). In such cases, we turn to **root-finding algorithms** — numerical methods used to approximate solutions for equations of the form:
+
+$$f(x) = 0$$
+
+A **root** (or **zero**) of a function is a value of $x$ for which the function equals zero. These algorithms iteratively refine guesses for $x$ until they converge to an acceptable approximation of the true root.
+
+### Popular Root-Finding Methods
+
+Below are three commonly used approaches — each with unique strengths and trade-offs.
+
+#### 1. Bisection Method
+
+#### Idea
+The Bisection Method is one of the simplest and most reliable root-finding techniques. It works by repeatedly dividing an interval in half and selecting the subinterval in which the sign of $f(x)$ changes — meaning a root must lie within it (by the Intermediate Value Theorem).
+
+##### Steps
+1. Choose two initial points $a$ and $b$ such that $f(a)$ and $f(b)$ have opposite signs
+2. Compute the midpoint $c = \frac{a + b}{2}$
+3. Evaluate $f(c)$:
+   - If $f(c) = 0$, you've found the root
+   - If $f(a)$ and $f(c)$ have opposite signs, the root lies in $[a, c]$
+   - Otherwise, it lies in $[c, b]$
+4. Repeat until the result is within a desired tolerance
+
+#### Pros & Cons
+- **Pros**: Simple, stable, guaranteed to converge
+- **Cons**: Converges slowly compared to other methods
+
+### JavaScript Implementation
+```javascript
+function bisection(f, a, b, tolerance = 1e-6, maxIter = 1000) {
+  if (f(a) * f(b) >= 0) throw new Error("f(a) and f(b) must have opposite signs");
+
+  let c;
+  for (let i = 0; i < maxIter; i++) {
+    c = (a + b) / 2;
+    if (Math.abs(f(c)) < tolerance) return c;
+
+    if (f(a) * f(c) < 0) b = c;
+    else a = c;
+  }
+  return c;
+}
+
+// Example: Solve f(x) = x^3 - x - 2 = 0
+console.log(bisection(x => x ** 3 - x - 2, 1, 2)); // Output ≈ 1.521
+```
 #### Root-Finding Algorithms
 
 In many scientific, engineering, and financial problems, we often face equations that cannot be solved analytically (that is, using algebra alone). In such cases, we turn to root-finding algorithms — numerical methods used to approximate solutions for equations of the form:
