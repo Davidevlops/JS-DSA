@@ -577,94 +577,27 @@ Optimization & Control Systems: Computing constraints or equilibrium states
 
 #### Optimization Algorithms
 
-Optimization lies at the heart of machine learning, engineering design, finance, and scientific research.
-In simple terms, optimization algorithms are methods used to find the minimum or maximum of a function — for example, minimizing loss in a machine learning model or maximizing profit in an investment portfolio.
+Optimization lies at the heart of machine learning, engineering design, finance, and scientific research. In simple terms, optimization algorithms are methods used to find the minimum or maximum of a function — for example, minimizing loss in a machine learning model or maximizing profit in an investment portfolio.
 
 Mathematically, the problem is often expressed as:
 
-min
-⁡
-𝑥
-𝑓
-(
-𝑥
-)
-or
-max
-⁡
-𝑥
-𝑓
-(
-𝑥
-)
-x
-min
-	​
+$$\min_x f(x) \quad \text{or} \quad \max_x f(x)$$
 
-f(x)or
-x
-max
-	​
+where $f(x)$ is the objective function we want to optimize.
 
-f(x)
+Because many real-world problems are too complex for exact calculus-based solutions, these algorithms iteratively improve guesses for $x$ to move closer to the optimal point.
 
-where 
-𝑓
-(
-𝑥
-)
-f(x) is the objective function we want to optimize.
+## 1. Gradient Descent
+Gradient Descent is one of the most widely used optimization algorithms, especially in machine learning. It works by iteratively moving in the direction of steepest descent — the negative gradient — to minimize the objective function.
 
-Because many real-world problems are too complex for exact calculus-based solutions, these algorithms iteratively improve guesses for 
-𝑥
-x to move closer to the optimal point.
+### Mathematically
+$$x_{n+1} = x_n - \eta \cdot f'(x_n)$$
 
-1. Gradient Descent
+where $\eta$ (eta) is the learning rate, controlling the step size.
 
-Idea:
-Gradient Descent is one of the most widely used optimization algorithms, especially in machine learning.
-It works by iteratively moving in the direction of steepest descent — the negative gradient — to minimize the objective function.
+### JavaScript Implementation
 
-Mathematically:
-
-𝑥
-𝑛
-+
-1
-=
-𝑥
-𝑛
-−
-𝜂
-⋅
-𝑓
-′
-(
-𝑥
-𝑛
-)
-x
-n+1
-	​
-
-=x
-n
-	​
-
-−η⋅f
-′
-(x
-n
-	​
-
-)
-
-where 
-𝜂
-η (eta) is the learning rate, controlling the step size.
-
-JavaScript Implementation:
-
+```javascript
 function gradientDescent(f, df, x0, learningRate = 0.1, tolerance = 1e-6, maxIter = 1000) {
   let x = x0;
 
@@ -684,8 +617,7 @@ const f = x => (x - 3) ** 2;
 const df = x => 2 * (x - 3);
 
 console.log("Minimum at x ≈", gradientDescent(f, df, 10));
-
-
+```
 ✅ Pros: Simple, efficient, and widely applicable
 ⚠️ Cons: May get stuck in local minima; choice of learning rate affects performance
 
