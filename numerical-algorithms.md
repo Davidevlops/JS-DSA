@@ -494,7 +494,298 @@ Finance: Calculating interest rates (IRR), option pricing, or break-even points.
 
 Scientific computing: Solving nonlinear equations in physics and chemistry models.
 
-#### Numerical Integration and Differentiation
+#### Numerical Integration (Approximation Methods)
+In many real-world scenarios, finding the exact integral of a function analytically is impossible or extremely complex. This is where numerical integration methods — or approximation techniques — come in.
+These methods estimate the area under a curve by breaking it into smaller, manageable parts that can be computed efficiently.
+
+Below are three of the most popular and widely used numerical integration methods:
+
+1. Trapezoidal Rule
+
+The Trapezoidal Rule approximates the area under a curve by dividing it into trapezoids instead of rectangles. It then sums up the areas of these trapezoids to estimate the integral.
+
+Mathematically:
+
+∫
+𝑎
+𝑏
+𝑓
+(
+𝑥
+)
+ 
+𝑑
+𝑥
+≈
+ℎ
+2
+[
+𝑓
+(
+𝑎
+)
++
+2
+∑
+𝑖
+=
+1
+𝑛
+−
+1
+𝑓
+(
+𝑥
+𝑖
+)
++
+𝑓
+(
+𝑏
+)
+]
+∫
+a
+b
+	​
+
+f(x)dx≈
+2
+h
+	​
+
+[f(a)+2
+i=1
+∑
+n−1
+	​
+
+f(x
+i
+	​
+
+)+f(b)]
+
+where 
+ℎ
+=
+𝑏
+−
+𝑎
+𝑛
+h=
+n
+b−a
+	​
+
+ is the width of each subinterval.
+
+JavaScript Implementation:
+
+function trapezoidalRule(f, a, b, n) {
+  const h = (b - a) / n;
+  let sum = f(a) + f(b);
+
+  for (let i = 1; i < n; i++) {
+    sum += 2 * f(a + i * h);
+  }
+
+  return (h / 2) * sum;
+}
+
+// Example: integrate f(x) = x^2 from 0 to 3
+const result = trapezoidalRule(x => x ** 2, 0, 3, 1000);
+console.log("Trapezoidal Rule Result:", result.toFixed(4));
+
+2. Simpson’s Rule
+
+The Simpson’s Rule provides a more accurate approximation by fitting parabolas through sections of the curve rather than straight lines.
+It requires that the number of intervals n be even.
+
+∫
+𝑎
+𝑏
+𝑓
+(
+𝑥
+)
+ 
+𝑑
+𝑥
+≈
+ℎ
+3
+[
+𝑓
+(
+𝑎
+)
++
+4
+∑
+odd 
+𝑖
+𝑓
+(
+𝑥
+𝑖
+)
++
+2
+∑
+even 
+𝑖
+𝑓
+(
+𝑥
+𝑖
+)
++
+𝑓
+(
+𝑏
+)
+]
+∫
+a
+b
+	​
+
+f(x)dx≈
+3
+h
+	​
+
+[f(a)+4
+odd i
+∑
+	​
+
+f(x
+i
+	​
+
+)+2
+even i
+∑
+	​
+
+f(x
+i
+	​
+
+)+f(b)]
+
+JavaScript Implementation:
+
+function simpsonsRule(f, a, b, n) {
+  if (n % 2 !== 0) throw new Error("n must be even for Simpson's Rule");
+  const h = (b - a) / n;
+  let sum = f(a) + f(b);
+
+  for (let i = 1; i < n; i++) {
+    sum += f(a + i * h) * (i % 2 === 0 ? 2 : 4);
+  }
+
+  return (h / 3) * sum;
+}
+
+// Example: integrate f(x) = Math.sin(x) from 0 to π
+const resultSimpson = simpsonsRule(Math.sin, 0, Math.PI, 100);
+console.log("Simpson’s Rule Result:", resultSimpson.toFixed(4));
+
+3. Monte Carlo Integration
+
+The Monte Carlo Method uses random sampling to estimate the area under a curve.
+It’s particularly useful for high-dimensional integrals or cases where the function is too complex for analytical or deterministic numerical methods.
+
+∫
+𝑎
+𝑏
+𝑓
+(
+𝑥
+)
+ 
+𝑑
+𝑥
+≈
+(
+𝑏
+−
+𝑎
+)
+×
+1
+𝑁
+∑
+𝑖
+=
+1
+𝑁
+𝑓
+(
+𝑥
+𝑖
+)
+∫
+a
+b
+	​
+
+f(x)dx≈(b−a)×
+N
+1
+	​
+
+i=1
+∑
+N
+	​
+
+f(x
+i
+	​
+
+)
+
+where 
+𝑥
+𝑖
+x
+i
+	​
+
+ are random points between 
+𝑎
+a and 
+𝑏
+b.
+
+JavaScript Implementation:
+
+function monteCarloIntegration(f, a, b, n) {
+  let sum = 0;
+  for (let i = 0; i < n; i++) {
+    const x = a + Math.random() * (b - a);
+    sum += f(x);
+  }
+  return ((b - a) / n) * sum;
+}
+
+// Example: integrate f(x) = Math.exp(-x*x) from -2 to 2
+const resultMonteCarlo = monteCarloIntegration(x => Math.exp(-x * x), -2, 2, 100000);
+console.log("Monte Carlo Result:", resultMonteCarlo.toFixed(4));
+
+✅ Use Cases
+
+Estimating areas under complex curves
+
+Solving physics or engineering equations
+
+Data-driven analytics and machine learning
+
+Financial modeling (option pricing, risk estimation)
 
 When exact calculus is impossible, approximation methods step in:
 
