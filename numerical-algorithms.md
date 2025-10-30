@@ -503,7 +503,7 @@ console.log("Optimal x ≈", geneticAlgorithm(f3));
 Pros: Works on complex, non-differentiable problems
 Cons: Slow; requires parameter tuning (population size, mutation rate, etc.)
 
-Use Cases
+#### Use Cases
 
 Optimization algorithms power a vast range of modern applications:
 
@@ -517,7 +517,7 @@ Engineering Design: Reducing material usage or maximizing efficiency
 
 Operations Research: Scheduling, routing, and resource allocation
 
-#### Solving Linear Systems
+## Solving Linear Systems
 
 In mathematics and computational science, many real-world problems boil down to solving a system of linear equations, often written as:
 
@@ -530,7 +530,7 @@ where:
 
 Linear systems appear everywhere — from machine learning (solving for model parameters) to engineering simulations, computer graphics, and optimization problems.
 
-## 1. Gaussian Elimination (Direct Method)
+### 1. Gaussian Elimination (Direct Method)
 The Gaussian Elimination method systematically transforms the matrix A into an upper triangular form, then uses back-substitution to find the values of the unknowns. It's a foundational algorithm used in almost all linear algebra libraries.
 
 ### JavaScript Implementation
@@ -583,7 +583,7 @@ const b = [8, -11, -3];
 console.log("Solution (Gaussian Elimination):", gaussianElimination(A, b));
 ```
 
-## 2. LU Decomposition
+### 2. LU Decomposition
 
 Instead of transforming the matrix multiple times, LU Decomposition splits A into two simpler matrices:
 
@@ -632,7 +632,7 @@ const { L, U } = luDecomposition(A2);
 console.log("L =", L);
 console.log("U =", U);
 ```
-## 3. Jacobi and Gauss–Seidel Methods (Iterative Methods)
+### 3. Jacobi and Gauss–Seidel Methods (Iterative Methods)
 When the system is large or sparse, direct methods become computationally expensive. Iterative methods like Jacobi and Gauss–Seidel approximate solutions by refining guesses over multiple iterations.
 
 ### JavaScript Implementation
@@ -670,7 +670,7 @@ const A3 = [
 const b3 = [6, 25, -11, 15];
 console.log("Jacobi Method Result:", jacobiMethod(A3, b3));
 ```
-## 4. Conjugate Gradient Method
+### 4. Conjugate Gradient Method
 
 The Conjugate Gradient (CG) method is a powerful iterative algorithm optimized for large, sparse, symmetric, and positive-definite systems — common in scientific computing and machine learning.
 
