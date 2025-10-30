@@ -384,7 +384,7 @@ console.log("Minimum at x ≈", gradientDescent(f, df, 10));
 ### 2. Newton's Method (for Optimization)
 While Gradient Descent uses only the first derivative, Newton's Method also considers the second derivative (curvature) of the function for faster convergence. It adjusts the step size adaptively based on how steep or flat the function is.
 
-### Formula
+**Formula**
 x_{n+1} = x_n - f'(x_n)/f''(x_n)
 
 ### JavaScript Implementation
@@ -415,7 +415,7 @@ console.log("Minimum at x ≈", newtonsMethod(f1, f2, 5));
  Pros: Fast convergence near the minimum
  Cons: Requires computing second derivatives; can diverge with poor initial guesses
 
-## 3. Simulated Annealing
+### 3. Simulated Annealing
 Inspired by metallurgical annealing, this method explores the search space randomly, accepting worse solutions with a certain probability that decreases over time (the "cooling schedule"). This helps the algorithm escape local minima — something gradient-based methods struggle with.
 
 It's particularly useful for non-convex, discrete, or combinatorial problems (like traveling salesman or scheduling).
@@ -455,7 +455,7 @@ Pros & Cons
  Pros: Can escape local minima; works for complex landscapes
  Cons: Computationally slower; requires tuning cooling parameters
 
-## 4. Genetic Algorithms
+### 4. Genetic Algorithms
 Genetic Algorithms (GAs) mimic biological evolution — using operations like selection, crossover, and mutation to evolve a population of candidate solutions toward optimal results.
 
 These algorithms are especially effective for multi-variable, non-differentiable, or discrete optimization problems.
