@@ -122,10 +122,10 @@ A **root** (or **zero**) of a function is a value of x for which the function eq
 
 Below are three commonly used approaches — each with unique strengths and trade-offs.
 
-#### 1. Bisection Method
+### 1. Bisection Method
 The Bisection Method is one of the simplest and most reliable root-finding techniques. It works by repeatedly dividing an interval in half and selecting the subinterval in which the sign of f(x) changes — meaning a root must lie within it (by the Intermediate Value Theorem).
 
-### Steps
+#### Steps
 1. Choose two initial points a and b such that f(a) and f(b) have opposite signs
 2. Compute the midpoint c = (a + b) / 2
 3. Evaluate f(c):
@@ -134,7 +134,7 @@ The Bisection Method is one of the simplest and most reliable root-finding techn
    - Otherwise, it lies in [c, b]
 4. Repeat until the result is within a desired tolerance
 
-### Pros & Cons
+#### Pros & Cons
 - **Pros**: Simple, stable, guaranteed to converge
 - **Cons**: Converges slowly compared to other methods
 
@@ -157,7 +157,7 @@ function bisection(f, a, b, tolerance = 1e-6, maxIter = 1000) {
 // Example: Solve f(x) = x^3 - x - 2 = 0
 console.log(bisection(x => x ** 3 - x - 2, 1, 2)); // Output ≈ 1.521
 ```
-#### 2. Newton–Raphson Method
+### 2. Newton–Raphson Method
 This is one of the fastest root-finding methods, using calculus to refine guesses. It approximates the root by iteratively following the tangent line at the current point until it converges to zero.
 
 #### Formula
@@ -192,13 +192,13 @@ console.log(
   )
 ); // Output ≈ 1.521
 ```
-#### 3. Secant Method
+### 3. Secant Method
 The Secant Method is similar to Newton–Raphson but doesn't require the derivative of the function. Instead, it approximates the derivative using the slope of a secant line through two recent points.
 
-### Formula
+#### Formula
 x_{n+1} = x_n - f(x_n) × (x_n - x_{n-1})/(f(x_n) - f(x_{n-1}))
 
-### Pros & Cons
+#### Pros & Cons
 - **Pros**: Faster than Bisection and doesn't need f'(x)
 - **Cons**: May fail to converge if guesses are poor
 
@@ -220,7 +220,7 @@ function secant(f, x0, x1, tolerance = 1e-6, maxIter = 100) {
 // Example: f(x) = x^3 - x - 2
 console.log(secant(x => x ** 3 - x - 2, 1, 2)); // Output ≈ 1.521
 ```
-## Use Cases
+#### Use Cases
 
 Root-finding algorithms appear across numerous fields:
 
@@ -229,7 +229,7 @@ Root-finding algorithms appear across numerous fields:
 - **Scientific computing**: Solving nonlinear equations in physics and chemistry models
 
 
-### Numerical Integration (Approximation Methods)
+## Numerical Integration (Approximation Methods)
 
 In many real-world scenarios, finding the exact integral of a function analytically is impossible or extremely complex. This is where **numerical integration methods** — or approximation techniques — come in.
 
@@ -238,7 +238,7 @@ These methods estimate the area under a curve by breaking it into smaller, manag
 ### Popular Numerical Integration Methods
 Below are three of the most popular and widely used numerical integration methods:
 
-## 1. Trapezoidal Rule
+### 1. Trapezoidal Rule
 
 The Trapezoidal Rule approximates the area under a curve by dividing it into trapezoids instead of rectangles. It then sums up the areas of these trapezoids to estimate the integral.
 
@@ -266,7 +266,7 @@ function trapezoidalRule(f, a, b, n) {
 const result = trapezoidalRule(x => x ** 2, 0, 3, 1000);
 console.log("Trapezoidal Rule Result:", result.toFixed(4));
 ```
-## 2. Simpson’s Rule
+### 2. Simpson’s Rule
 
 Simpson’s Rule provides a more accurate approximation by fitting parabolas through sections of the curve rather than straight lines. It requires that the number of intervals n be even.
 
@@ -293,7 +293,7 @@ function simpsonsRule(f, a, b, n) {
 const resultSimpson = simpsonsRule(Math.sin, 0, Math.PI, 100);
 console.log("Simpson’s Rule Result:", resultSimpson.toFixed(4));
 ```
-## 3. Monte Carlo Integration
+### 3. Monte Carlo Integration
 
 The Monte Carlo Method uses random sampling to estimate the area under a curve. It's particularly useful for high-dimensional integrals or cases where the function is too complex for analytical or deterministic numerical methods.
 
@@ -319,7 +319,7 @@ function monteCarloIntegration(f, a, b, n) {
 const resultMonteCarlo = monteCarloIntegration(x => Math.exp(-x * x), -2, 2, 100000);
 console.log("Monte Carlo Result:", resultMonteCarlo.toFixed(4));
 ```
- Use Cases
+#### Use Cases
 
 Estimating areas under complex curves
 
@@ -335,7 +335,7 @@ When exact calculus is impossible, approximation methods step in:
 * **Simpson’s Rule**
 * **Monte Carlo Integration**
 
-#### Optimization Algorithms
+## Optimization Algorithms
 
 Optimization lies at the heart of machine learning, engineering design, finance, and scientific research. In simple terms, optimization algorithms are methods used to find the minimum or maximum of a function — for example, minimizing loss in a machine learning model or maximizing profit in an investment portfolio.
 
@@ -347,7 +347,7 @@ where f(x) is the objective function we want to optimize.
 
 Because many real-world problems are too complex for exact calculus-based solutions, these algorithms iteratively improve guesses for x to move closer to the optimal point.
 
-## 1. Gradient Descent
+### 1. Gradient Descent
 Gradient Descent is one of the most widely used optimization algorithms, especially in machine learning. It works by iteratively moving in the direction of steepest descent — the negative gradient — to minimize the objective function.
 
 ### Mathematically
