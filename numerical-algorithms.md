@@ -378,8 +378,9 @@ const df = x => 2 * (x - 3);
 
 console.log("Minimum at x ≈", gradientDescent(f, df, 10));
 ```
- Pros: Simple, efficient, and widely applicable
- Cons: May get stuck in local minima; choice of learning rate affects performance
+#### Pros & Cons
+- **Pros**: Simple, efficient, and widely applicable
+- **Cons**: May get stuck in local minima; choice of learning rate affects performance
 
 ### 2. Newton's Method (for Optimization)
 While Gradient Descent uses only the first derivative, Newton's Method also considers the second derivative (curvature) of the function for faster convergence. It adjusts the step size adaptively based on how steep or flat the function is.
@@ -412,8 +413,9 @@ const f2 = x => 2;             // Second derivative
 
 console.log("Minimum at x ≈", newtonsMethod(f1, f2, 5));
 ```
- Pros: Fast convergence near the minimum
- Cons: Requires computing second derivatives; can diverge with poor initial guesses
+#### Pros & Cons
+- **Pros**: Fast convergence near the minimum
+- **Cons**: Requires computing second derivatives; can diverge with poor initial guesses
 
 ### 3. Simulated Annealing
 Inspired by metallurgical annealing, this method explores the search space randomly, accepting worse solutions with a certain probability that decreases over time (the "cooling schedule"). This helps the algorithm escape local minima — something gradient-based methods struggle with.
@@ -451,9 +453,9 @@ function simulatedAnnealing(f, x0, temp = 100, coolingRate = 0.95, tolerance = 1
 const f2 = x => (x - 5) ** 2 + Math.sin(5 * x);
 console.log("Best solution ≈", simulatedAnnealing(f2, 0));
 ```
-Pros & Cons
-Pros: Can escape local minima; works for complex landscapes
-Cons: Computationally slower; requires tuning cooling parameters
+#### Pros & Cons
+- **Pros**: Can escape local minima; works for complex landscapes
+- **Cons**: Computationally slower; requires tuning cooling parameters
 
 ### 4. Genetic Algorithms
 Genetic Algorithms (GAs) mimic biological evolution — using operations like selection, crossover, and mutation to evolve a population of candidate solutions toward optimal results.
