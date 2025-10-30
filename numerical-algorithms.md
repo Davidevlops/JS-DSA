@@ -160,7 +160,7 @@ console.log(bisection(x => x ** 3 - x - 2, 1, 2)); // Output ≈ 1.521
 ### 2. Newton–Raphson Method
 This is one of the fastest root-finding methods, using calculus to refine guesses. It approximates the root by iteratively following the tangent line at the current point until it converges to zero.
 
-#### Formula
+**Formula**
 x_{n+1} = x_n - f(x_n)/f'(x_n)
 
 #### Pros & Cons
@@ -170,7 +170,7 @@ x_{n+1} = x_n - f(x_n)/f'(x_n)
 ### JavaScript Implementation
 ```javascript
 function newtonRaphson(f, df, x0, tolerance = 1e-6, maxIter = 100) {
-  let x = x0;
+  let x = x0;F
 
   for (let i = 0; i < maxIter; i++) {
     const fx = f(x);
@@ -195,7 +195,7 @@ console.log(
 ### 3. Secant Method
 The Secant Method is similar to Newton–Raphson but doesn't require the derivative of the function. Instead, it approximates the derivative using the slope of a secant line through two recent points.
 
-#### Formula
+**Formula**
 x_{n+1} = x_n - f(x_n) × (x_n - x_{n-1})/(f(x_n) - f(x_{n-1}))
 
 #### Pros & Cons
@@ -321,7 +321,7 @@ console.log("Monte Carlo Result:", resultMonteCarlo.toFixed(4));
 ```
 #### Use Cases
 
-Numerical Integration  algorithms appear across numerous fields:
+Numerical Integration algorithms play a vital role in numerous real-world applications, such as:
 - Estimating areas under complex curves
 - Solving physics or engineering equations
 - Data-driven analytics and machine learning
@@ -525,6 +525,8 @@ where:
 
 Linear systems appear everywhere — from machine learning (solving for model parameters) to engineering simulations, computer graphics, and optimization problems.
 
+### Popular Methods for Solving Linear Systems
+
 ### 1. Gaussian Elimination (Direct Method)
 The Gaussian Elimination method systematically transforms the matrix A into an upper triangular form, then uses back-substitution to find the values of the unknowns. It's a foundational algorithm used in almost all linear algebra libraries.
 
@@ -705,15 +707,13 @@ const A4 = [
 const b4 = [1, 2];
 console.log("Conjugate Gradient Result:", conjugateGradient(A4, b4));
 ```
+
 #### Use Cases
 
-Machine Learning: Solving systems in linear regression, SVMs, and optimization problems
-
-Physics Simulations: Modeling motion, energy, or stress systems
-
-Computer Graphics: Solving transformation and rendering equations
-
-Optimization & Control Systems: Computing constraints or equilibrium states
+- Machine Learning: Solving systems in linear regression, SVMs, and optimization problems
+- Physics Simulations: Modeling motion, energy, or stress systems
+- Computer Graphics: Solving transformation and rendering equations
+- Optimization & Control Systems: Computing constraints or equilibrium states
 
 ##  Conclusion
 
