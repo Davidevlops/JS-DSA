@@ -709,7 +709,7 @@ console.log("Conjugate Gradient Result:", conjugateGradient(A4, b4));
 ```
 
 #### Use Cases
-
+Solving Linear Systems power a vast range of modern applications:
 - Machine Learning: Solving systems in linear regression, SVMs, and optimization problems
 - Physics Simulations: Modeling motion, energy, or stress systems
 - Computer Graphics: Solving transformation and rendering equations
