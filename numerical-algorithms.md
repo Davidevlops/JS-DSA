@@ -2,7 +2,7 @@
 
 Our journey through "Discovering JavaScript's Hidden Secrets" has reached its final destination. We're incredibly grateful to have shared this exploration with you. For our final series, we're looking at the algorithms that don't just solve problems but build the future.
 
-Imagine a world where we can perfectly simulate the behavior of new medicines, design hyper-efficient energy grids, or create AI with a deep understanding of complex systems. This vision is rapidly becoming a reality, thanks to a specialized field of computation.
+Imagine a world where we can perfectly simulate the behaviour of new medicines, design hyper-efficient energy grids, or create AI with a deep understanding of complex systems. This vision is rapidly becoming a reality, thanks to a specialized field of computation.
 
 At the heart of this revolution are **Numerical Algorithms**. They are the quiet, mathematical engines that empower computers to tackle problems in physics, engineering, and finance that were once thought impossible. By translating the elegant language of continuous mathematics into practical, step-by-step digital processes, they unlock solutions that drive innovation.
 
@@ -37,10 +37,6 @@ Speed matters. Efficiency is measured by:
 
 - **Time Complexity** → How fast the algorithm runs
 - **Space Complexity** → How much memory it uses
-
-**For instance:**
-- Naive exponentiation: O(n)
-- Fast Exponentiation (Exponentiation by Squaring): O(log n) — a huge improvement for cryptography and large computations.
 
 ## Essential Numerical Algorithms to Know
 
@@ -224,7 +220,7 @@ function secant(f, x0, x1, tolerance = 1e-6, maxIter = 100) {
 // Example: f(x) = x^3 - x - 2
 console.log(secant(x => x ** 3 - x - 2, 1, 2)); // Output ≈ 1.521
 ```
-## 🧩 Use Cases
+## Use Cases
 
 Root-finding algorithms appear across numerous fields:
 
@@ -723,9 +719,6 @@ Physics Simulations: Modeling motion, energy, or stress systems
 Computer Graphics: Solving transformation and rendering equations
 
 Optimization & Control Systems: Computing constraints or equilibrium states
-
-
-
 
 ##  Conclusion
 
