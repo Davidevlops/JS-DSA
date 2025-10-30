@@ -452,8 +452,8 @@ const f2 = x => (x - 5) ** 2 + Math.sin(5 * x);
 console.log("Best solution ≈", simulatedAnnealing(f2, 0));
 ```
 Pros & Cons
- Pros: Can escape local minima; works for complex landscapes
- Cons: Computationally slower; requires tuning cooling parameters
+Pros: Can escape local minima; works for complex landscapes
+Cons: Computationally slower; requires tuning cooling parameters
 
 ### 4. Genetic Algorithms
 Genetic Algorithms (GAs) mimic biological evolution — using operations like selection, crossover, and mutation to evolve a population of candidate solutions toward optimal results.
