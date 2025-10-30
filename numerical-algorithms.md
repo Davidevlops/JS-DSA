@@ -350,7 +350,7 @@ Because many real-world problems are too complex for exact calculus-based soluti
 ### 1. Gradient Descent
 Gradient Descent is one of the most widely used optimization algorithms, especially in machine learning. It works by iteratively moving in the direction of steepest descent — the negative gradient — to minimize the objective function.
 
-### Mathematically
+**Mathematically:**
 x_{n+1} = x_n - η · f'(x_n)
 
 where η (eta) is the learning rate, controlling the step size.
@@ -381,7 +381,7 @@ console.log("Minimum at x ≈", gradientDescent(f, df, 10));
  Pros: Simple, efficient, and widely applicable
  Cons: May get stuck in local minima; choice of learning rate affects performance
 
-## 2. Newton's Method (for Optimization)
+### 2. Newton's Method (for Optimization)
 While Gradient Descent uses only the first derivative, Newton's Method also considers the second derivative (curvature) of the function for faster convergence. It adjusts the step size adaptively based on how steep or flat the function is.
 
 ### Formula
