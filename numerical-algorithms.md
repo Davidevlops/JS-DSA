@@ -321,13 +321,11 @@ console.log("Monte Carlo Result:", resultMonteCarlo.toFixed(4));
 ```
 #### Use Cases
 
-Estimating areas under complex curves
-
-Solving physics or engineering equations
-
-Data-driven analytics and machine learning
-
-Financial modeling (option pricing, risk estimation)
+Numerical Integration  algorithms appear across numerous fields:
+- Estimating areas under complex curves
+- Solving physics or engineering equations
+- Data-driven analytics and machine learning
+- Financial modeling (option pricing, risk estimation)
 
 When exact calculus is impossible, approximation methods step in:
 
@@ -501,23 +499,18 @@ function geneticAlgorithm(f, popSize = 20, generations = 100, mutationRate = 0.1
 const f3 = x => x ** 2 + Math.sin(3 * x);
 console.log("Optimal x ≈", geneticAlgorithm(f3));
 ```
-
-Pros: Works on complex, non-differentiable problems
-Cons: Slow; requires parameter tuning (population size, mutation rate, etc.)
+#### Pros & Cons
+- **Pros**: Works on complex, non-differentiable problems
+- **Cons**: Slow; requires parameter tuning (population size, mutation rate, etc.)
 
 #### Use Cases
 
 Optimization algorithms power a vast range of modern applications:
-
-Machine Learning: Minimizing cost or loss functions
-
-Control Systems: Tuning system parameters for stability and performance
-
-Finance: Portfolio optimization, risk minimization
-
-Engineering Design: Reducing material usage or maximizing efficiency
-
-Operations Research: Scheduling, routing, and resource allocation
+- Machine Learning: Minimizing cost or loss functions
+- Control Systems: Tuning system parameters for stability and performance
+- Finance: Portfolio optimization, risk minimization
+- Engineering Design: Reducing material usage or maximizing efficiency
+- Operations Research: Scheduling, routing, and resource allocation
 
 ## Solving Linear Systems
 
