@@ -710,7 +710,7 @@ const A4 = [
 const b4 = [1, 2];
 console.log("Conjugate Gradient Result:", conjugateGradient(A4, b4));
 ```
-Use Cases
+#### Use Cases
 
 Machine Learning: Solving systems in linear regression, SVMs, and optimization problems
 
